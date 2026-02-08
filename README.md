@@ -2,13 +2,15 @@
 
 *So you want to build a software factory?*
 
-Agentic coding crossed an **inflection point** — models now [compound **correctness**](META.md) instead of error.
+It seems agentic coding has crossed an **inflection point** — models now [compound **correctness**](META.md) instead of error.
 
-Three [intellectual threads](PARADIGM.md) converge on one [**formula**](META.md#the-formula): **Seed** → **Validation** → **Feedback Loop**, fueled by **tokens**.
+Three [intellectual threads](PARADIGM.md) appear to converge on one [**formula**](META.md#the-formula): **Seed** → **Validation** → **Feedback Loop**, fueled by **tokens**.
 
 The [hard **questions**](QUESTIONS.md) remain open.
 
 The [**conversation**](CONVERSATION.md) is live.
+
+---
 
 - **[Meta](META.md)** — The moment, the paradigm, and the formula behind the software factory concept.
 - **[Principles](principles/INDEX.md)** — The beliefs you must hold for a software factory to make sense. Seven principles covering specification, validation, feedback, economics, and environment design.
