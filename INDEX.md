@@ -56,4 +56,4 @@ Known implementations of the software factory concept — real projects applying
 
 ---
 
-**Reference:** [PARADIGM.md](PARADIGM.md) — Three lineages | [QUESTIONS.md](QUESTIONS.md) — Honest questions | [CONVERSATION.md](CONVERSATION.md) — Community discussion | [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
+**Reference:** [META.md](META.md) — The moment, paradigm, and formula | [PARADIGM.md](PARADIGM.md) — Three lineages | [QUESTIONS.md](QUESTIONS.md) — Honest questions | [CONVERSATION.md](CONVERSATION.md) — Community discussion | [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions

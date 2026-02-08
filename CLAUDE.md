@@ -15,6 +15,7 @@ software-factory/
 ├── PARADIGM.md                        — Three lineages converging on the factory concept
 ├── QUESTIONS.md                       — Honest questions and design constraints
 ├── CONVERSATION.md                    — Community discussion and essential reading
+├── META.md                            — The moment, paradigm, and formula
 │
 ├── principles/                        — Beliefs that make a software factory make sense
 │   ├── INDEX.md
@@ -66,7 +67,7 @@ Write about principles and techniques as general concepts, not as features of a 
 
 ### Attribution
 
-When a specific source contributes a key insight, attribute naturally: "As Larson observes, agent output quality depends more on the engineering environment than on agent sophistication." Use source names for provenance, not as subjects of sentences.
+When a specific source contributes a key insight, attribute naturally: "As Larson observes, agent output quality depends more on the engineering environment than on agent sophistication." Use source names for provenance, not as subjects of sentences. Every attributed source must have a corresponding entry in [SOURCES.md](SOURCES.md).
 
 ### Tone
 
