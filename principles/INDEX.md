@@ -1,6 +1,6 @@
 # Principles
 
-Principles are the beliefs you must hold for a software factory to make sense. They aren't aspirational slogans — they're load-bearing assumptions. If you don't accept these, the techniques won't work and the components won't justify their cost.
+Principles are the assumptions behind the software factory concept. They aren't aspirational slogans — they're the premises the techniques and components depend on. Understanding where you agree or disagree with these is the starting point for evaluating whether the approach fits your organization.
 
 The first four form the core formula: **Seed** &rarr; **Validation** &rarr; **Feedback Loop**, with **Tokens** as the fuel. The remaining three describe the enabling conditions that make the formula viable.
 

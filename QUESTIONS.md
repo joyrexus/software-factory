@@ -43,7 +43,3 @@ Nine pillars define what gets measured at each level:
 ### Connection to the Formula
 
 The pillars map directly to the formula — Seed, Validation, Feedback Loop. Style & Validation, Build System, and Testing make the **Validation** stage reliable. Documentation, Development Environment, and Task Discovery ensure **Seeds** are well-formed. Debugging & Observability, Security, and Product & Experimentation close the **Feedback Loop** by making outcomes measurable and recoverable. A codebase that scores well across all nine pillars is one where the formula can operate with confidence.
-
----
-
-These aren't objections. They're the problems that the [principles](principles/INDEX.md), [techniques](techniques/INDEX.md), and [components](components/INDEX.md) in this knowledge base must solve.
