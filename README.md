@@ -44,7 +44,7 @@ software-factory/
 ├── components/                        — Infrastructure a software factory needs
 │   ├── attractor/                     — Pipeline orchestrator (deep-dive)
 │   ├── context-store/                 — Persistent structured memory for agents
-│   └── agent-identity/               — Auth/authz for mixed human-agent workforce
+│   └── agent-identity/                — Auth/authz for mixed human-agent workforce
 │
 └── implementations/                   — Known implementations
     └── kilroy.md                      — Local-first software factory CLI
