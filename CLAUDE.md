@@ -4,13 +4,6 @@ This is a hierarchical markdown knowledge base about building a software factory
 
 There is no code — only interconnected markdown files organized as a navigable hierarchy.
 
-## Sources
-
-- **[StrongDM Software Factory](https://factory.strongdm.ai/)** — Principles, techniques, and the Attractor pipeline orchestrator
-- **[Compound Engineering](https://lethain.com/everyinc-compound-engineering/)** (Will Larson) — Plan/work/review/compound framework
-- **[Agent-Native Development](https://www.factory.ai/news/build-with-agents)** (Factory.ai) — Specification discipline and environment design
-- **[Simon Willison's Review](https://simonwillison.net/2026/Feb/7/software-factory/)** — Critical assessment and the "dark factory" framing
-
 ## Project Layout
 
 ```
@@ -19,6 +12,9 @@ software-factory/
 ├── CLAUDE.md                          — Project instructions (this file)
 ├── INDEX.md                           — Master table of contents
 ├── SOURCES.md                         — Annotated bibliography
+├── PARADIGM.md                        — Three lineages converging on the factory concept
+├── QUESTIONS.md                       — Honest questions and design constraints
+├── CONVERSATION.md                    — Community discussion and essential reading
 │
 ├── principles/                        — Beliefs that make a software factory make sense
 │   ├── INDEX.md

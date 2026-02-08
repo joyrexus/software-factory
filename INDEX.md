@@ -56,4 +56,4 @@ Known implementations of the software factory concept — real projects applying
 
 ---
 
-**Reference:** [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
+**Reference:** [PARADIGM.md](PARADIGM.md) — Three lineages | [QUESTIONS.md](QUESTIONS.md) — Honest questions | [CONVERSATION.md](CONVERSATION.md) — Community discussion | [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
