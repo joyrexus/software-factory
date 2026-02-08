@@ -24,8 +24,6 @@ The [**conversation**](CONVERSATION.md) is live.
 
 ---
 
-## Project Layout
-
 ```
 software-factory/
 ├── README.md                          — "So you want to build a software factory"
