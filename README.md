@@ -4,7 +4,11 @@
 
 It seems agentic coding has crossed an **inflection point** — models now [compound **correctness**](META.md) instead of error.
 
-Three [intellectual threads](PARADIGM.md) appear to converge on one [**formula**](META.md#the-formula): **Seed** → **Validation** → **Feedback Loop**, fueled by **tokens**.
+Three [intellectual threads](PARADIGM.md) appear to converge on one [**formula**](META.md#the-formula):
+
+> **Seed** → **Validation** → **Feedback Loop**
+
+…fueled by **tokens**.
 
 The [hard **questions**](QUESTIONS.md) remain open.
 
