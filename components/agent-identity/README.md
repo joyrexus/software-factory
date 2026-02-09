@@ -32,5 +32,5 @@ StrongDM ID is the reference implementation described in the Software Factory ma
 
 - [Risk-Tiered Automation](../../techniques/risk-tiered-automation.md) — Permission tiers aligned with action risk
 - [Validation](../../principles/validation.md) — Audit trails as validation of agent behavior
-- [Attractor](../attractor/INDEX.md) — Pipeline orchestrator whose agents need identity
-- [Context Store](../context-store/INDEX.md) — Persistent memory that identity controls access to
+- [Attractor](../attractor/README.md) — Pipeline orchestrator whose agents need identity
+- [Context Store](../context-store/README.md) — Persistent memory that identity controls access to

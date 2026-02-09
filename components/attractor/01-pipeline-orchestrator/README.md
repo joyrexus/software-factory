@@ -23,6 +23,6 @@ This section decomposes the `attractor-spec.md` into focused topics covering eve
 ## See Also
 
 - [../00-overview/architecture-overview.md](../00-overview/architecture-overview.md) — Where the pipeline sits in the stack
-- [../02-coding-agent-loop/INDEX.md](../02-coding-agent-loop/INDEX.md) — The agent loop that codergen nodes invoke
+- [../02-coding-agent-loop/README.md](../02-coding-agent-loop/README.md) — The agent loop that codergen nodes invoke
 - [../05-reference/dot-syntax-quick-ref.md](../05-reference/dot-syntax-quick-ref.md) — Compact DOT syntax reference card
 - [../05-reference/condition-expressions.md](../05-reference/condition-expressions.md) — Full condition expression grammar

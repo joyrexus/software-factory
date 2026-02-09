@@ -18,5 +18,5 @@ The loop follows a simple cycle: send a prompt to an LLM, receive tool calls, ex
 ## See Also
 
 - [../01-pipeline-orchestrator/node-types-and-handlers.md](../01-pipeline-orchestrator/node-types-and-handlers.md) — How codergen nodes invoke agent sessions
-- [../03-unified-llm-client/INDEX.md](../03-unified-llm-client/INDEX.md) — The LLM client the loop uses for model calls
+- [../03-unified-llm-client/README.md](../03-unified-llm-client/README.md) — The LLM client the loop uses for model calls
 - [../04-implementation-guide/integration-patterns.md](../04-implementation-guide/integration-patterns.md) — Pipeline ↔ Agent Loop integration

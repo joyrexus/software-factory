@@ -8,7 +8,7 @@ Annotated bibliography of the primary sources synthesized in this knowledge base
 
 **URL:** [factory.strongdm.ai](https://factory.strongdm.ai/)
 
-StrongDM's Software Factory is the most radical implementation of the agentic development paradigm: "code must not be written by humans; code must not be reviewed by humans." The site describes principles (deliberate naivete, tokens as fuel), named techniques (digital twin universe, gene transfusion, filesystem-as-memory, semport, pyramid summaries, shift work), and three products — the Attractor pipeline orchestrator, CXDB context store, and StrongDM ID agent identity system. The key innovation is scenario-based validation using probabilistic satisfaction metrics: measuring what fraction of observed trajectories through end-to-end user stories likely satisfy the user. This knowledge base's [Attractor deep-dive](components/attractor/INDEX.md) is built primarily from StrongDM's open-source specifications.
+StrongDM's Software Factory is the most radical implementation of the agentic development paradigm: "code must not be written by humans; code must not be reviewed by humans." The site describes principles (deliberate naivete, tokens as fuel), named techniques (digital twin universe, gene transfusion, filesystem-as-memory, semport, pyramid summaries, shift work), and three products — the Attractor pipeline orchestrator, CXDB context store, and StrongDM ID agent identity system. The key innovation is scenario-based validation using probabilistic satisfaction metrics: measuring what fraction of observed trajectories through end-to-end user stories likely satisfy the user. This knowledge base's [Attractor deep-dive](components/attractor/README.md) is built primarily from StrongDM's open-source specifications.
 
 **Key contributions:** Named principles and techniques vocabulary, digital twin universe concept, scenario-based validation, the Attractor pipeline spec.
 
@@ -95,7 +95,7 @@ OpenClaw's agent memory architecture uses markdown files as the source of truth 
 **URL:** [nicolasbustamante.com/p/the-rag-obituary-killed-by-agents](https://www.nicolasbustamante.com/p/the-rag-obituary-killed-by-agents)
 **Author:** Nicolas Bustamante
 
-The case that RAG is being superseded by agentic search — agents with tool access navigate relationships directly rather than retrieving embedding-matched fragments. The core critique is that RAG's chunking and embedding pipeline introduces compounding errors: lossy chunking fragments context, embedding collapse loses relational structure, and retrieval returns fragments without the connections that made them meaningful. The "agents investigate, not retrieve" framing has direct implications for [context store](components/context-store/INDEX.md) design.
+The case that RAG is being superseded by agentic search — agents with tool access navigate relationships directly rather than retrieving embedding-matched fragments. The core critique is that RAG's chunking and embedding pipeline introduces compounding errors: lossy chunking fragments context, embedding collapse loses relational structure, and retrieval returns fragments without the connections that made them meaningful. The "agents investigate, not retrieve" framing has direct implications for [context store](components/context-store/README.md) design.
 
 **Key contributions:** Chunking fragmentation critique, the "agents investigate, not retrieve" framing, architectural implications for context systems.
 
@@ -116,6 +116,6 @@ Observations from production agent systems on S3-first architecture — using S3
 
 **URL:** [github.com/strongdm/cxdb](https://github.com/strongdm/cxdb)
 
-StrongDM's open-source AI context store — the reference implementation of the [context store](components/context-store/INDEX.md) concept described in this knowledge base. Implements a Turn DAG with blob CAS architecture: immutable turn nodes with parent references, BLAKE3 content-addressed blob storage with Zstd compression, branch-from-any-turn forking with O(1) cost, and a type registry with forward-compatible schema evolution. Includes a built-in React UI for visual debugging.
+StrongDM's open-source AI context store — the reference implementation of the [context store](components/context-store/README.md) concept described in this knowledge base. Implements a Turn DAG with blob CAS architecture: immutable turn nodes with parent references, BLAKE3 content-addressed blob storage with Zstd compression, branch-from-any-turn forking with O(1) cost, and a type registry with forward-compatible schema evolution. Includes a built-in React UI for visual debugging.
 
 **Key contributions:** Turn DAG data model, BLAKE3 content-addressed blob storage, O(1) context forking, type registry with forward-compatible schema evolution.

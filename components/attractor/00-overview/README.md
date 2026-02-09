@@ -10,6 +10,6 @@ Context for understanding the Software Factory vision and how the three NLSpec c
 
 ## See Also
 
-- [01-pipeline-orchestrator/](../01-pipeline-orchestrator/INDEX.md) for deep dives into the orchestrator
+- [01-pipeline-orchestrator/](../01-pipeline-orchestrator/README.md) for deep dives into the orchestrator
 - [04-implementation-guide/build-sequence.md](../04-implementation-guide/build-sequence.md) for the recommended build order
 - [05-reference/glossary.md](../05-reference/glossary.md) for key terms

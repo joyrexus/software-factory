@@ -39,7 +39,7 @@ The default and most common handler. Creates a coding agent session (via the `Co
 5. Collects artifacts (files written, test results, etc.)
 6. Returns an `Outcome` with status, context updates, and artifact references
 
-The `CodergenBackend` is the integration point with the [Coding Agent Loop](../02-coding-agent-loop/INDEX.md).
+The `CodergenBackend` is the integration point with the [Coding Agent Loop](../02-coding-agent-loop/README.md).
 
 ### Terminal (shape=ellipse)
 

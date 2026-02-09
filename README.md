@@ -13,10 +13,10 @@ The [hard questions](QUESTIONS.md) remain open.
 ---
 
 - **[Meta](META.md)** — The moment, the paradigm, and the formula behind the software factory concept.
-- **[Principles](principles/INDEX.md)** — The assumptions behind the software factory concept. Seven principles covering specification, validation, feedback, economics, and environment design.
-- **[Techniques](techniques/INDEX.md)** — Repeatable patterns to evaluate and adopt. Ten techniques for environment construction, workflow design, and knowledge management.
-- **[Components](components/INDEX.md)** — Infrastructure a software factory would need. Deep-dive on the Attractor pipeline orchestrator, plus architectural stubs for context stores and agent identity systems.
-- **[Implementations](implementations/INDEX.md)** — Known implementations applying these ideas.
+- **[Principles](principles/README.md)** — The assumptions behind the software factory concept. Seven principles covering specification, validation, feedback, economics, and environment design.
+- **[Techniques](techniques/README.md)** — Repeatable patterns to evaluate and adopt. Ten techniques for environment construction, workflow design, and knowledge management.
+- **[Components](components/README.md)** — Infrastructure a software factory would need. Deep-dive on the Attractor pipeline orchestrator, plus architectural stubs for context stores and agent identity systems.
+- **[Implementations](implementations/README.md)** — Known implementations applying these ideas.
 - **[Conversation](CONVERSATION.md)** — Community commentary on the source material.
 
 ---

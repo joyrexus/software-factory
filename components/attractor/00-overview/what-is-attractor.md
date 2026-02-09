@@ -22,9 +22,9 @@ Attractor is defined across three Natural Language Specifications (NLSpecs) — 
 
 | Spec | Role | Analogy |
 |------|------|---------|
-| **[Unified LLM Client](../03-unified-llm-client/INDEX.md)** | Provider-agnostic access to OpenAI, Anthropic, and Gemini | The engine |
-| **[Coding Agent Loop](../02-coding-agent-loop/INDEX.md)** | Agentic loop pairing LLMs with developer tools | The driver |
-| **[Attractor Pipeline](../01-pipeline-orchestrator/INDEX.md)** | DOT-based orchestration of multi-phase workflows | The road map |
+| **[Unified LLM Client](../03-unified-llm-client/README.md)** | Provider-agnostic access to OpenAI, Anthropic, and Gemini | The engine |
+| **[Coding Agent Loop](../02-coding-agent-loop/README.md)** | Agentic loop pairing LLMs with developer tools | The driver |
+| **[Attractor Pipeline](../01-pipeline-orchestrator/README.md)** | DOT-based orchestration of multi-phase workflows | The road map |
 
 Each spec is self-contained and independently implementable, but they're designed to compose: the pipeline orchestrator creates coding agent sessions, which use the LLM client to talk to models.
 

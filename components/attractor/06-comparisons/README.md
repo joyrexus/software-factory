@@ -20,4 +20,4 @@ As this directory grows, consider adding comparisons with:
 
 - [../00-overview/what-is-attractor.md](../00-overview/what-is-attractor.md) — What Attractor is
 - [../04-implementation-guide/decision-points.md](../04-implementation-guide/decision-points.md) — Decisions informed by these comparisons
-- [../07-future-extensions/INDEX.md](../07-future-extensions/INDEX.md) — Ideas inspired by these comparisons
+- [../07-future-extensions/README.md](../07-future-extensions/README.md) — Ideas inspired by these comparisons

@@ -45,6 +45,6 @@ This creates a complete, searchable, machine-readable history of every change th
 
 ## See Also
 
-- [Agent Identity Overview](INDEX.md) — What agent identity is and why you need it
+- [Agent Identity Overview](README.md) — What agent identity is and why you need it
 - [Risk-Tiered Automation](../../techniques/risk-tiered-automation.md) — How permission tiers map to risk levels
 - [Attractor: Human-in-the-Loop](../attractor/01-pipeline-orchestrator/human-in-the-loop.md) — Pipeline gates that invoke human approval

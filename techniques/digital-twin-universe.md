@@ -31,5 +31,5 @@ A DTU must be:
 ## See Also
 
 - [Scenarios Not Tests](scenarios-not-tests.md) — The validation methodology that DTU enables
-- [Attractor](../components/attractor/INDEX.md) — Pipeline orchestrator that can coordinate DTU-backed validation
+- [Attractor](../components/attractor/README.md) — Pipeline orchestrator that can coordinate DTU-backed validation
 - [Attractor: Validation and Testing](../components/attractor/07-future-extensions/validation-and-testing.md) — Future extension for DTU integration

@@ -73,7 +73,7 @@ See [../04-implementation-guide/build-sequence.md](../04-implementation-guide/bu
 
 ## See Also
 
-- [../01-pipeline-orchestrator/INDEX.md](../01-pipeline-orchestrator/INDEX.md) — Deep dive into the orchestrator
-- [../02-coding-agent-loop/INDEX.md](../02-coding-agent-loop/INDEX.md) — Deep dive into the agent loop
-- [../03-unified-llm-client/INDEX.md](../03-unified-llm-client/INDEX.md) — Deep dive into the LLM client
+- [../01-pipeline-orchestrator/README.md](../01-pipeline-orchestrator/README.md) — Deep dive into the orchestrator
+- [../02-coding-agent-loop/README.md](../02-coding-agent-loop/README.md) — Deep dive into the agent loop
+- [../03-unified-llm-client/README.md](../03-unified-llm-client/README.md) — Deep dive into the LLM client
 - [../04-implementation-guide/integration-patterns.md](../04-implementation-guide/integration-patterns.md) — How the components connect in practice

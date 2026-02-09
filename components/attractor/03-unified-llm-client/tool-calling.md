@@ -21,7 +21,7 @@ The parameters use **JSON Schema** as the canonical format — it's universal ac
 | **Active** | Yes | Client executes the tool automatically and loops |
 | **Passive** | No | Client returns tool calls to the caller without executing |
 
-Active tools enable automatic agentic loops — the client calls the model, the model requests a tool, the client executes it, sends the result back, and repeats. This is the pattern used by the [Coding Agent Loop](../02-coding-agent-loop/INDEX.md).
+Active tools enable automatic agentic loops — the client calls the model, the model requests a tool, the client executes it, sends the result back, and repeats. This is the pattern used by the [Coding Agent Loop](../02-coding-agent-loop/README.md).
 
 Passive tools are for callers that want to handle tool execution themselves.
 

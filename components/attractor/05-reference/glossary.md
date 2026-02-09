@@ -102,4 +102,4 @@ Key terms used across the Attractor specs and Software Factory documentation.
 
 ## U
 
-**Unified LLM Client** — The provider-agnostic client library at the bottom of the stack. See [../03-unified-llm-client/INDEX.md](../03-unified-llm-client/INDEX.md).
+**Unified LLM Client** — The provider-agnostic client library at the bottom of the stack. See [../03-unified-llm-client/README.md](../03-unified-llm-client/README.md).

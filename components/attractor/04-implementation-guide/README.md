@@ -12,4 +12,4 @@ Practical guidance for building the Attractor stack: what to build first, what d
 ## See Also
 
 - [../00-overview/architecture-overview.md](../00-overview/architecture-overview.md) — The dependency chain this build order follows
-- [../06-comparisons/INDEX.md](../06-comparisons/INDEX.md) — How other systems have approached similar problems
+- [../06-comparisons/README.md](../06-comparisons/README.md) — How other systems have approached similar problems

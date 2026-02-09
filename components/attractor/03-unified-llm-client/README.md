@@ -19,5 +19,5 @@ The spec emphasizes using each provider's **native API** (OpenAI Responses API, 
 ## See Also
 
 - [../00-overview/architecture-overview.md](../00-overview/architecture-overview.md) — Where the LLM client sits in the stack
-- [../02-coding-agent-loop/INDEX.md](../02-coding-agent-loop/INDEX.md) — The agent loop that uses this client
+- [../02-coding-agent-loop/README.md](../02-coding-agent-loop/README.md) — The agent loop that uses this client
 - [../04-implementation-guide/build-sequence.md](../04-implementation-guide/build-sequence.md) — Why this is built first

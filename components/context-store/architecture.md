@@ -82,7 +82,7 @@ StrongDM's open-source implementation of the context store concept.
 
 ## See Also
 
-- [Context Store Overview](INDEX.md) — What a context store is and why you need one
+- [Context Store Overview](README.md) — What a context store is and why you need one
 - [Attractor: State and Context](../attractor/01-pipeline-orchestrator/state-and-context.md) — How the pipeline orchestrator manages state
 - [Compound Knowledge](../../principles/compound-knowledge.md) — The principle driving context store design
 - [OpenClaw Memory Concepts](https://docs.openclaw.ai/concepts/memory) — File-first agent memory with hybrid retrieval

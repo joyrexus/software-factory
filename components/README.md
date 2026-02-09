@@ -14,8 +14,8 @@ These are architectural roles, not product prescriptions. Any software factory m
 
 | Component | Description | Depth |
 |-----------|-------------|-------|
-| [Attractor](attractor/INDEX.md) | DOT-based pipeline orchestrator for multi-agent workflows | Full deep-dive (56 files) |
-| [Context Store](context-store/INDEX.md) | Persistent structured memory for agents (DAG, deduplication, queries) | Architectural stub |
-| [Agent Identity](agent-identity/INDEX.md) | Auth/authz for mixed human-agent workforce | Architectural stub |
+| [Attractor](attractor/README.md) | DOT-based pipeline orchestrator for multi-agent workflows | Full deep-dive (56 files) |
+| [Context Store](context-store/README.md) | Persistent structured memory for agents (DAG, deduplication, queries) | Architectural stub |
+| [Agent Identity](agent-identity/README.md) | Auth/authz for mixed human-agent workforce | Architectural stub |
 
 The Attractor component is a comprehensive analysis of StrongDM's open-source pipeline orchestrator specification. The Context Store and Agent Identity sections are architectural stubs describing the role each component fills and the key design properties, based on StrongDM's CXDB and StrongDM ID descriptions.

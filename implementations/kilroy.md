@@ -4,7 +4,7 @@
 
 ## Overview
 
-Kilroy is a command-line tool that turns English requirements into an [Attractor](../components/attractor/INDEX.md) pipeline (a DOT graph), validates the pipeline, then executes it node-by-node with tool-using coding agents in an isolated git worktree. It is the first known open-source implementation of the Attractor specification.
+Kilroy is a command-line tool that turns English requirements into an [Attractor](../components/attractor/README.md) pipeline (a DOT graph), validates the pipeline, then executes it node-by-node with tool-using coding agents in an isolated git worktree. It is the first known open-source implementation of the Attractor specification.
 
 **Repository:** [github.com/danshapiro/kilroy](https://github.com/danshapiro/kilroy)
 
@@ -75,8 +75,8 @@ Kilroy demonstrates that the software factory concept is implementable at the in
 
 ## See Also
 
-- [Attractor](../components/attractor/INDEX.md) — The pipeline orchestrator specification that Kilroy implements
-- [Context Store](../components/context-store/INDEX.md) — The context store concept that CXDB implements for Kilroy
+- [Attractor](../components/attractor/README.md) — The pipeline orchestrator specification that Kilroy implements
+- [Context Store](../components/context-store/README.md) — The context store concept that CXDB implements for Kilroy
 - [CXDB](https://github.com/strongdm/cxdb) — StrongDM's open-source context store used as Kilroy's execution database
 - [The Seed](../principles/seed.md) — English requirements as seeds for pipeline generation
 - [Shift Work](../techniques/shift-work.md) — Kilroy's workflow separates interactive specification from non-interactive execution

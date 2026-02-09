@@ -76,7 +76,7 @@ The loop ends when any of these conditions is met:
 ## What Happens Each Turn
 
 1. **Assemble messages**: System prompt + conversation history + any steering/follow-up injections
-2. **Call LLM**: Via `Client.complete()` or `Client.stream()` from the [Unified LLM Client](../03-unified-llm-client/INDEX.md)
+2. **Call LLM**: Via `Client.complete()` or `Client.stream()` from the [Unified LLM Client](../03-unified-llm-client/README.md)
 3. **Process response**: If the model returns tool calls, execute them all (potentially in parallel)
 4. **Truncate outputs**: Apply the truncation pipeline to tool outputs that exceed limits
 5. **Check for loops**: Compare recent tool call signatures against history

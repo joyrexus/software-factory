@@ -6,7 +6,7 @@ This is the master index for the knowledge base. Every file in the project is re
 
 ---
 
-## [Principles](principles/INDEX.md)
+## [Principles](principles/README.md)
 
 The assumptions behind the software factory concept. Seven principles forming a connected system.
 
@@ -20,7 +20,7 @@ The assumptions behind the software factory concept. Seven principles forming a 
 | [compound-knowledge.md](principles/compound-knowledge.md) | Organizational learning at machine speed |
 | [agent-native-environment.md](principles/agent-native-environment.md) | Designing environments for non-human workers |
 
-## [Techniques](techniques/INDEX.md)
+## [Techniques](techniques/README.md)
 
 Repeatable patterns to evaluate and adopt, clustered by domain: environment, workflow, and knowledge management.
 
@@ -36,17 +36,17 @@ Repeatable patterns to evaluate and adopt, clustered by domain: environment, wor
 | [specification-discipline.md](techniques/specification-discipline.md) | The self-check heuristic for specifications |
 | [risk-tiered-automation.md](techniques/risk-tiered-automation.md) | Graduated autonomy levels for agent actions |
 
-## [Components](components/INDEX.md)
+## [Components](components/README.md)
 
 Infrastructure a software factory would need. Three architectural roles the concept implies.
 
 | Directory | Description |
 |-----------|-------------|
-| [attractor/](components/attractor/INDEX.md) | Pipeline orchestrator — DOT-based graph engine for multi-agent workflows (56-file deep-dive) |
-| [context-store/](components/context-store/INDEX.md) | Persistent structured memory for agents — DAG structure, deduplication, query patterns |
-| [agent-identity/](components/agent-identity/INDEX.md) | Auth/authz for mixed human-agent workforce — federated identity, audit trails |
+| [attractor/](components/attractor/README.md) | Pipeline orchestrator — DOT-based graph engine for multi-agent workflows (56-file deep-dive) |
+| [context-store/](components/context-store/README.md) | Persistent structured memory for agents — DAG structure, deduplication, query patterns |
+| [agent-identity/](components/agent-identity/README.md) | Auth/authz for mixed human-agent workforce — federated identity, audit trails |
 
-## [Implementations](implementations/INDEX.md)
+## [Implementations](implementations/README.md)
 
 Known implementations applying these ideas.
 

@@ -14,11 +14,11 @@ software-factory/
 ├── SOURCES.md                         — Annotated bibliography
 ├── PARADIGM.md                        — Three lineages converging on the factory concept
 ├── QUESTIONS.md                       — Honest questions and design constraints
-├── CONVERSATION.md                    — Community discussion and essential reading
+├── CONVERSATION.md                    — Community commentary on the source material
 ├── META.md                            — The moment, paradigm, and formula
 │
 ├── principles/                        — Assumptions behind the software factory concept
-│   ├── INDEX.md
+│   ├── README.md
 │   ├── seed.md                        — Specification as starting point
 │   ├── validation.md                  — End-to-end proof of correctness
 │   ├── feedback-loop.md               — Compounding correctness
@@ -28,7 +28,7 @@ software-factory/
 │   └── agent-native-environment.md    — Designing for non-human workers
 │
 ├── techniques/                        — Repeatable patterns you can adopt
-│   ├── INDEX.md
+│   ├── README.md
 │   ├── digital-twin-universe.md       — Cloning external dependencies for validation
 │   ├── gene-transfusion.md            — Cross-codebase pattern transfer
 │   ├── filesystem-as-memory.md        — Disk as agent cognition substrate
@@ -40,24 +40,23 @@ software-factory/
 │   └── risk-tiered-automation.md      — Graduated autonomy levels
 │
 ├── components/                        — Infrastructure a software factory needs
-│   ├── INDEX.md
+│   ├── README.md
 │   ├── attractor/                     — Pipeline orchestrator (56-file deep-dive)
 │   │   ├── README.md
-│   │   ├── INDEX.md
 │   │   └── 00-overview/ ... 07-future-extensions/
 │   ├── context-store/                 — Persistent structured memory for agents
-│   │   ├── INDEX.md
+│   │   ├── README.md
 │   │   └── architecture.md
 │   └── agent-identity/                — Auth/authz for mixed human-agent workforce
-│       ├── INDEX.md
+│       ├── README.md
 │       └── architecture.md
 │
 └── implementations/                   — Known implementations
-    ├── INDEX.md
+    ├── README.md
     └── kilroy.md                      — Local-first software factory CLI
 ```
 
-Every directory contains an `INDEX.md` that lists and describes its files. The root `INDEX.md` links to all section indexes.
+The root `INDEX.md` is the master quick-reference index — every file in the knowledge base reachable from one table. Sub-level directories use `README.md` files for navigable overviews, rendered automatically by GitHub when browsing.
 
 ## Writing Guidelines
 
@@ -81,9 +80,10 @@ Every file should include a "See Also" section linking to related content. Princ
 
 This hierarchy follows StrongDM's own [filesystem technique](https://factory.strongdm.ai/techniques/filesystem):
 
-- **Directories with meaningful names** reflect conceptual hierarchy
-- **Markdown INDEX files** provide navigable overviews at each level
+- **Root `INDEX.md`** is the full quick-reference index for the entire knowledge base — every file reachable in one table
+- **Sub-level `README.md` files** provide navigable overviews at each directory level, rendered by GitHub when browsing
 - **On-disk state** serves as a practical memory substrate — the filesystem itself is the knowledge graph
+- This is a lightweight application of the [Pyramid Summaries](techniques/pyramid-summaries.md) technique: root INDEX is Level 0, directory READMEs are Level 1, individual files are Level 2
 
 The structure is designed to be **genrefied** — reorganized as understanding deepens, following the library-science principle of restructuring information to optimize future retrieval.
 
@@ -103,10 +103,12 @@ When modifying any file in this project, you must:
 
 2. **Update cross-references.** If you add, rename, move, or remove a file, update every document that links to it. Use `Grep` to find all references to the affected filename.
 
-3. **Update INDEX files.** Every content file must be listed in its section's `INDEX.md`. If you add a new file, add it to the section INDEX. If you add a new section, add it to the root `INDEX.md` as well.
+3. **Update README files.** Every content file must be listed in its directory's `README.md`. If you add a new file, add it to the directory README. If you add a new section, add it to the root `INDEX.md` as well.
 
 4. **Maintain the root INDEX.** The root `INDEX.md` is the authoritative table of contents. Any structural change (new sections, renamed sections, significant scope changes to a section) must be reflected there.
 
 5. **Preserve terminology.** Use terms consistently as defined in [components/attractor/05-reference/glossary.md](components/attractor/05-reference/glossary.md). If you introduce a new term, add it to the glossary.
 
-6. **No orphaned files.** Every markdown file must be reachable from the root INDEX through the section INDEX chain. After any structural change, verify this.
+6. **No orphaned files.** Every markdown file must be reachable from the root INDEX through the directory README chain. After any structural change, verify this.
+
+7. **Keep READMEs current.** When adding, removing, or renaming files in a subdirectory, update that directory's `README.md` to reflect the change. This maintains navigability and is a practical application of the [Pyramid Summaries](techniques/pyramid-summaries.md) technique — each README is a summary of its directory's contents, regenerable from the files below it.

@@ -32,4 +32,4 @@ Factory.ai operationalizes this through required evidence: every pull request mu
 - [Digital Twin Universe](../techniques/digital-twin-universe.md) — Environment-level validation infrastructure
 - [The Seed](seed.md) — Quality of specification determines quality of output to validate
 - [The Feedback Loop](feedback-loop.md) — Validation results feeding back into future iterations
-- [Attractor](../components/attractor/INDEX.md) — Pipeline orchestrator with goal gates implementing validation checkpoints
+- [Attractor](../components/attractor/README.md) — Pipeline orchestrator with goal gates implementing validation checkpoints
