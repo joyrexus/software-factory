@@ -22,7 +22,7 @@ StrongDM's approach stores scenarios as holdout sets — like evaluation dataset
 
 ## Environment as Validator
 
-As Larson observes, agent output quality depends more on the engineering environment than on agent sophistication. A codebase with strong types, comprehensive CI, and opinionated linters catches errors that no amount of prompt engineering can prevent. The environment itself becomes a validation layer.
+As Klaassen observes, agent output quality depends more on the engineering environment than on agent sophistication. A codebase with strong types, comprehensive CI, and opinionated linters catches errors that no amount of prompt engineering can prevent. The environment itself becomes a validation layer.
 
 Factory.ai operationalizes this through required evidence: every pull request must demonstrate that tests pass, linting is clean, and diffs are confined to agreed paths. The agent doesn't decide whether its work is good enough — the environment does.
 

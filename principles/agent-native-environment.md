@@ -6,7 +6,7 @@
 
 Agents need environments designed for them. This is Factory.ai's key contribution: the recognition that standard development practices — stand-ups, kanban boards, open-ended tickets, branching strategies — are optimizations for human cognition. Agents have different needs: precise specifications, small scopes, objective verification criteria, and machine-readable context.
 
-As Larson observes, agent output quality depends more on the engineering environment than on agent sophistication. A mediocre model working in a well-structured codebase with comprehensive CI, opinionated linters, and clear conventions will outperform a frontier model working in a chaotic codebase with no tests. The environment is the lever.
+As Klaassen observes, agent output quality depends more on the engineering environment than on agent sophistication. A mediocre model working in a well-structured codebase with comprehensive CI, opinionated linters, and clear conventions will outperform a frontier model working in a chaotic codebase with no tests. The environment is the lever.
 
 ## What Agents Need
 
@@ -22,7 +22,7 @@ An agent-native environment provides:
 
 ## The AGENTS.md Convention
 
-Both Larson and Factory.ai converge on a specific artifact: a file at the repository root that serves as the agent's orientation document. Factory.ai's template covers:
+Both Klaassen and Factory.ai converge on a specific artifact: a file at the repository root that serves as the agent's orientation document. Factory.ai's template covers:
 
 - Core commands (build, test, lint, format)
 - Project layout and key abstractions

@@ -14,7 +14,7 @@ The feedback loop operates at two scales.
 
 **The inner loop** is within a single task: the agent implements, validates, reads errors, and iterates until the output satisfies its acceptance criteria. Factory.ai describes this as explore-plan-code-verify. StrongDM runs this loop until probabilistic satisfaction exceeds a threshold. The inner loop is what turns a seed into a working implementation.
 
-**The outer loop** is across tasks: knowledge from completed work feeds into future planning, improving seed quality, validation coverage, and agent effectiveness over time. This is Larson's Compound step — the novel element in his framework. The outer loop is what turns a sequence of independent tasks into an improving system.
+**The outer loop** is across tasks: knowledge from completed work feeds into future planning, improving seed quality, validation coverage, and agent effectiveness over time. This is Klaassen's Compound step — the novel element in the framework. The outer loop is what turns a sequence of independent tasks into an improving system.
 
 Both loops must function for a factory to work. The inner loop ensures each task converges. The outer loop ensures the factory gets better at producing convergent results.
 

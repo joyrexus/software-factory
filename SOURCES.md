@@ -16,12 +16,12 @@ StrongDM's Software Factory is the most radical implementation of the agentic de
 
 ## Compound Engineering
 
-**URL:** [lethain.com/everyinc-compound-engineering](https://lethain.com/everyinc-compound-engineering/)
-**Author:** Will Larson
+**URL:** [every.to/guides/compound-engineering](https://every.to/guides/compound-engineering)
+**Author:** Kieran Klaassen
 
-Larson's framework identifies four steps for effective agentic development: plan, work, review, and compound. The first three are variations on known practices; the fourth — having agents summarize learnings into structured formats consulted by future planning phases — is the key innovation. Larson's central insight is that agent output quality depends more on engineering environment quality (codebase maturity, test coverage, CI/CD systems) than on agent sophistication. The framework is operationalized through workflow commands and an AGENTS.md file that instructs agents when and how to execute each step. Notably lightweight: Larson reports implementing the full framework in approximately one hour.
+Klaassen's framework identifies four steps for effective agentic development: plan, work, review, and compound. The first three are variations on known practices; the fourth — having agents summarize learnings into structured formats consulted by future planning phases — is the key innovation. Klaassen's central insight is that agent output quality depends more on engineering environment quality (codebase maturity, test coverage, CI/CD systems) than on agent sophistication. The guide describes five adoption stages (from manual development through parallel cloud execution) and reframes the engineer's role: "plans are the new code." Each unit of engineering work should make subsequent units easier, not harder.
 
-**Key contributions:** The "environment matters more than agent" insight, the Compound step as explicit practice, AGENTS.md as living compound knowledge.
+**Key contributions:** The "environment matters more than agent" insight, the Compound step as explicit practice, five-stage adoption model, the plan-first engineering paradigm.
 
 ---
 

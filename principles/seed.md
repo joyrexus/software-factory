@@ -12,7 +12,7 @@ This is not a new insight for software engineering. What's new is how much it ma
 
 All three lineages converge on this point, though they frame it differently.
 
-As Larson observes, the Plan step — decoupling research from implementation by consulting specs, PRs, and RFCs before coding begins — is what separates productive agentic workflows from expensive random walks. The agent that plans first writes code that survives review.
+As Klaassen observes, the Plan step — decoupling research from implementation by consulting specs, PRs, and RFCs before coding begins — is what separates productive agentic workflows from expensive random walks. The agent that plans first writes code that survives review.
 
 Factory.ai makes the specification discipline explicit with a self-check heuristic: can you identify where the agent begins reading, and can you identify the artifact that proves completion? If either answer is unclear, you haven't written a specification — you've written a wish. A good seed includes a starting location, failure signals, boundaries, and a done definition, without prescribing internal algorithms.
 

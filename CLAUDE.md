@@ -24,11 +24,11 @@ Sub-level directories use `README.md` files for navigable overviews, rendered au
 
 ### Concept-First, Not Vendor-First
 
-Write about principles and techniques as general concepts, not as features of a specific product. StrongDM, Factory.ai, and Larson are *sources* of ideas, not the subjects. Good: "A specification must identify where the agent begins reading and what artifact proves completion." Bad: "Factory.ai says specifications should..."
+Write about principles and techniques as general concepts, not as features of a specific product. StrongDM, Factory.ai, and Klaassen are *sources* of ideas, not the subjects. Good: "A specification must identify where the agent begins reading and what artifact proves completion." Bad: "Factory.ai says specifications should..."
 
 ### Attribution
 
-When a specific source contributes a key insight, attribute naturally: "As Larson observes, agent output quality depends more on the engineering environment than on agent sophistication." Use source names for provenance, not as subjects of sentences. Every attributed source must have a corresponding entry in [SOURCES.md](SOURCES.md).
+When a specific source contributes a key insight, attribute naturally: "As Klaassen observes, agent output quality depends more on the engineering environment than on agent sophistication." Use source names for provenance, not as subjects of sentences. Every attributed source must have a corresponding entry in [SOURCES.md](SOURCES.md).
 
 When citing or referencing a source, link to the relevant entry in SOURCES.md (e.g., `[Willison](../SOURCES.md#simon-willisons-review)`) rather than linking directly to external URLs. SOURCES.md provides summaries and key contributions that contextualize each source within the overall thesis — readers benefit from landing there first. Direct external URLs belong only in SOURCES.md itself.
 
