@@ -119,3 +119,25 @@ Observations from production agent systems on S3-first architecture — using S3
 StrongDM's open-source AI context store — the reference implementation of the [context store](components/context-store/README.md) concept described in this knowledge base. Implements a Turn DAG with blob CAS architecture: immutable turn nodes with parent references, BLAKE3 content-addressed blob storage with Zstd compression, branch-from-any-turn forking with O(1) cost, and a type registry with forward-compatible schema evolution. Includes a built-in React UI for visual debugging.
 
 **Key contributions:** Turn DAG data model, BLAKE3 content-addressed blob storage, O(1) context forking, type registry with forward-compatible schema evolution.
+
+---
+
+## Retooling for Agentic Development
+
+**URL:** [x.com/gdb/status/2019566641491963946](https://x.com/gdb/status/2019566641491963946)
+**Author:** Greg Brockman
+
+Brockman's post describes OpenAI's internal approach to retooling engineering teams for agentic software development. He reports a "step function improvement" since December 2025, with engineers shifting from using Codex for unit tests to having it write essentially all code plus operations and debugging. The post outlines six recommendations: try the tools and designate "agents captains," create skills and AGENTS.md files, inventory and expose internal tools via CLI or MCP, structure codebases to be agent-first, maintain code quality standards ("say no to slop"), and build basic infrastructure including observability and agent trajectory tracking. The framing — "not just a technical but also a deep cultural change" — reinforces that adoption depends on environment readiness rather than model capability.
+
+**Key contributions:** The "agents captain" role, AGENTS.md as living documentation, the "say no to slop" quality principle, infrastructure priorities (observability, trajectory tracking, tool management).
+
+---
+
+## Structuring Work Agent-First
+
+**URL:** [x.com/levie/status/2019634114874470819](https://x.com/levie/status/2019634114874470819)
+**Author:** Aaron Levie
+
+Levie observes that human workflows rely on implicit context — knowledge of projects, roles, tools, best practices — that "comes for free" by virtue of experience and large human context windows. Agents lack this implicit context, requiring deliberate effort to provide it. The post argues that agentic coding is the leading edge of a broader shift: all knowledge work will soon need to be structured so agents can "jump into a workflow and intently get up to speed." Organizations that maintain "authoritative documented approaches to how things get done" will have a significant advantage.
+
+**Key contributions:** The implicit-vs-explicit context gap, documentation as competitive advantage for agent adoption, agentic coding as leading indicator for all knowledge work.

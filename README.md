@@ -1,14 +1,14 @@
 # The Software Factory Thesis
 
-Several teams have reported that agentic coding workflows — where LLMs write, test, and iterate on code autonomously — can [compound correctness](meta/META.md) rather than error.
+Several teams have reported that agentic coding workflows — where LLMs write, test, and iterate on code autonomously — can [compound correctness](meta/meta.md) rather than error.
 
-Three [intellectual threads](meta/PARADIGM.md) appear to converge on a shared pattern:
+Three [intellectual threads](meta/paradigm.md) appear to converge on a shared pattern:
 
 > **Seed** → **Validation** → **Feedback Loop**
 
 …fueled by **tokens**.
 
-That said, there are [hard questions](meta/QUESTIONS.md) to ask about this approach.
+That said, there are [hard questions](meta/questions.md) to ask about this approach.
 
 ---
 

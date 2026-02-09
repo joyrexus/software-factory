@@ -46,4 +46,4 @@ A codebase that scores well across all nine pillars is one where the formula can
 
 ---
 
-**See also:** [QUESTIONS.md](QUESTIONS.md) — the provability question and proving loops | [SOURCES.md](../SOURCES.md) — annotated bibliography
+**See also:** [questions.md](questions.md) — the provability question and proving loops | [SOURCES.md](../SOURCES.md) — annotated bibliography

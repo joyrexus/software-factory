@@ -13,11 +13,11 @@ software-factory/
 │
 ├── meta/                              — Context, paradigm, and commentary
 │   ├── README.md
-│   ├── META.md                        — The moment, paradigm, and formula
-│   ├── PARADIGM.md                    — Three lineages converging on the factory concept
-│   ├── QUESTIONS.md                   — Honest questions and design constraints
+│   ├── meta.md                        — The moment, paradigm, and formula
+│   ├── paradigm.md                    — Three lineages converging on the factory concept
+│   ├── questions.md                   — Honest questions and design constraints
 │   ├── maturity-model.md             — Agent Readiness Model — maturity levels and pillars
-│   └── CONVERSATION.md               — Community commentary on the source material
+│   └── conversation.md               — Community commentary on the source material
 │
 ├── principles/                        — Assumptions behind the software factory concept
 │   ├── README.md
@@ -66,11 +66,11 @@ Context, paradigm, and commentary surrounding the software factory concept.
 
 | File | Description |
 |------|-------------|
-| [META.md](meta/META.md) | The moment, paradigm, and formula |
-| [PARADIGM.md](meta/PARADIGM.md) | Three lineages converging on the factory concept |
-| [QUESTIONS.md](meta/QUESTIONS.md) | Honest questions and design constraints |
+| [meta.md](meta/meta.md) | The moment, paradigm, and formula |
+| [paradigm.md](meta/paradigm.md) | Three lineages converging on the factory concept |
+| [questions.md](meta/questions.md) | Honest questions and design constraints |
 | [maturity-model.md](meta/maturity-model.md) | Agent Readiness Model — maturity levels and technical pillars |
-| [CONVERSATION.md](meta/CONVERSATION.md) | Community commentary on the source material |
+| [conversation.md](meta/conversation.md) | Community commentary on the source material |
 
 ## [Principles](principles/README.md)
 

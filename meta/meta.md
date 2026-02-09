@@ -6,7 +6,7 @@ In late 2024, several organizations reported a shift in agentic coding workflows
 
 This knowledge base explores and assesses the software factory concept — it does not advocate for it. The goal is to give organizations considering agentic engineering a clear-eyed map of the emerging patterns, open questions, and trade-offs involved.
 
-## [The Paradigm](PARADIGM.md)
+## [The Paradigm](paradigm.md)
 
 Three intellectual threads — compound engineering, agent-native development, and the software factory vision — appear to converge from different starting points.
 
@@ -20,10 +20,10 @@ Every specification is a **seed** — the quality of the starting input determin
 
 If this formula holds, the question becomes what infrastructure you need to make it reliable.
 
-## [The Honest Questions](QUESTIONS.md)
+## [The Honest Questions](questions.md)
 
 Design constraints on proving agent-written code works, on economics, and on competitive moats.
 
-## [The Conversation](CONVERSATION.md)
+## [The Conversation](conversation.md)
 
 Community commentary on the source material — perspectives, counterarguments, and experience reports.

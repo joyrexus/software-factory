@@ -12,7 +12,7 @@ See [INDEX.md](INDEX.md) for the full project layout and master table of content
 - **[README.md](README.md)** — The Software Factory Thesis
 - **[SOURCES.md](SOURCES.md)** — Annotated bibliography
 - **[CLAUDE.md](CLAUDE.md)** — Project instructions (this file)
-- **[meta/](meta/README.md)** — Context, paradigm, open questions, and community commentary
+- **[meta/](meta/README.md)** — Core context for the thesis: paradigm, open questions, and community commentary (README serves as the primary contextual framing, not just navigation)
 - **[principles/](principles/README.md)** — Seven principles behind the concept
 - **[techniques/](techniques/README.md)** — Nine repeatable patterns
 - **[components/](components/README.md)** — Infrastructure deep-dives (Attractor, Context Store, Agent Identity)
@@ -44,10 +44,17 @@ This hierarchy follows StrongDM's own [filesystem technique](https://factory.str
 
 - **Root `INDEX.md`** is the full quick-reference index for the entire knowledge base — every file reachable in one table
 - **Sub-level `README.md` files** provide navigable overviews at each directory level, rendered by GitHub when browsing
+- **`meta/README.md`** is an exception to the typical navigational role — it serves as the core contextual piece for understanding the thesis and the conversation being explored, providing the essential framing that other content files elaborate on
 - **On-disk state** serves as a practical memory substrate — the filesystem itself is the knowledge graph
 - This is a lightweight application of the [Pyramid Summaries](techniques/pyramid-summaries.md) technique: root INDEX is Level 0, directory READMEs are Level 1, individual files are Level 2
 
 The structure is designed to be **genrefied** — reorganized as understanding deepens, following the library-science principle of restructuring information to optimize future retrieval.
+
+## File Naming
+
+**Structural files** use uppercase names: `INDEX.md`, `README.md`, `SOURCES.md`, `CLAUDE.md`. These are project-level files with special roles (table of contents, entry points, bibliography, project instructions).
+
+**Content files** use lowercase names (e.g., `seed.md`, `paradigm.md`, `maturity-model.md`). This applies to all files that contain subject-matter content.
 
 ## Living Document
 
