@@ -26,7 +26,7 @@ StrongDM's CXDB (Context Database) is the reference implementation described in 
 
 | File | Description |
 |------|-------------|
-| [Architecture](architecture.md) | DAG structure, blob deduplication, dynamic types, query patterns |
+| [Architecture](architecture.md) | DAG structure, blob deduplication, dynamic types, query patterns, related approaches, and CXDB overview |
 
 ## See Also
 
@@ -34,3 +34,7 @@ StrongDM's CXDB (Context Database) is the reference implementation described in 
 - [Filesystem as Memory](../../techniques/filesystem-as-memory.md) — Lightweight alternative for simpler use cases
 - [Attractor](../attractor/INDEX.md) — Pipeline orchestrator that produces context for the store
 - [Agent Identity](../agent-identity/INDEX.md) — Access control for who can read and write context
+- [OpenClaw Memory Concepts](https://docs.openclaw.ai/concepts/memory) — File-first agent memory with hybrid retrieval
+- [The RAG Obituary](https://www.nicolasbustamante.com/p/the-rag-obituary-killed-by-agents) — The case for agentic search over embedding-based retrieval
+- [Lessons from Building AI Agents](https://www.nicolasbustamante.com/p/lessons-from-building-ai-agents-for) — S3-first architecture and filesystem as agent primitive
+- [CXDB](https://github.com/strongdm/cxdb) — StrongDM's open-source context store implementation

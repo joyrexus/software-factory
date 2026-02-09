@@ -1,6 +1,6 @@
 # Sources
 
-Annotated bibliography of the seven primary sources synthesized in this knowledge base.
+Annotated bibliography of the primary sources synthesized in this knowledge base.
 
 ---
 
@@ -77,3 +77,45 @@ Detailed reference for the Agent Readiness framework — level definitions, nine
 Conference talk presenting the Agent Readiness Model — the conceptual case for measuring and improving codebase readiness for autonomous agent operation. Provides practical examples of how organizations have applied the maturity model and discusses the gap between agent capability and environment readiness.
 
 **Key contributions:** Practitioner-oriented presentation of the readiness model, real-world application examples, the environment-readiness gap thesis.
+
+---
+
+## OpenClaw Memory System
+
+**URL:** [docs.openclaw.ai/concepts/memory](https://docs.openclaw.ai/concepts/memory)
+
+OpenClaw's agent memory architecture uses markdown files as the source of truth — daily session logs and a long-term `MEMORY.md` — with hybrid retrieval combining vector similarity and BM25 full-text search. The system implements an agentic flush mechanism where the agent itself decides when to persist working memory to disk. The "files are the source of truth" principle aligns with the [filesystem-as-memory](techniques/filesystem-as-memory.md) technique while extending it with retrieval infrastructure.
+
+**Key contributions:** File-first memory model, hybrid retrieval combining vector similarity with full-text search, the "files are the source of truth" principle.
+
+---
+
+## The RAG Obituary
+
+**URL:** [nicolasbustamante.com/p/the-rag-obituary-killed-by-agents](https://www.nicolasbustamante.com/p/the-rag-obituary-killed-by-agents)
+**Author:** Nicolas Bustamante
+
+The case that RAG is being superseded by agentic search — agents with tool access navigate relationships directly rather than retrieving embedding-matched fragments. The core critique is that RAG's chunking and embedding pipeline introduces compounding errors: lossy chunking fragments context, embedding collapse loses relational structure, and retrieval returns fragments without the connections that made them meaningful. The "agents investigate, not retrieve" framing has direct implications for [context store](components/context-store/INDEX.md) design.
+
+**Key contributions:** Chunking fragmentation critique, the "agents investigate, not retrieve" framing, architectural implications for context systems.
+
+---
+
+## Lessons from Building AI Agents
+
+**URL:** [nicolasbustamante.com/p/lessons-from-building-ai-agents-for](https://www.nicolasbustamante.com/p/lessons-from-building-ai-agents-for)
+**Author:** Nicolas Bustamante
+
+Observations from production agent systems on S3-first architecture — using S3 as the authoritative store with databases serving as query indexes — and the value of filesystem/bash as agent-native primitives. The pattern parallels CXDB's blob CAS architecture: content-addressed immutable storage with metadata indexed separately. The filesystem tools observation reinforces the [agent-native environment](principles/agent-native-environment.md) principle.
+
+**Key contributions:** S3 as authoritative store with database as query index pattern, filesystem tools as agent-native abstractions.
+
+---
+
+## CXDB
+
+**URL:** [github.com/strongdm/cxdb](https://github.com/strongdm/cxdb)
+
+StrongDM's open-source AI context store — the reference implementation of the [context store](components/context-store/INDEX.md) concept described in this knowledge base. Implements a Turn DAG with blob CAS architecture: immutable turn nodes with parent references, BLAKE3 content-addressed blob storage with Zstd compression, branch-from-any-turn forking with O(1) cost, and a type registry with forward-compatible schema evolution. Includes a built-in React UI for visual debugging.
+
+**Key contributions:** Turn DAG data model, BLAKE3 content-addressed blob storage, O(1) context forking, type registry with forward-compatible schema evolution.
