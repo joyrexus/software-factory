@@ -1,32 +1,29 @@
 # The Software Factory Thesis
 
-*So you want to build a software factory?*
+Several teams have reported that agentic coding workflows — where LLMs write, test, and iterate on code autonomously — can [compound correctness](META.md) rather than error.
 
-It seems agentic coding has crossed an **inflection point** — models now [compound **correctness**](META.md) instead of error.
-
-Three [intellectual threads](PARADIGM.md) appear to converge on one [**formula**](META.md#the-formula):
+Three [intellectual threads](PARADIGM.md) appear to converge on a shared pattern:
 
 > **Seed** → **Validation** → **Feedback Loop**
 
 …fueled by **tokens**.
 
-The [hard **questions**](QUESTIONS.md) remain open.
-
-The [**conversation**](CONVERSATION.md) is live.
+The [hard questions](QUESTIONS.md) remain open.
 
 ---
 
 - **[Meta](META.md)** — The moment, the paradigm, and the formula behind the software factory concept.
 - **[Principles](principles/INDEX.md)** — The assumptions behind the software factory concept. Seven principles covering specification, validation, feedback, economics, and environment design.
-- **[Techniques](techniques/INDEX.md)** — Repeatable patterns you can adopt. Ten techniques for environment construction, workflow design, and knowledge management.
-- **[Components](components/INDEX.md)** — Infrastructure a software factory needs. Deep-dive on the Attractor pipeline orchestrator, plus architectural stubs for context stores and agent identity systems.
-- **[Implementations](implementations/INDEX.md)** — People are building this now. Known implementations applying these principles in real projects.
+- **[Techniques](techniques/INDEX.md)** — Repeatable patterns to evaluate and adopt. Ten techniques for environment construction, workflow design, and knowledge management.
+- **[Components](components/INDEX.md)** — Infrastructure a software factory would need. Deep-dive on the Attractor pipeline orchestrator, plus architectural stubs for context stores and agent identity systems.
+- **[Implementations](implementations/INDEX.md)** — Known implementations applying these ideas.
+- **[Conversation](CONVERSATION.md)** — Community commentary on the source material.
 
 ---
 
 ```
 software-factory/
-├── README.md                          — "So you want to build a software factory"
+├── README.md                          — The software factory thesis
 ├── CLAUDE.md                          — Project instructions
 ├── INDEX.md                           — Master table of contents
 ├── SOURCES.md                         — Annotated bibliography

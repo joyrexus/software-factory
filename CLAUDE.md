@@ -8,7 +8,7 @@ There is no code — only interconnected markdown files organized as a navigable
 
 ```
 software-factory/
-├── README.md                          — "So you want to build a software factory"
+├── README.md                          — The software factory thesis
 ├── CLAUDE.md                          — Project instructions (this file)
 ├── INDEX.md                           — Master table of contents
 ├── SOURCES.md                         — Annotated bibliography
@@ -17,7 +17,7 @@ software-factory/
 ├── CONVERSATION.md                    — Community discussion and essential reading
 ├── META.md                            — The moment, paradigm, and formula
 │
-├── principles/                        — Beliefs that make a software factory make sense
+├── principles/                        — Assumptions behind the software factory concept
 │   ├── INDEX.md
 │   ├── seed.md                        — Specification as starting point
 │   ├── validation.md                  — End-to-end proof of correctness
@@ -48,7 +48,7 @@ software-factory/
 │   ├── context-store/                 — Persistent structured memory for agents
 │   │   ├── INDEX.md
 │   │   └── architecture.md
-│   └── agent-identity/               — Auth/authz for mixed human-agent workforce
+│   └── agent-identity/                — Auth/authz for mixed human-agent workforce
 │       ├── INDEX.md
 │       └── architecture.md
 │

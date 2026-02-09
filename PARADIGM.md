@@ -1,6 +1,6 @@
 # Three Lineages
 
-Three intellectual threads are converging on the same destination, each from a different starting point.
+Three intellectual threads appear to converge on a similar destination, each from a different starting point.
 
 **Compound Engineering.** Agent output quality depends more on your engineering environment than on agent sophistication. The framework — plan, work, review, and crucially *compound* knowledge back into the system — turns the insight that "your codebase determines agent quality" into an operational discipline. The key innovation is the Compound step: having agents summarize learnings into structured formats that future planning phases consult, creating feedback loops that improve every subsequent iteration. (Larson, [Compound Engineering](https://lethain.com/everyinc-compound-engineering/))
 
@@ -8,4 +8,4 @@ Three intellectual threads are converging on the same destination, each from a d
 
 **The Software Factory.** The most radical implementation takes the position that "code must not be written by humans; code must not be reviewed by humans." The approach includes digital twin universes — behavioral clones of third-party services for validation — and probabilistic satisfaction metrics that measure what fraction of observed trajectories through scenarios likely satisfy the user. Where others describe principles, this describes a running system. (StrongDM, [Software Factory](https://factory.strongdm.ai/))
 
-Each provides part of the picture. Together they describe a complete paradigm.
+Each provides part of the picture. Together they outline an emerging paradigm.

@@ -1,16 +1,14 @@
-# So You Want to Build a Software Factory
+# The Software Factory Concept
 
 ## The Moment
 
-In late 2024, something shifted. Long-horizon agentic coding workflows — the kind where an LLM writes code, runs tests, reads errors, and iterates — crossed an inflection point. Models began compounding correctness instead of error. A coding agent could work for thirty minutes, an hour, longer, and the code kept getting *better* rather than drifting into hallucinated nonsense. Multiple organizations, working independently, arrived at the same conclusion: the "dark factory" — where agents produce code, agents review code, and humans architect systems and validate outcomes — was no longer science fiction. It was an engineering challenge.
-
-This knowledge base is for software architects who've moved past "should we use AI for coding?" and are now asking a harder question: *what does an organization look like when agents do most of the coding?*
+In late 2024, several organizations reported a shift in agentic coding workflows — the kind where an LLM writes code, runs tests, reads errors, and iterates. Models appeared to compound correctness instead of error. Agents could work for thirty minutes, an hour, longer, and the code kept getting *better* rather than drifting into hallucinated nonsense. Multiple teams, working independently, arrived at similar conclusions about what they called the "dark factory" — where agents produce code, agents review code, and humans architect systems and validate outcomes.
 
 This knowledge base explores and assesses the software factory concept — it does not advocate for it. The goal is to give organizations considering agentic engineering a clear-eyed map of the emerging patterns, open questions, and trade-offs involved.
 
 ## [The Paradigm](PARADIGM.md)
 
-Three intellectual threads — compound engineering, agent-native development, and the software factory vision — are converging on the same destination from different starting points.
+Three intellectual threads — compound engineering, agent-native development, and the software factory vision — appear to converge from different starting points.
 
 ## The Formula
 
@@ -24,8 +22,8 @@ If this formula holds, the question becomes what infrastructure you need to make
 
 ## [The Honest Questions](QUESTIONS.md)
 
-Essential design constraints disguised as skepticism — on proving agent-written code works, on economics, and on competitive moats.
+Design constraints on proving agent-written code works, on economics, and on competitive moats.
 
 ## [The Conversation](CONVERSATION.md)
 
-An active, evolving conversation in the engineering community — practitioner perspectives, counterarguments, and real-world experience reports.
+Community commentary on the source material — perspectives, counterarguments, and experience reports.
