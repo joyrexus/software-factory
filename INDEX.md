@@ -2,13 +2,13 @@
 
 This is the master index for the knowledge base. Every file in the project is reachable from here through section indexes.
 
-**Start here:** [README.md](README.md) — "So You Want to Build a Software Factory"
+**Start here:** [README.md](README.md) — The Software Factory Thesis
 
 ---
 
 ## [Principles](principles/INDEX.md)
 
-The beliefs you must hold for a software factory to make sense. Seven principles forming a connected system.
+The assumptions behind the software factory concept. Seven principles forming a connected system.
 
 | File | Description |
 |------|-------------|
@@ -22,7 +22,7 @@ The beliefs you must hold for a software factory to make sense. Seven principles
 
 ## [Techniques](techniques/INDEX.md)
 
-Repeatable patterns you can adopt, clustered by domain: environment, workflow, and knowledge management.
+Repeatable patterns to evaluate and adopt, clustered by domain: environment, workflow, and knowledge management.
 
 | File | Description |
 |------|-------------|
@@ -38,7 +38,7 @@ Repeatable patterns you can adopt, clustered by domain: environment, workflow, a
 
 ## [Components](components/INDEX.md)
 
-Infrastructure a software factory needs. Three architectural roles any factory must fill.
+Infrastructure a software factory would need. Three architectural roles the concept implies.
 
 | Directory | Description |
 |-----------|-------------|
@@ -48,7 +48,7 @@ Infrastructure a software factory needs. Three architectural roles any factory m
 
 ## [Implementations](implementations/INDEX.md)
 
-Known implementations of the software factory concept — real projects applying these principles.
+Known implementations applying these ideas.
 
 | File | Description |
 |------|-------------|
@@ -56,4 +56,4 @@ Known implementations of the software factory concept — real projects applying
 
 ---
 
-**Reference:** [META.md](META.md) — The moment, paradigm, and formula | [PARADIGM.md](PARADIGM.md) — Three lineages | [QUESTIONS.md](QUESTIONS.md) — Honest questions | [CONVERSATION.md](CONVERSATION.md) — Community discussion | [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
+**Reference:** [META.md](META.md) — The moment, paradigm, and formula | [PARADIGM.md](PARADIGM.md) — Three lineages | [QUESTIONS.md](QUESTIONS.md) — Honest questions | [CONVERSATION.md](CONVERSATION.md) — Community commentary | [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
