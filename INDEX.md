@@ -16,6 +16,7 @@ software-factory/
 │   ├── META.md                        — The moment, paradigm, and formula
 │   ├── PARADIGM.md                    — Three lineages converging on the factory concept
 │   ├── QUESTIONS.md                   — Honest questions and design constraints
+│   ├── maturity-model.md             — Agent Readiness Model — maturity levels and pillars
 │   └── CONVERSATION.md               — Community commentary on the source material
 │
 ├── principles/                        — Assumptions behind the software factory concept
@@ -68,6 +69,7 @@ Context, paradigm, and commentary surrounding the software factory concept.
 | [META.md](meta/META.md) | The moment, paradigm, and formula |
 | [PARADIGM.md](meta/PARADIGM.md) | Three lineages converging on the factory concept |
 | [QUESTIONS.md](meta/QUESTIONS.md) | Honest questions and design constraints |
+| [maturity-model.md](meta/maturity-model.md) | Agent Readiness Model — maturity levels and technical pillars |
 | [CONVERSATION.md](meta/CONVERSATION.md) | Community commentary on the source material |
 
 ## [Principles](principles/README.md)

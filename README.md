@@ -8,13 +8,12 @@ Three [intellectual threads](meta/PARADIGM.md) appear to converge on a shared pa
 
 …fueled by **tokens**.
 
-The [hard questions](meta/QUESTIONS.md) remain open.
+That said, there are [hard questions](meta/QUESTIONS.md) to ask about this approach.
 
 ---
 
-- **[Meta](meta/README.md)** — The moment, the paradigm, and the formula behind the software factory concept.
+- **[Meta](meta/README.md)** — Context, paradigm, open questions, and community commentary surrounding the software factory concept.
 - **[Principles](principles/README.md)** — The assumptions behind the software factory concept. Seven principles covering specification, validation, feedback, economics, and environment design.
 - **[Techniques](techniques/README.md)** — Repeatable patterns to evaluate and adopt. Ten techniques for environment construction, workflow design, and knowledge management.
 - **[Components](components/README.md)** — Infrastructure a software factory would need. Deep-dive on the Attractor pipeline orchestrator, plus architectural stubs for context stores and agent identity systems.
 - **[Implementations](implementations/README.md)** — Known implementations applying these ideas.
-- **[Conversation](meta/CONVERSATION.md)** — Community commentary on the source material.

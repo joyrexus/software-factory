@@ -8,38 +8,18 @@ How do you prove agent-written code works when both the implementation and the t
 
 ## Readiness
 
-Before asking "can agents write code?", ask "is this codebase ready for agents to work in?"
+Before asking "does it make sense to have coding agents updating my codebase without review," ask a harder question: can your system *prove it works*?
 
-The Agent Readiness Model provides a conceptual framework for evaluating whether a codebase is prepared for autonomous agent operation. Rather than measuring agent capability, it measures the environment agents operate within — the same insight Larson's [Compound Engineering](SOURCES.md#compound-engineering) framework arrives at from a different direction.
+The software factory approach depends on a verifiability constraint. Agent output must be validated against something close to production reality — what the [Digital Twin Universe](../techniques/digital-twin-universe.md) technique calls a behavioral clone of the real environment. In the mature end state, the goal is not a codebase that passes tests. It is a system that continuously proves it works: every deploy, every workflow, every user journey evidenced by telemetry, assertions, synthetic checks, and regression detectors.
 
-### Maturity Levels
+Most existing codebases are nowhere near this. They lack the observability and reproducibility stack that the approach requires. The honest starting point is not "adopt agents" but "build proving loops" — the infrastructure that makes correctness demonstrable:
 
-The model defines five levels of codebase maturity for agent operation:
+- **Service-level invariants** — automated checks that critical business rules hold after every change
+- **Golden signals** — latency, error rate, throughput, and saturation monitored continuously with alerting thresholds
+- **Synthetic journeys** — automated user-flow simulations running against production or near-production environments
+- **Regression detectors** — statistical baselines that flag behavioral drift before users notice
+- **SLO burn correlation** — linking deployment events to error-budget consumption so the system can attribute degradation to specific changes
 
-| Level | Name | Description |
-|-------|------|-------------|
-| L1 | Functional | Code runs but requires manual setup, no automated validation |
-| L2 | Documented | Basic docs and some automation exist |
-| L3 | Standardized | Processes defined, documented, enforced through automation — the minimum bar for production-grade autonomous operation |
-| L4 | Optimized | Fast feedback loops, data-driven improvement, continuous measurement |
-| L5 | Autonomous | Self-improving systems with sophisticated orchestration |
+Organizations that build these proving loops first will find that agents slot in naturally — the validation infrastructure already exists. Organizations that skip straight to agent adoption will discover, expensively, that they cannot distinguish agent-written regressions from pre-existing fragility.
 
-Advancement requires passing 80% of criteria at the current level and all previous levels. This gating rule prevents organizations from claiming L4 optimization while lacking L2 documentation.
-
-### Technical Pillars
-
-Nine pillars define what gets measured at each level:
-
-1. **Style & Validation** — automated enforcement of code standards and formatting
-2. **Build System** — reproducible, deterministic builds that agents can invoke without human guidance
-3. **Testing** — layered test suites (unit, integration, end-to-end) with clear pass/fail signals
-4. **Documentation** — structured context that agents can discover and consume
-5. **Development Environment** — consistent, reproducible setup that eliminates "works on my machine"
-6. **Debugging & Observability** — structured logs, traces, and error reporting agents can interpret
-7. **Security** — automated scanning, dependency auditing, and policy enforcement
-8. **Task Discovery** — structured backlogs and specifications agents can parse into actionable work
-9. **Product & Experimentation** — feature flags, A/B testing, and rollback mechanisms for safe deployment
-
-### Connection to the Formula
-
-The pillars map directly to the formula — Seed, Validation, Feedback Loop. Style & Validation, Build System, and Testing make the **Validation** stage reliable. Documentation, Development Environment, and Task Discovery ensure **Seeds** are well-formed. Debugging & Observability, Security, and Product & Experimentation close the **Feedback Loop** by making outcomes measurable and recoverable. A codebase that scores well across all nine pillars is one where the formula can operate with confidence.
+For a structured assessment of where a codebase stands, Factory.ai's [Agent Readiness Model](maturity-model.md) provides a maturity framework with five levels and nine technical pillars. The pillars map directly to the formula: Seed, Validation, and Feedback Loop — a codebase that scores well across them is one where the proving loops are already in place.
