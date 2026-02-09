@@ -11,7 +11,7 @@ For the full framing, see the [meta overview](README.md). For specific threads:
 
 Community commentary, counterarguments, and experience reports:
 
-- [Simon Willison's review thread on X](https://x.com/simonw/status/2020161285376082326) — Willison's commentary and community responses
-- [The Hacker News discussion](https://news.ycombinator.com/item?id=46924426#46931812) — Perspectives, counterarguments, and experience reports
-- [Greg Brockman on retooling for agentic development](https://x.com/gdb/status/2019566641491963946) — OpenAI's internal approach: agents captains, AGENTS.md, agent-first codebases, quality standards, and infrastructure priorities
-- [Aaron Levie on structuring work agent-first](https://x.com/levie/status/2019634114874470819) — The implicit context gap between humans and agents, documentation as competitive advantage, agentic coding as leading indicator for all knowledge work
+- [Simon Willison's review thread](../SOURCES.md#simon-willisons-review) — Willison's commentary and community responses
+- [The Hacker News discussion](../SOURCES.md#simon-willisons-review) — Perspectives, counterarguments, and experience reports
+- [Retooling for agentic development](../SOURCES.md#retooling-for-agentic-development) (Brockman) — OpenAI's internal approach: agents captains, AGENTS.md, agent-first codebases, quality standards, and infrastructure priorities
+- [Structuring work agent-first](../SOURCES.md#structuring-work-agent-first) (Levie) — The implicit context gap between humans and agents, documentation as competitive advantage, agentic coding as leading indicator for all knowledge work

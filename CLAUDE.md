@@ -30,6 +30,8 @@ Write about principles and techniques as general concepts, not as features of a 
 
 When a specific source contributes a key insight, attribute naturally: "As Larson observes, agent output quality depends more on the engineering environment than on agent sophistication." Use source names for provenance, not as subjects of sentences. Every attributed source must have a corresponding entry in [SOURCES.md](SOURCES.md).
 
+When citing or referencing a source, link to the relevant entry in SOURCES.md (e.g., `[Willison](../SOURCES.md#simon-willisons-review)`) rather than linking directly to external URLs. SOURCES.md provides summaries and key contributions that contextualize each source within the overall thesis — readers benefit from landing there first. Direct external URLs belong only in SOURCES.md itself.
+
 ### Tone
 
 Authoritative but not dogmatic. These are emerging patterns, not settled science. Use language like "the evidence suggests" or "practitioners report" rather than "you must" or "the correct approach is." Acknowledge open questions — Willison's skepticism is a feature, not a problem to overcome.
