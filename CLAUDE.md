@@ -6,57 +6,19 @@ There is no code — only interconnected markdown files organized as a navigable
 
 ## Project Layout
 
-```
-software-factory/
-├── README.md                          — The software factory thesis
-├── CLAUDE.md                          — Project instructions (this file)
-├── INDEX.md                           — Master table of contents
-├── SOURCES.md                         — Annotated bibliography
-├── PARADIGM.md                        — Three lineages converging on the factory concept
-├── QUESTIONS.md                       — Honest questions and design constraints
-├── CONVERSATION.md                    — Community commentary on the source material
-├── META.md                            — The moment, paradigm, and formula
-│
-├── principles/                        — Assumptions behind the software factory concept
-│   ├── README.md
-│   ├── seed.md                        — Specification as starting point
-│   ├── validation.md                  — End-to-end proof of correctness
-│   ├── feedback-loop.md               — Compounding correctness
-│   ├── tokens-as-fuel.md              — Economics of agent labor
-│   ├── deliberate-naivete.md          — Questioning inherited constraints
-│   ├── compound-knowledge.md          — Organizational learning at machine speed
-│   └── agent-native-environment.md    — Designing for non-human workers
-│
-├── techniques/                        — Repeatable patterns you can adopt
-│   ├── README.md
-│   ├── digital-twin-universe.md       — Cloning external dependencies for validation
-│   ├── gene-transfusion.md            — Cross-codebase pattern transfer
-│   ├── filesystem-as-memory.md        — Disk as agent cognition substrate
-│   ├── shift-work.md                  — Interactive vs. non-interactive modes
-│   ├── semport.md                     — Semantically-aware code migration
-│   ├── pyramid-summaries.md           — Reversible multi-level context compression
-│   ├── scenarios-not-tests.md         — Holdout-set validation replacing unit tests
-│   ├── specification-discipline.md    — The self-check heuristic for specs
-│   └── risk-tiered-automation.md      — Graduated autonomy levels
-│
-├── components/                        — Infrastructure a software factory needs
-│   ├── README.md
-│   ├── attractor/                     — Pipeline orchestrator (56-file deep-dive)
-│   │   ├── README.md
-│   │   └── 00-overview/ ... 07-future-extensions/
-│   ├── context-store/                 — Persistent structured memory for agents
-│   │   ├── README.md
-│   │   └── architecture.md
-│   └── agent-identity/                — Auth/authz for mixed human-agent workforce
-│       ├── README.md
-│       └── architecture.md
-│
-└── implementations/                   — Known implementations
-    ├── README.md
-    └── kilroy.md                      — Local-first software factory CLI
-```
+See [INDEX.md](INDEX.md) for the full project layout and master table of contents. Key top-level structure:
 
-The root `INDEX.md` is the master quick-reference index — every file in the knowledge base reachable from one table. Sub-level directories use `README.md` files for navigable overviews, rendered automatically by GitHub when browsing.
+- **[INDEX.md](INDEX.md)** — Master table of contents (every file reachable from here)
+- **[README.md](README.md)** — The Software Factory Thesis
+- **[SOURCES.md](SOURCES.md)** — Annotated bibliography
+- **[CLAUDE.md](CLAUDE.md)** — Project instructions (this file)
+- **[meta/](meta/README.md)** — Context, paradigm, open questions, and community commentary
+- **[principles/](principles/README.md)** — Seven principles behind the concept
+- **[techniques/](techniques/README.md)** — Nine repeatable patterns
+- **[components/](components/README.md)** — Infrastructure deep-dives (Attractor, Context Store, Agent Identity)
+- **[implementations/](implementations/README.md)** — Known implementations
+
+Sub-level directories use `README.md` files for navigable overviews, rendered automatically by GitHub when browsing.
 
 ## Writing Guidelines
 

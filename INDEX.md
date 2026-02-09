@@ -4,7 +4,71 @@ This is the master index for the knowledge base. Every file in the project is re
 
 **Start here:** [README.md](README.md) — The Software Factory Thesis
 
+```
+software-factory/
+├── README.md                          — The software factory thesis
+├── CLAUDE.md                          — Project instructions
+├── INDEX.md                           — Master table of contents (this file)
+├── SOURCES.md                         — Annotated bibliography
+│
+├── meta/                              — Context, paradigm, and commentary
+│   ├── README.md
+│   ├── META.md                        — The moment, paradigm, and formula
+│   ├── PARADIGM.md                    — Three lineages converging on the factory concept
+│   ├── QUESTIONS.md                   — Honest questions and design constraints
+│   └── CONVERSATION.md               — Community commentary on the source material
+│
+├── principles/                        — Assumptions behind the software factory concept
+│   ├── README.md
+│   ├── seed.md                        — Specification as starting point
+│   ├── validation.md                  — End-to-end proof of correctness
+│   ├── feedback-loop.md               — Compounding correctness
+│   ├── tokens-as-fuel.md              — Economics of agent labor
+│   ├── deliberate-naivete.md          — Questioning inherited constraints
+│   ├── compound-knowledge.md          — Organizational learning at machine speed
+│   └── agent-native-environment.md    — Designing for non-human workers
+│
+├── techniques/                        — Repeatable patterns you can adopt
+│   ├── README.md
+│   ├── digital-twin-universe.md       — Cloning external dependencies for validation
+│   ├── gene-transfusion.md            — Cross-codebase pattern transfer
+│   ├── filesystem-as-memory.md        — Disk as agent cognition substrate
+│   ├── shift-work.md                  — Interactive vs. non-interactive modes
+│   ├── semport.md                     — Semantically-aware code migration
+│   ├── pyramid-summaries.md           — Reversible multi-level context compression
+│   ├── scenarios-not-tests.md         — Holdout-set validation replacing unit tests
+│   ├── specification-discipline.md    — The self-check heuristic for specs
+│   └── risk-tiered-automation.md      — Graduated autonomy levels
+│
+├── components/                        — Infrastructure a software factory needs
+│   ├── README.md
+│   ├── attractor/                     — Pipeline orchestrator (56-file deep-dive)
+│   │   ├── README.md
+│   │   └── 00-overview/ ... 07-future-extensions/
+│   ├── context-store/                 — Persistent structured memory for agents
+│   │   ├── README.md
+│   │   └── architecture.md
+│   └── agent-identity/                — Auth/authz for mixed human-agent workforce
+│       ├── README.md
+│       └── architecture.md
+│
+└── implementations/                   — Known implementations
+    ├── README.md
+    └── kilroy.md                      — Local-first software factory CLI
+```
+
 ---
+
+## [Meta](meta/README.md)
+
+Context, paradigm, and commentary surrounding the software factory concept.
+
+| File | Description |
+|------|-------------|
+| [META.md](meta/META.md) | The moment, paradigm, and formula |
+| [PARADIGM.md](meta/PARADIGM.md) | Three lineages converging on the factory concept |
+| [QUESTIONS.md](meta/QUESTIONS.md) | Honest questions and design constraints |
+| [CONVERSATION.md](meta/CONVERSATION.md) | Community commentary on the source material |
 
 ## [Principles](principles/README.md)
 
@@ -56,4 +120,4 @@ Known implementations applying these ideas.
 
 ---
 
-**Reference:** [META.md](META.md) — The moment, paradigm, and formula | [PARADIGM.md](PARADIGM.md) — Three lineages | [QUESTIONS.md](QUESTIONS.md) — Honest questions | [CONVERSATION.md](CONVERSATION.md) — Community commentary | [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
+**Reference:** [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
