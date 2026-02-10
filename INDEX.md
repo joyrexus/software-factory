@@ -21,7 +21,8 @@ software-factory/
 │   │   ├── cloud-agents.md            — Cloud agents and the background revolution
 │   │   ├── case-studies.md            — Building in-house: Ramp and Stripe
 │   │   └── maturity-model.md          — Agent Readiness Model — maturity levels and pillars
-│   └── conversation.md               — Community commentary on the source material
+│   ├── conversation.md               — Community commentary on the source material
+│   └── takeaways.md                  — Practical synthesis for engineering leaders
 │
 ├── principles/                        — Assumptions behind the software factory concept
 │   ├── README.md
@@ -76,6 +77,7 @@ Context, paradigm, and commentary surrounding the software factory concept.
 | [questions.md](meta/questions.md) | Honest questions and design constraints |
 | [agent-native/](meta/agent-native/README.md) | Agent-native engineering in practice — cloud agents, case studies, and maturity model |
 | [conversation.md](meta/conversation.md) | Community commentary on the source material |
+| [takeaways.md](meta/takeaways.md) | Practical synthesis for engineering leaders — evidence, organizational shifts, and a phased game plan |
 
 ## [Principles](principles/README.md)
 
