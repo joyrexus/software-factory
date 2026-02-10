@@ -36,6 +36,17 @@ Factory.ai's framework starts from the observation that standard development pra
 
 ---
 
+## Using Linters to Direct Agents
+
+**URL:** [factory.ai/news/using-linters-to-direct-agents](https://www.factory.ai/news/using-linters-to-direct-agents)
+**Author:** Factory.ai
+
+The argument for shifting linters from style enforcement to machine-enforced architectural guardrails that agents can verify and self-correct against. As development moves from "developers writing code with AI" to "developers orchestrating agents that build software," traditional guardrails — code review, conventions, tribal knowledge — become insufficient. Agents need machine-verifiable rules, not suggestions. The article identifies seven categories of lint rules for agent-native codebases: grep-ability (consistent formatting for searchability), glob-ability (predictable file organization), architectural boundaries (cross-layer import prevention), security and privacy (secret blocking, input validation), testability and coverage (colocated tests, network call restrictions), observability (structured logging, telemetry naming), and documentation signals (module-level docstrings, ADR links). A repeatable five-step lint development cycle — observe anti-patterns, codify the rule, surface violations, remediate at scale using parallel agents, enforce on CI and agent toolchains — turns every lesson into an executable constraint that compounds over time.
+
+**Key contributions:** Seven lint rule categories for agent-native codebases, the lint development cycle (observe → codify → surface → remediate → enforce), the distinction between AGENTS.md (explains "why") and linting (enforces "how"), grep-ability as the highest-priority starting category.
+
+---
+
 ## Simon Willison's Review
 
 **URL:** [simonwillison.net/2026/Feb/7/software-factory](https://simonwillison.net/2026/Feb/7/software-factory/)
@@ -227,3 +238,13 @@ Conference talk at AI Engineer Summit presenting the context engineering framewo
 The distinction between text-based search and semantic code navigation. Text search finds character patterns; semantic navigation understands relationships between code elements — resolving symbols to their actual definitions across repository boundaries, tracking which specific implementation version calling code depends on, and disambiguating identically-named functions across dozens of repositories. Language-agnostic indexing formats (such as SCIP) capture compiler-accurate semantic information — symbol definitions, external references, and package metadata — enabling go-to-definition and find-references that work across repository boundaries with version awareness.
 
 **Key contributions:** Text search vs. semantic navigation distinction, cross-repository symbol resolution, version-aware dependency tracking.
+
+---
+
+## Internal Plugin Marketplaces
+
+**URL:** [code.claude.com/docs/en/discover-plugins](https://code.claude.com/docs/en/discover-plugins)
+
+Claude Code's plugin marketplace system as a reference implementation for internal agent tool distribution. A marketplace is a catalog of plugins — skills, agents, hooks, and MCP servers — that engineers can discover and install without building from scratch. The two-step model (add a marketplace to browse its catalog, then install individual plugins) separates capability discovery from adoption. Plugins install at three scopes: user (personal, across all projects), project (shared with collaborators via repository settings), and local (personal, single repository). Team distribution is built in: administrators add marketplace configuration to project settings so team members are automatically prompted to install when they join a repository. Capability categories include code intelligence (LSP integration for type-aware navigation), external integrations (pre-configured MCP servers for GitHub, Jira, Sentry, Slack, and others), and development workflows (commit, PR review, agent SDK tooling). The organizational value lies in encoding team-specific workflows, conventions, and tool integrations as distributable, versionable packages.
+
+**Key contributions:** Marketplace-as-catalog model for agent tool distribution, scope-based installation (user/project/local), team-level plugin configuration for automatic onboarding, plugin categories spanning code intelligence, external integrations, and development workflows.

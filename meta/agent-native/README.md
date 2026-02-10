@@ -11,3 +11,4 @@ The key emerging insight from practice is that effective background agents requi
 | [cloud-agents.md](cloud-agents.md) | Cloud agents and the background revolution — delegation, task classification, and organizational effects |
 | [case-studies.md](case-studies.md) | Building in-house: Ramp and Stripe — convergent architectural requirements at scale |
 | [maturity-model.md](maturity-model.md) | Agent Readiness Model — maturity levels and technical pillars |
+| [practices/](practices/README.md) | Agent-native practices — linters, code indexing, refactors, internal tools, and plugin marketplaces |

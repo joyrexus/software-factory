@@ -20,7 +20,9 @@ software-factory/
 │   │   ├── README.md
 │   │   ├── cloud-agents.md            — Cloud agents and the background revolution
 │   │   ├── case-studies.md            — Building in-house: Ramp and Stripe
-│   │   └── maturity-model.md          — Agent Readiness Model — maturity levels and pillars
+│   │   ├── maturity-model.md          — Agent Readiness Model — maturity levels and pillars
+│   │   └── practices/               — Agent-native practices catalog
+│   │       └── README.md
 │   ├── conversation.md               — Community commentary on the source material
 │   └── takeaways.md                  — Practical synthesis for engineering leaders
 │
