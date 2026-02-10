@@ -32,7 +32,7 @@ The paradox is that AI coding tools make large-scale search *more* valuable, not
 
 ## Connection to Readiness
 
-Codebase indexing is environment infrastructure — a precondition for scaling autonomous agent work beyond single-repository tasks. In the [Agent Readiness Model](../meta/maturity-model.md), it maps to the Seed stage alongside Documentation, Development Environment, and Task Discovery. Agents need to discover and understand existing code before producing new code. An organization that scores well on other pillars but lacks cross-repository visibility will find that its agents produce locally correct but globally inconsistent work, duplicating existing implementations and breaking downstream consumers they cannot see.
+Codebase indexing is environment infrastructure — a precondition for scaling autonomous agent work beyond single-repository tasks. In the [Agent Readiness Model](../meta/agent-native/maturity-model.md), it maps to the Seed stage alongside Documentation, Development Environment, and Task Discovery. Agents need to discover and understand existing code before producing new code. An organization that scores well on other pillars but lacks cross-repository visibility will find that its agents produce locally correct but globally inconsistent work, duplicating existing implementations and breaking downstream consumers they cannot see.
 
 ## Implements
 
@@ -43,4 +43,4 @@ Codebase indexing is environment infrastructure — a precondition for scaling a
 
 - [Filesystem as Memory](filesystem-as-memory.md) — Local file structure as agent memory; codebase indexing extends this across repository boundaries
 - [Pyramid Summaries](pyramid-summaries.md) — Multi-level compression within hierarchies; indexing provides the search layer across those hierarchies
-- [Agent Readiness Model](../meta/maturity-model.md) — Codebase indexing as a technical pillar for measuring readiness
+- [Agent Readiness Model](../meta/agent-native/maturity-model.md) — Codebase indexing as a technical pillar for measuring readiness

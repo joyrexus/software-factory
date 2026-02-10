@@ -154,6 +154,50 @@ The case for organization-wide code search when growing beyond a single reposito
 
 ---
 
+## Agent-Native Engineering
+
+**URL:** [generalintelligencecompany.com/writing/agent-native-engineering](https://www.generalintelligencecompany.com/writing/agent-native-engineering)
+**Author:** Andrew Pignanelli, General Intelligence Company
+
+The argument that background agents changed everything: "agent native engineering means restructuring your organization around agents as individual-contributors instead of engineers." Introduces a three-level task classification — simple (one-shottable), manageable (background agents with feedback cycles), and complex (engineer-managed with synchronous agents) — and reports that in January 2026 their engineers shipped an average of 20 PRs per day. The organizational effects are significant: managers evolve into staff engineers, code review becomes a larger share of workflow than coding, and roadmaps beyond a few weeks become ineffective. Future projections include delegation-first architecture, IDEs as we know them disappearing, and the assertion that "every organization must become agent native, or they will cease to exist."
+
+**Key contributions:** Three-level task classification, organizational transformation effects, the delegation-first architecture projection, the "agent native or cease to exist" framing.
+
+---
+
+## The Cloud Agent Thesis
+
+**URL:** [nader.substack.com/p/the-cloud-agent-thesis](https://nader.substack.com/p/the-cloud-agent-thesis)
+**Author:** Nader Dabit
+
+Cloud agents as a distinct category from local agents — running on remote infrastructure with their own shell, IDE, and browser, accessible asynchronously through Slack, Jira, CLI, or API. The key distinctions from local tools: accessibility (non-engineers can invoke agents without Git knowledge or local environments), cross-codebase capability (agents configured against every organizational repository), async parallelism (ten tasks kicked off simultaneously yielding ten PRs), and org-wide scaling through playbooks — reusable workflows encoding expertise that anyone can trigger. The organizational transformation requirements are explicit: strategic project selection, knowledge codification, adoption analytics, governance frameworks, and workflow redesign. The pattern also demands a complementary review agent to handle the volume of PRs that parallel agent sessions generate.
+
+**Key contributions:** Cloud-vs-local agent taxonomy, playbooks as reusable expertise, the review agent corollary, organizational transformation prerequisites.
+
+---
+
+## Why We Built Our Own Background Agent
+
+**URL:** [engineering.ramp.com/post/why-we-built-our-background-agent](https://engineering.ramp.com/post/why-we-built-our-background-agent)
+**Author:** Ramp Engineering
+
+Ramp's in-house background agent, Inspect, writes code and verifies its work through integrated tools and context. The rationale: "it only has to work on your code" — owning the tooling enables capabilities that off-the-shelf tools cannot match. Infrastructure runs on sandboxed VMs on Modal with images rebuilt every 30 minutes, providing the complete local engineering toolkit (Vite, Postgres, Temporal). The context layer is wired into Sentry, Datadog, LaunchDarkly, Braintrust, GitHub, Slack, and Buildkite. Within months of deployment, approximately 30% of all pull requests merged to frontend and backend repositories were written by Inspect, achieved through organic adoption rather than mandated usage. Multiplayer sessions support concurrent collaboration with attribution per contributor, enabling non-engineers to participate in engineering work.
+
+**Key contributions:** The "only has to work on your code" rationale for building in-house, 30% agent-written PR rate through organic adoption, multiplayer collaboration sessions.
+
+---
+
+## Minions: Stripe's One-Shot Coding Agents
+
+**URL:** [stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents)
+**Author:** Alistair Gray, Stripe
+
+Stripe's homegrown coding agents produce more than 1,000 pull requests merged weekly with no human-written code. The infrastructure: isolated devboxes pre-warmed in 10 seconds (the same machines engineers use), pre-loaded with Stripe code and services, isolated from production and the internet. The context layer centers on Toolshed, Stripe's central internal MCP server hosting 400+ MCP tools, providing access to internal docs, ticket details, build statuses, and Sourcegraph code intelligence. Minions read the same rule files as human tools (Cursor, Claude Code) and deterministically run relevant MCP tools pre-run to hydrate context. Verification uses a shift-left philosophy: local linting in under 5 seconds, selective test execution from a battery of 3+ million tests, and a maximum of two CI rounds per run. Built on a fork of Block's "goose" coding agent with customized orchestration interleaving agent loops with deterministic code operations.
+
+**Key contributions:** 1,000+ weekly merged PRs at scale, Toolshed as centralized MCP infrastructure, deterministic context hydration, shift-left verification with selective testing from 3M+ tests.
+
+---
+
 ## Cross-Repository Code Navigation
 
 **URL:** [sourcegraph.com/blog/cross-repository-code-navigation](https://sourcegraph.com/blog/cross-repository-code-navigation)

@@ -32,6 +32,16 @@ Both Klaassen and Factory.ai converge on a specific artifact: a file at the repo
 
 This file is the minimum viable agent-native environment. Without it, agents spend tokens rediscovering what any team member could tell them in five minutes.
 
+## From Principle to Practice
+
+The agent-native environment principle is now being validated at scale. Background agents running in sandboxed cloud environments — with full toolchains, databases, and CI access — have shifted agent-native engineering from aspiration to operational reality. Two convergent requirements are emerging from practice: complete development environments that mirror what engineers have, and rich context layers giving agents access to telemetry, codebase search, internal APIs, and specifications.
+
+Practitioners report that these environment investments, not model improvements, are the primary driver of agent effectiveness. [Ramp](../SOURCES.md#why-we-built-our-own-background-agent) reports approximately 30% of merged PRs written by their background agent within months of deployment. [Stripe](../SOURCES.md#minions-stripes-one-shot-coding-agents) merges over 1,000 agent-written PRs weekly. Both attribute their results to infrastructure — sandboxed environments and integrated context — reinforcing [Klaassen's](../SOURCES.md#compound-engineering) original insight that the environment is the lever.
+
+The [General Intelligence Company](../SOURCES.md#agent-native-engineering) introduces a three-level task classification — simple, manageable, and complex — arguing that only complex tasks require synchronous human coding. As environments mature, tasks migrate downward: problems that were once complex become manageable, and manageable tasks become one-shottable. [Dabit](../SOURCES.md#the-cloud-agent-thesis) extends this with the cloud agent taxonomy, distinguishing background agents from local tools by their accessibility (non-engineers can invoke them), cross-codebase capability, async parallelism, and org-wide scaling through reusable playbooks.
+
+For the expanded treatment — including case studies, the background agent model, and the maturity framework — see [Agent-Native Engineering in Practice](../meta/agent-native/README.md).
+
 ## See Also
 
 - [Compound Knowledge](compound-knowledge.md) — How the environment improves over time
@@ -39,3 +49,4 @@ This file is the minimum viable agent-native environment. Without it, agents spe
 - [Risk-Tiered Automation](../techniques/risk-tiered-automation.md) — Graduated autonomy within the environment
 - [Filesystem as Memory](../techniques/filesystem-as-memory.md) — Structuring the environment for agent cognition
 - [The Seed](seed.md) — The specification that the environment helps agents interpret
+- [Agent-Native Engineering in Practice](../meta/agent-native/README.md) — Expanded context on background agents, case studies, and the maturity model

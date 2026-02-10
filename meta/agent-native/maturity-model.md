@@ -2,7 +2,7 @@
 
 Factory.ai's Agent Readiness Model reframes the question from "how good is the agent?" to "how ready is the codebase?" It provides a structured assessment framework for evaluating whether a codebase — and the engineering environment around it — can support autonomous agent operation. The model defines five maturity levels and ten technical pillars, scored with a gating rule that prevents premature advancement.
 
-See [SOURCES.md](../SOURCES.md) for the three primary sources: the [introductory blog post](https://www.factory.ai/news/agent-readiness), the [detailed documentation](https://docs.factory.ai/web/agent-readiness/overview), and the [conference talk](https://www.youtube.com/watch?v=ShuJ_CN6zr4).
+See [SOURCES.md](../../SOURCES.md) for the three primary sources: the [introductory blog post](https://www.factory.ai/news/agent-readiness), the [detailed documentation](https://docs.factory.ai/web/agent-readiness/overview), and the [conference talk](https://www.youtube.com/watch?v=ShuJ_CN6zr4).
 
 ## Maturity Levels
 
@@ -47,4 +47,4 @@ A codebase that scores well across all ten pillars is one where the formula can 
 
 ---
 
-**See also:** [questions.md](questions.md) — the provability question and proving loops | [SOURCES.md](../SOURCES.md) — annotated bibliography
+**See also:** [questions.md](../questions.md) — the provability question and proving loops | [SOURCES.md](../../SOURCES.md) — annotated bibliography

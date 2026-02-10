@@ -16,7 +16,11 @@ software-factory/
 │   ├── meta.md                        — The moment, paradigm, and formula
 │   ├── paradigm.md                    — Three lineages converging on the factory concept
 │   ├── questions.md                   — Honest questions and design constraints
-│   ├── maturity-model.md             — Agent Readiness Model — maturity levels and pillars
+│   ├── agent-native/                  — Agent-native engineering in practice
+│   │   ├── README.md
+│   │   ├── cloud-agents.md            — Cloud agents and the background revolution
+│   │   ├── case-studies.md            — Building in-house: Ramp and Stripe
+│   │   └── maturity-model.md          — Agent Readiness Model — maturity levels and pillars
 │   └── conversation.md               — Community commentary on the source material
 │
 ├── principles/                        — Assumptions behind the software factory concept
@@ -70,7 +74,7 @@ Context, paradigm, and commentary surrounding the software factory concept.
 | [meta.md](meta/meta.md) | The moment, paradigm, and formula |
 | [paradigm.md](meta/paradigm.md) | Three lineages converging on the factory concept |
 | [questions.md](meta/questions.md) | Honest questions and design constraints |
-| [maturity-model.md](meta/maturity-model.md) | Agent Readiness Model — maturity levels and technical pillars |
+| [agent-native/](meta/agent-native/README.md) | Agent-native engineering in practice — cloud agents, case studies, and maturity model |
 | [conversation.md](meta/conversation.md) | Community commentary on the source material |
 
 ## [Principles](principles/README.md)
