@@ -63,9 +63,9 @@ Factory.ai's introduction of the Agent Readiness Model — eight technical pilla
 **URL:** [docs.factory.ai/web/agent-readiness/overview](https://docs.factory.ai/web/agent-readiness/overview)
 **Author:** Factory.ai
 
-Detailed reference for the Agent Readiness framework — level definitions, nine technical pillars, scoring methodology, and progression criteria. Expands the blog post's conceptual overview into a complete specification with per-pillar criteria at each maturity level and the 80% gating rule for level advancement.
+Detailed reference for the Agent Readiness framework — level definitions, ten technical pillars, scoring methodology, and progression criteria. Expands the blog post's conceptual overview into a complete specification with per-pillar criteria at each maturity level and the 80% gating rule for level advancement.
 
-**Key contributions:** Full pillar definitions and per-level criteria, gating rule specification, nine-pillar taxonomy (expanded from original eight).
+**Key contributions:** Full pillar definitions and per-level criteria, gating rule specification, ten-pillar taxonomy (expanded from original nine).
 
 ---
 
@@ -141,3 +141,23 @@ Brockman's post describes OpenAI's internal approach to retooling engineering te
 Levie observes that human workflows rely on implicit context — knowledge of projects, roles, tools, best practices — that "comes for free" by virtue of experience and large human context windows. Agents lack this implicit context, requiring deliberate effort to provide it. The post argues that agentic coding is the leading edge of a broader shift: all knowledge work will soon need to be structured so agents can "jump into a workflow and intently get up to speed." Organizations that maintain "authoritative documented approaches to how things get done" will have a significant advantage.
 
 **Key contributions:** The implicit-vs-explicit context gap, documentation as competitive advantage for agent adoption, agentic coding as leading indicator for all knowledge work.
+
+---
+
+## Code Search at Scale
+
+**URL:** [sourcegraph.com/blog/why-code-search-at-scale-is-essential-when-you-grow-beyond-one-repository](https://sourcegraph.com/blog/why-code-search-at-scale-is-essential-when-you-grow-beyond-one-repository)
+
+The case for organization-wide code search when growing beyond a single repository. As codebases expand across hundreds or thousands of repositories, developers face a knowledge discovery bottleneck — custom patterns, subtle overrides, and cross-service dependencies remain invisible to tools scoped to local workspaces. Security and compliance scenarios demand exhaustive enumeration: when a vulnerability is disclosed, finding a representative sample of affected code is insufficient — every instance across every repository must be identified. The post argues that AI coding tools create an amplification paradox: agents that produce code faster generate more surface area for cross-service breakage, making organization-wide search more valuable, not less.
+
+**Key contributions:** The knowledge discovery bottleneck framing, exhaustive enumeration requirement for security and compliance, the AI-amplification paradox.
+
+---
+
+## Cross-Repository Code Navigation
+
+**URL:** [sourcegraph.com/blog/cross-repository-code-navigation](https://sourcegraph.com/blog/cross-repository-code-navigation)
+
+The distinction between text-based search and semantic code navigation. Text search finds character patterns; semantic navigation understands relationships between code elements — resolving symbols to their actual definitions across repository boundaries, tracking which specific implementation version calling code depends on, and disambiguating identically-named functions across dozens of repositories. Language-agnostic indexing formats (such as SCIP) capture compiler-accurate semantic information — symbol definitions, external references, and package metadata — enabling go-to-definition and find-references that work across repository boundaries with version awareness.
+
+**Key contributions:** Text search vs. semantic navigation distinction, cross-repository symbol resolution, version-aware dependency tracking.

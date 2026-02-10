@@ -7,7 +7,7 @@ In late 2024, multiple teams working independently reported a shift in agentic c
 - **[The moment and the formula](meta.md)** — frames the convergence and distills the shared insight across all three lineages
 - **[Three lineages](paradigm.md)** — traces compound engineering (Klaassen), agent-native development (Factory.ai), and the software factory vision (StrongDM) to their common destination
 - **[Honest questions](questions.md)** — surfaces hard design constraints: provability of agent-written code, token economics at $1,000/day, and what "readiness" really means — not feature checklists but proving loops
-- **[Agent Readiness Model](maturity-model.md)** — extracts Factory.ai's maturity framework: five levels, nine technical pillars, and a gating rule that prevents premature advancement
+- **[Agent Readiness Model](maturity-model.md)** — extracts Factory.ai's maturity framework: five levels, ten technical pillars, and a gating rule that prevents premature advancement
 - **[The conversation](conversation.md)** — community perspectives, counterarguments, and experience reports from practitioners engaging with these ideas
 
 ---

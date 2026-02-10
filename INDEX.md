@@ -39,7 +39,8 @@ software-factory/
 │   ├── pyramid-summaries.md           — Reversible multi-level context compression
 │   ├── scenarios-not-tests.md         — Holdout-set validation replacing unit tests
 │   ├── specification-discipline.md    — The self-check heuristic for specs
-│   └── risk-tiered-automation.md      — Graduated autonomy levels
+│   ├── risk-tiered-automation.md      — Graduated autonomy levels
+│   └── codebase-indexing.md           — Organization-wide code search and navigation
 │
 ├── components/                        — Infrastructure a software factory needs
 │   ├── README.md
@@ -101,6 +102,7 @@ Repeatable patterns to evaluate and adopt, clustered by domain: environment, wor
 | [scenarios-not-tests.md](techniques/scenarios-not-tests.md) | Holdout-set validation replacing unit tests |
 | [specification-discipline.md](techniques/specification-discipline.md) | The self-check heuristic for specifications |
 | [risk-tiered-automation.md](techniques/risk-tiered-automation.md) | Graduated autonomy levels for agent actions |
+| [codebase-indexing.md](techniques/codebase-indexing.md) | Organization-wide code search, navigation, and impact analysis |
 
 ## [Components](components/README.md)
 

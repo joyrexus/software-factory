@@ -7,7 +7,7 @@ For the full framing, see the [meta overview](README.md). For specific threads:
 - **[The moment and the formula](meta.md)** — the convergence and the shared insight
 - **[Three lineages](paradigm.md)** — compound engineering, agent-native development, and the software factory vision
 - **[Honest questions](questions.md)** — provability, token economics, and what readiness really means
-- **[Agent Readiness Model](maturity-model.md)** — five maturity levels, nine technical pillars
+- **[Agent Readiness Model](maturity-model.md)** — five maturity levels, ten technical pillars
 
 Community commentary, counterarguments, and experience reports:
 

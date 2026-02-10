@@ -13,6 +13,7 @@ Patterns for building infrastructure that agents work within.
 | [Digital Twin Universe](digital-twin-universe.md) | Behavioral clones of third-party services for validation |
 | [Filesystem as Memory](filesystem-as-memory.md) | Disk as agent cognition substrate — directories as namespaces, INDEX files as navigation |
 | [Risk-Tiered Automation](risk-tiered-automation.md) | Graduated autonomy levels: low, medium, and high risk action tiers |
+| [Codebase Indexing](codebase-indexing.md) | Organization-wide code search, navigation, and impact analysis |
 
 ## Workflow
 
