@@ -198,6 +198,28 @@ Stripe's homegrown coding agents produce more than 1,000 pull requests merged we
 
 ---
 
+## Advanced Context Engineering for Coding Agents
+
+**URL:** [github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
+**Author:** Dex Horthy
+
+The argument that AI coding fails in production codebases not due to model limitations but due to poor context management. Introduces "human leverage" — errors in research cascade into thousands of bad lines of code, errors in plans cascade into hundreds, so human attention should concentrate on the highest-leverage stages (research validation and plan review) rather than code review. Reports shipping 35K LOC in 7 hours on an unfamiliar Rust project using a research→plan→implement workflow. Concludes that coding agents will be commoditized but "the hard part will be the team and workflow transformation" — organizations must drive the culture/process/tech shift to an AI-first coding world. Reinforces the spec-first paradigm: specs should be treated as "the real code," not discarded after agent compilation.
+
+**Key contributions:** The human leverage framework (research > plans > code in error cascade potential), the brownfield-vs-greenfield context gap, spec-first agentic workflows as organizational imperative, the team/workflow transformation thesis.
+
+---
+
+## Advanced Context Engineering for Coding Agents (Talk)
+
+**URL:** [youtube.com/watch?v=rmvDxxNubIg](https://www.youtube.com/watch?v=rmvDxxNubIg)
+**Author:** Dex Horthy
+
+Conference talk at AI Engineer Summit presenting the context engineering framework. Same core argument as the written document — structured research→plan→implement workflows with human leverage concentrated on upstream decisions.
+
+**Key contributions:** Practitioner-oriented presentation of the context engineering framework, live demonstration of the research→plan→implement workflow.
+
+---
+
 ## Cross-Repository Code Navigation
 
 **URL:** [sourcegraph.com/blog/cross-repository-code-navigation](https://sourcegraph.com/blog/cross-repository-code-navigation)
