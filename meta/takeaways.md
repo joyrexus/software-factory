@@ -84,6 +84,7 @@ Create the conditions that make agents effective.
 - **Make organizational knowledge machine-accessible.** Expose internal tools via CLI or MCP. Wire in context sources: telemetry, codebase search, internal APIs, feature flags, architectural documentation.
 - **Set up sandboxed development environments** that mirror what engineers use — complete toolchains, databases, test runners, and CI access. The agent should operate in the same environment as a human engineer, not a stripped-down container.
 - **Designate "agents captains"** — [Brockman's](../SOURCES.md#retooling-for-agentic-development) term for engineers who drive adoption within their teams, trying tools first, creating skills, and establishing conventions.
+- **Identify which practices to adopt** using the [practices catalog](agent-native/practices/README.md) — linters as architectural guardrails, codebase indexing for cross-repository visibility, and internal plugin marketplaces for reusable agent capabilities. These practices are organized by scope, from individual repository to organization-wide, so teams can start with what fits their current maturity level.
 
 ### Phase 3: Start delegating
 
@@ -122,4 +123,5 @@ These uncertainties do not invalidate the patterns — they bound the confidence
 - [Validation](../principles/validation.md) — end-to-end proof of correctness
 - [Agent-Native Environment](../principles/agent-native-environment.md) — designing for non-human workers
 - [Specification Discipline](../techniques/specification-discipline.md) — the self-check heuristic for specifications
+- [Agent-Native Practices](agent-native/practices/README.md) — concrete practices catalog: linters, code indexing, plugin marketplaces
 - [Agent Readiness Model](agent-native/maturity-model.md) — maturity levels and technical pillars
