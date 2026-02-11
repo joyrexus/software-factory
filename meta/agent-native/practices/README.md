@@ -1,6 +1,6 @@
 # Agent-Native Practices
 
-This section catalogs concrete practices that make engineering environments agent-native, organized by scope. **Key practices** are foundational capabilities that most organizations pursuing agent-native engineering will need. **Targeted practices** are more specific techniques for particular contexts or organizational stages. Practices with available source material include summaries; others are stubs awaiting sources.
+This section catalogs concrete practices that make engineering environments agent-native, organized by scope. **Key practices** are foundational capabilities that most organizations pursuing agent-native engineering will need. **Targeted practices** are more specific techniques for particular contexts or organizational stages.
 
 ---
 
@@ -44,15 +44,46 @@ This practice is treated in depth in [Cloud Agents and the Background Revolution
 
 ### Agent-Driven Refactors
 
-*Stub — awaiting source material.*
+Large-scale refactors — API migrations, dependency upgrades, pattern replacements — may be one of the highest-leverage applications of agent-native infrastructure because they compose three key practices into a single workflow: linter rules define the target state, code indexing enumerates every instance that needs to change, and background agents execute the transformations in parallel.
 
-Using agents to execute large-scale refactors across codebases: API migrations, dependency upgrades, pattern replacements. The combination of linter rules (to define the target state), code indexing (to enumerate all instances), and background agents (to execute changes in parallel) suggests that refactoring may be one of the highest-leverage applications of agent-native infrastructure.
+The workflow follows the lint development cycle's final two steps. [Factory.ai](../../SOURCES.md#using-linters-to-direct-agents) describes the cycle as observe → codify → surface → **remediate** at scale using parallel agents applying codemods → **enforce** on CI and agent toolchains. The remediation step is the refactor itself — agents apply the codemod to every surfaced violation simultaneously. The lint rule serves as both the specification for the change and the verification that the change was applied correctly.
+
+Exhaustive enumeration is the critical prerequisite. As [Sourcegraph](../../SOURCES.md#code-search-at-scale) argues, finding a representative sample of affected code is insufficient for refactoring — every instance across every repository must be identified. A refactor that misses occurrences creates inconsistency that compounds over time, and agents operating in bounded context windows cannot discover instances outside their scope without cross-repository search infrastructure.
+
+The infrastructure that makes this safe at scale is well-documented in practitioner reports. [Stripe](../../SOURCES.md#minions-stripes-one-shot-coding-agents) applies shift-left verification — local linting in under five seconds, selective test execution from 3+ million tests, and a maximum of two CI rounds per run — to every agent-generated change. [Ramp](../../SOURCES.md#why-we-built-our-own-background-agent) provides sandboxed VMs rebuilt every 30 minutes with integrated telemetry from Sentry, Datadog, and Buildkite, giving agents the feedback loops needed to verify refactor correctness. [Stripe's](../../SOURCES.md#minions-stripes-one-shot-coding-agents) deterministic context hydration ensures each agent session starts with structured knowledge of conventions and dependencies rather than discovering them at runtime.
+
+The pattern is: **define** the target state as a machine-verifiable rule → **enumerate** all instances with cross-repository indexing → **execute** changes in parallel via background agents → **verify** each change against the rule that triggered it. Organizations already practicing linter-driven development and codebase indexing have the prerequisites in place; agent-driven refactoring is the composed workflow that those practices enable.
 
 ### Targeted Internal Tools
 
-*Stub — awaiting source material.*
+Internal tools — CLIs, scripts, dashboards, one-off integrations — are high-confidence starting points for agent-driven development because they sit at the intersection of several converging recommendations from independent sources.
 
-Building lightweight internal tools — CLIs, scripts, dashboards, one-off integrations — as a high-confidence starting point for agent-driven development. Internal tools have bounded scope, forgiving users, and low blast radius, making them natural candidates for agent delegation before graduating to production-facing work.
+[Pignanelli's](../../SOURCES.md#agent-native-engineering) three-level task classification provides the framework: simple (one-shottable), manageable (background agents with feedback cycles), complex (engineer-managed with synchronous agents). Internal tools sit squarely in the "simple" category — bounded scope, clear done criteria, and strong test coverage make them natural candidates for one-shot agent delegation. Starting at the bottom of the classification builds confidence and reveals environment gaps before the stakes are high.
+
+[Brockman](../../SOURCES.md#retooling-for-agentic-development) arrives at the same conclusion from the adoption side: "try the tools" first, designate "agents captains" who drive adoption within their teams, and "inventory and expose internal tools via CLI or MCP." The recommendation to start with internal tooling is explicit — it is the first concrete action item in OpenAI's own retooling playbook.
+
+[Klaassen's](../../SOURCES.md#compound-engineering) central insight — that agent output quality depends more on the engineering environment than on agent sophistication — explains why internal tools are the right starting point. Internal-facing work provides a controlled environment where the risk of environment immaturity is low: users are forgiving colleagues rather than paying customers, the blast radius of a defect is bounded, and the scope is narrow enough that specifications can be precise. These conditions minimize the gap between environment readiness and agent requirements.
+
+[Dabit](../../SOURCES.md#the-cloud-agent-thesis) extends the pattern through playbooks — reusable workflows encoding expertise that anyone can trigger. Internal tools are natural playbook candidates because the workflow is self-contained: a non-engineer can invoke an agent through Slack or a web interface to build a dashboard or integration without Git knowledge or a local environment. This opens engineering capacity to the broader organization while keeping risk low.
+
+The strategic logic: internal tools let teams build agent-delegation muscle — establishing conventions for specifications, review, and verification — in an environment where mistakes are cheap and feedback is fast. As those conventions mature, they become the foundation for delegating higher-stakes, production-facing work.
+
+### Automated Review at Scale
+
+As agent adoption increases, review becomes the bottleneck. More parallel agent sessions produce more pull requests, and without review infrastructure that scales proportionally, organizations create a growing backlog of unreviewed changes — the opposite of the velocity improvement they sought.
+
+The evidence for this is convergent across multiple sources. [Pignanelli](../../SOURCES.md#agent-native-engineering) reports that code review already constitutes a larger share of engineering workflow than coding in agent-native organizations, and recommends replacing the traditional two-engineer review requirement with code review bots, agentic pentesting, and AI SRE staging oversight. [Dabit](../../SOURCES.md#the-cloud-agent-thesis) frames it as a corollary: the system that generates PRs at scale must also help triage them at scale — a complementary review agent is an architectural requirement of the cloud agent model, not an optimization.
+
+Practitioner implementations validate this. [Stripe](../../SOURCES.md#minions-stripes-one-shot-coding-agents) applies a shift-left verification philosophy: local linting runs in under five seconds using heuristics to select relevant checks per git push, selective test execution draws from 3+ million tests, and a maximum of two CI rounds per run enforces discipline. Many test failures have autofixes applied automatically; only failures without autofixes are sent back to the agent for a single retry. The result is that most quality issues are caught before a human reviewer ever sees the PR. [Ramp](../../SOURCES.md#why-we-built-our-own-background-agent) invested in automated review tooling to keep pace with approximately 30% of merged PRs coming from their agent — the infrastructure was a prerequisite for organic adoption at that volume.
+
+The practice has several dimensions:
+
+- **Deterministic pre-checks** — linting, type checking, and formatting that run automatically and reject non-compliant changes before review begins
+- **Selective test execution** — infrastructure to identify and run only the tests relevant to each change, enabling fast feedback even against large test suites
+- **Review agents** — agents that triage incoming PRs, flag patterns that need human attention, and approve changes that meet established criteria
+- **Graduated autonomy** — low-risk changes (style fixes, documentation, dependency patches) receive lighter review than high-risk changes (security boundaries, payment flows, data migrations)
+
+This practice is a prerequisite, not an afterthought. Organizations planning to scale agent output should invest in review infrastructure concurrently with agent adoption — the [takeaways](../../takeaways.md) identify this as one of four organizational shifts that recur across the sources. See [Cloud Agents and the Background Revolution](../cloud-agents.md) for the broader context on how review fits into the delegation model.
 
 ### Internal Plugin Marketplaces
 
@@ -68,6 +99,7 @@ Capability categories span code intelligence (LSP integration for type-aware nav
 - [Cloud Agents and the Background Revolution](../cloud-agents.md) — delegation model and organizational effects
 - [Building In-House: Ramp and Stripe](../case-studies.md) — convergent architectural requirements at scale
 - [Agent Readiness Model](../maturity-model.md) — maturity framework for evaluating environment readiness
+- [Takeaways for Engineering Leaders](../../takeaways.md) — phased adoption plan and organizational shifts
 - [Codebase Indexing and Search](../../../techniques/codebase-indexing.md) — full treatment of code indexing as agent infrastructure
 - [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic for specs
 - [Agent-Native Environment](../../../principles/agent-native-environment.md) — the foundational principle
