@@ -8,6 +8,24 @@ Background and cloud agents represent a fundamentally different interaction mode
 
 The shift is from collaboration to delegation. Engineers describe tasks, kick off sessions, and return to finished work. Ten tasks can run in parallel, yielding ten PRs. The agent has its own shell, IDE, and browser — it does not share the developer's environment or require their attention during execution.
 
+## What Makes Cloud Agents Effective
+
+The shift from collaboration to delegation only works if the agents receiving delegated work can actually complete it. For cloud agents to be effective, four capabilities matter:
+
+- **They need to understand how work actually gets done across systems.** An agent that can write code but cannot navigate the surrounding context — ticket trackers, feature flags, deployment pipelines, monitoring dashboards — is operating with a fraction of the information a human engineer has. The rich context layers that [Ramp](../../SOURCES.md#why-we-built-our-own-background-agent) and [Stripe](../../SOURCES.md#minions-stripes-one-shot-coding-agents) built (Sentry, Datadog, LaunchDarkly, Sourcegraph, 400+ MCP tools) exist precisely because writing code is only part of doing engineering work. The goal is not merely connecting to individual tools but creating a semantic layer — a unified model of how information flows, where decisions happen, and what outcomes matter — that all agents can reference.
+
+- **They need access to a computer and tools to plan, act, recover, and solve real-world problems.** Cloud agents are not chat interfaces generating text — they have their own shell, IDE, and browser, running in sandboxed environments with full development toolchains. This is the fundamental distinction from local coding tools: the agent can build, test, deploy, and debug without sharing the engineer's machine or requiring their attention. As agents operate, past interactions become useful context that improves future performance — a direct application of the [Compound Knowledge](../../principles/compound-knowledge.md) principle, where experience accumulates into durable, reusable understanding.
+
+- **They need to understand what good looks like, so quality improves as the work changes.** AGENTS.md files, linter configurations, test suites, and CI pipelines serve as the agent's quality model — machine-verifiable definitions of correctness that the agent can check its own work against. As [Klaassen](../../SOURCES.md#compound-engineering) observes, agent output quality depends more on this engineering environment than on agent sophistication. When the environment encodes what "good" means, every improvement to standards compounds across all future agent work. But static standards are not enough — built-in evaluation and optimization loops make quality visible and improvable, clarifying what's working and what isn't so that agents progress from impressive demos to dependable teammates.
+
+- **They need an identity, permissions, and boundaries teams can trust.** Agents operating autonomously in production codebases must have scoped permissions, audit trails, and governance frameworks that make their actions visible and controllable. [Dabit](../../SOURCES.md#the-cloud-agent-thesis) identifies governance frameworks as an explicit organizational transformation requirement — without them, scaling agent adoption means scaling unaccountable change.
+
+The practitioner evidence reinforces that these capabilities, not model improvements, are the primary drivers of agent effectiveness:
+
+- **Complete development environments** that mirror what engineers have — sandboxed VMs with full toolchains, databases, and CI access — enabling end-to-end verifiability without human intervention
+- **Rich context layers** giving agents access to telemetry, codebase search, internal APIs, architectural docs, feature flags, and specifications — the organizational knowledge that makes code meaningful
+- Organizations that invest in both report agents producing 30% or more of merged pull requests within months; those that deploy agents without this infrastructure discover that model capability alone is insufficient
+
 ## Task Classification
 
 The [General Intelligence Company](../../SOURCES.md#agent-native-engineering) introduces a three-level task classification that maps the delegation model to engineering reality:
@@ -52,3 +70,4 @@ Whether or not this timeline proves accurate, the direction is consistent with [
 - [Building In-House: Ramp and Stripe](case-studies.md) — concrete implementations of the background agent model
 - [Agent Readiness Model](maturity-model.md) — maturity framework for evaluating environment readiness
 - [Shift Work](../../techniques/shift-work.md) — interactive vs. non-interactive agent modes
+- [Agent-Native Practices](practices/README.md) — concrete practices catalog: linters, refactors, review at scale, and more
