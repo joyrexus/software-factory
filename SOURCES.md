@@ -144,6 +144,17 @@ Brockman's post describes OpenAI's internal approach to retooling engineering te
 
 ---
 
+## Harness Engineering
+
+**URL:** [openai.com/index/harness-engineering](https://openai.com/index/harness-engineering/)
+**Author:** OpenAI
+
+An internal OpenAI team's report on building a complete product over five months with zero manually-written code — approximately one million lines of code across 1,500 PRs, produced by a small team (three engineers, later seven) averaging 3.5 PRs per engineer per day. The case study demonstrates the endpoint of the delegation model: engineering work shifted entirely from writing code to "designing environments, creating feedback loops, and building scaffolding that enables agents to work autonomously." The repository is optimized first for agent legibility — documentation functions as "a navigable map rather than a manual," architectural invariants are mechanically enforced, and all context is repository-local. The companion guide ("Building an AI-Native Engineering Team") adds a quantitative capability benchmark: agents capable of roughly two hours of continuous work at moderate confidence as of mid-2025, with capability doubling approximately every seven months. Concrete practices include test-first discipline for agents (tests must fail before implementation) and continuous automated refactoring to prevent technical debt accumulation.
+
+**Key contributions:** Zero-manual-code product development as end-state evidence, repository-first agent legibility, capability doubling rate as planning variable, TDD-for-agents, continuous preventive refactoring.
+
+---
+
 ## Structuring Work Agent-First
 
 **URL:** [x.com/levie/status/2019634114874470819](https://x.com/levie/status/2019634114874470819)
@@ -184,6 +195,17 @@ The argument that background agents changed everything: "agent native engineerin
 Cloud agents as a distinct category from local agents — running on remote infrastructure with their own shell, IDE, and browser, accessible asynchronously through Slack, Jira, CLI, or API. The key distinctions from local tools: accessibility (non-engineers can invoke agents without Git knowledge or local environments), cross-codebase capability (agents configured against every organizational repository), async parallelism (ten tasks kicked off simultaneously yielding ten PRs), and org-wide scaling through playbooks — reusable workflows encoding expertise that anyone can trigger. The organizational transformation requirements are explicit: strategic project selection, knowledge codification, adoption analytics, governance frameworks, and workflow redesign. The pattern also demands a complementary review agent to handle the volume of PRs that parallel agent sessions generate.
 
 **Key contributions:** Cloud-vs-local agent taxonomy, playbooks as reusable expertise, the review agent corollary, organizational transformation prerequisites.
+
+---
+
+## How Cognition Uses Devin to Build Devin
+
+**URL:** [nader.substack.com/p/how-cognition-uses-devin-to-build](https://nader.substack.com/p/how-cognition-uses-devin-to-build)
+**Author:** Nader Dabit
+
+A practitioner account of Cognition using their own coding agent as an autonomous teammate across the development workflow. The key contributions beyond Dabit's earlier cloud agent thesis: structural precision on playbooks (outcome definitions, required steps, postconditions, corrections to defaults, forbidden actions), event-driven agent triggering through REST APIs (crash logs spawning investigation PRs, bug reports triggering reproduction, failed deployments initiating analysis), and session analytics that create continuous improvement loops — insights from one session inform the next. The organizational scope extends beyond engineering through dedicated data analyst agents that let non-engineers answer metrics questions in natural language. The review system transforms large PRs into organized diffs with explanations, autofix capabilities, bug catching with confidence levels, and codebase-aware chat — a concrete implementation of the complementary review agent the cloud agent model demands.
+
+**Key contributions:** Structured playbook specification patterns, event-driven programmatic agent triggering, session-to-session compounding through analytics, review agent as organized-diff system, non-engineering agent access extending to organizational analytics.
 
 ---
 

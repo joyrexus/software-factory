@@ -27,3 +27,5 @@ Community commentary, counterarguments, and experience reports:
 - [Why we built our own background agent](../SOURCES.md#why-we-built-our-own-background-agent) (Ramp) — Inspect: sandboxed VMs, integrated tooling, 30% of merged PRs from agent work
 - [Minions: Stripe's one-shot coding agents](../SOURCES.md#minions-stripes-one-shot-coding-agents) (Stripe) — 400+ MCP tools, isolated devboxes, 1,000+ PRs merged weekly
 - [Advanced context engineering for coding agents](../SOURCES.md#advanced-context-engineering-for-coding-agents) (Horthy) — Human leverage framework: concentrate human attention on research and plan review, not code review; the hard part is team/workflow transformation, not model capability
+- [Harness engineering](../SOURCES.md#harness-engineering) (OpenAI) — Zero-manual-code product development, repository-first agent legibility, capability doubling rate, TDD-for-agents
+- [How Cognition uses Devin to build Devin](../SOURCES.md#how-cognition-uses-devin-to-build-devin) (Dabit) — Structured playbook patterns, event-driven agent triggering, session-to-session compounding, review agent implementation
