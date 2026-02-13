@@ -2,6 +2,10 @@
 
 This section catalogs concrete practices that make engineering environments agent-native, organized by scope. **Key practices** are foundational capabilities that most organizations pursuing agent-native engineering will need. **Targeted practices** are more specific techniques for particular contexts or organizational stages.
 
+**Key Practices:** [Linters as Architectural Guardrails](#linters-as-architectural-guardrails) | [Code Indexing and Search](#code-indexing-and-search) | [Codebase Cartography](#codebase-cartography) | [Background Agents](#background-agents) | [Application Legibility](#application-legibility) | [Entropy Management](#entropy-management)
+
+**Targeted Practices:** [Agent-Driven Refactors](#agent-driven-refactors) | [Targeted Internal Tools](#targeted-internal-tools) | [Automated Review at Scale](#automated-review-at-scale) | [Internal Plugin Marketplaces](#internal-plugin-marketplaces)
+
 ---
 
 ## Key Practices
