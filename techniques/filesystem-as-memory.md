@@ -39,4 +39,5 @@ Each level provides a summary that points to more detailed files. An agent (or h
 
 - [Pyramid Summaries](pyramid-summaries.md) — Multi-level compression within the filesystem hierarchy
 - [Compound Knowledge](../principles/compound-knowledge.md) — Knowledge accumulation as explicit practice
+- [Progressive Disclosure](progressive-disclosure.md) — Layered context management building on the filesystem substrate
 - [Context Store](../components/context-store/README.md) — When the filesystem isn't enough: structured persistent memory

@@ -33,4 +33,5 @@ Patterns for capturing, transferring, and compressing knowledge.
 |-----------|-------------|
 | [Gene Transfusion](gene-transfusion.md) | Cross-codebase pattern transfer via working exemplars |
 | [Semport](semport.md) | Semantically-aware code migration between languages and frameworks |
+| [Progressive Disclosure](progressive-disclosure.md) | Layered context management — map not manual |
 | [Pyramid Summaries](pyramid-summaries.md) | Reversible multi-level context compression |

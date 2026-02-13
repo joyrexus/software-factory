@@ -43,6 +43,7 @@ software-factory/
 │   ├── filesystem-as-memory.md        — Disk as agent cognition substrate
 │   ├── shift-work.md                  — Interactive vs. non-interactive modes
 │   ├── semport.md                     — Semantically-aware code migration
+│   ├── progressive-disclosure.md      — Layered context management for agents
 │   ├── pyramid-summaries.md           — Reversible multi-level context compression
 │   ├── scenarios-not-tests.md         — Holdout-set validation replacing unit tests
 │   ├── specification-discipline.md    — The self-check heuristic for specs
@@ -106,6 +107,7 @@ Repeatable patterns to evaluate and adopt, clustered by domain: environment, wor
 | [filesystem-as-memory.md](techniques/filesystem-as-memory.md) | Disk as agent cognition substrate |
 | [shift-work.md](techniques/shift-work.md) | Separating interactive from non-interactive agent modes |
 | [semport.md](techniques/semport.md) | Semantically-aware code migration between languages/frameworks |
+| [progressive-disclosure.md](techniques/progressive-disclosure.md) | Layered context management for agents |
 | [pyramid-summaries.md](techniques/pyramid-summaries.md) | Reversible multi-level context compression |
 | [scenarios-not-tests.md](techniques/scenarios-not-tests.md) | Holdout-set validation replacing unit tests |
 | [specification-discipline.md](techniques/specification-discipline.md) | The self-check heuristic for specifications |

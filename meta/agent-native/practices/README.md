@@ -22,6 +22,8 @@ As development shifts from engineers writing code with AI assistance to engineer
 
 The lint development cycle is a repeatable five-step process: **observe** anti-patterns in reviews, logs, or metrics → **codify** the rule with severity, autofix, and test coverage → **surface** violations across the repository → **remediate** at scale using parallel agents applying codemods → **enforce** on pre-commit, CI, PR bots, and agent toolchains. Every lesson becomes an executable constraint that compounds over time.
 
+When lint rules are custom, the error messages themselves become a teaching mechanism. Writing error messages that inject remediation instructions into agent context — explaining not just what is wrong but how to fix it — turns every lint violation into an inline coaching moment. In a human-first workflow these detailed messages might feel pedantic; with agents, they become multipliers that apply everywhere at once ([Harness Engineering](../../SOURCES.md#harness-engineering)).
+
 A key distinction: AGENTS.md explains the "why" and provides examples; linting enforces the "how" through machine-checkable validation. Organizations adopting only one category should start with grep-ability — consistent formatting makes everything else easier for agents to discover and navigate.
 
 ### Code Indexing and Search
@@ -37,6 +39,30 @@ This practice has a full treatment in [Codebase Indexing and Search](../../../te
 Background and cloud agents represent a fundamentally different interaction model — from synchronous pair programming to asynchronous delegation. Engineers describe tasks, kick off sessions, and return to finished work. The infrastructure requirements (sandboxed environments, rich context layers, automated review) and organizational effects (engineers shift from coding to management, non-engineers gain access to engineering workflows) are well documented.
 
 This practice is treated in depth in [Cloud Agents and the Background Revolution](../cloud-agents.md) and [Building In-House: Ramp and Stripe](../case-studies.md). See those files for the full analysis rather than duplicating it here.
+
+### Application Legibility
+
+Code legibility — grep-ability, glob-ability, consistent naming — addresses the static codebase. Application legibility addresses runtime behavior: making the running application observable and navigable by agents, not just the source code.
+
+Agents that can only read code are operating with a fraction of the information they need. A bug report that says "the dashboard shows stale data after login" requires an agent to boot the app, reproduce the behavior, inspect network requests, and check what the UI actually renders. Making the app bootable, observable, and drivable within the agent's sandbox closes this gap.
+
+The concrete implementation involves several layers. **Per-worktree app instances** give each agent task an isolated running application — no shared state, no port collisions, no interference between parallel tasks. **Browser automation** via Chrome DevTools Protocol enables DOM snapshots, screenshots, and navigation, allowing agents to reproduce bugs, validate fixes, and reason about UI behavior directly rather than inferring it from code. **Ephemeral local observability** — logs via LogQL, metrics via PromQL — scoped to the agent's worktree and torn down on task completion, provides runtime insight without polluting shared monitoring infrastructure.
+
+When agents can query metrics directly, performance becomes specifiable: prompts like "ensure startup completes in under 800ms" become tractable because the agent can measure the result rather than guessing. Application legibility transforms vague quality concerns into verifiable constraints ([Harness Engineering](../../SOURCES.md#harness-engineering)).
+
+See also: [Agent-Native Environment](../../../principles/agent-native-environment.md) — the foundational principle that application legibility implements.
+
+### Entropy Management
+
+Agents replicate patterns that already exist — including suboptimal ones. Without systematic intervention, drift is inevitable. One team reports spending 20% of engineer time (every Friday) manually cleaning up "AI slop" before automating the process.
+
+The response is continuous automated cleanup at three levels. First, **golden principles** — opinionated, mechanical rules encoded directly in the repository that keep the codebase legible for future agent runs. Examples include preferring shared utility packages over hand-rolled helpers, validating boundaries rather than probing data, and enforcing consistent naming across layers. These rules serve double duty: they constrain current agent output and preserve the patterns future agents will replicate.
+
+Second, **recurring background agent tasks** that scan for deviations, update quality grades, and open targeted refactoring PRs. Most of these PRs are reviewable in under a minute and eligible for automerge. The garbage collection metaphor applies: pay down technical debt continuously in small increments rather than letting it compound into periodic, painful cleanup sprints.
+
+Third, a **human taste feedback loop**: review comments, refactoring PRs, and user-facing bugs are captured as documentation updates or encoded directly into tooling. When documentation falls short, the rule is promoted into code — a lint rule, a structural test, or an architectural constraint that prevents recurrence mechanically rather than through instruction alone ([Harness Engineering](../../SOURCES.md#harness-engineering)).
+
+See also: [Agent-Driven Refactors](#agent-driven-refactors) covers the refactoring workflow itself; entropy management is the continuous scheduling layer that feeds it. [Compound Knowledge](../../../principles/compound-knowledge.md) — each cleanup cycle improves the substrate for future agent work.
 
 ---
 
@@ -103,3 +129,4 @@ Capability categories span code intelligence (LSP integration for type-aware nav
 - [Codebase Indexing and Search](../../../techniques/codebase-indexing.md) — full treatment of code indexing as agent infrastructure
 - [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic for specs
 - [Agent-Native Environment](../../../principles/agent-native-environment.md) — the foundational principle
+- [Progressive Disclosure](../../../techniques/progressive-disclosure.md) — layered context management for agent consumption

@@ -38,4 +38,5 @@ An agent navigating this knowledge base reads the root INDEX to orient, reads a 
 ## See Also
 
 - [Filesystem as Memory](filesystem-as-memory.md) — The storage substrate that pyramid summaries organize
+- [Progressive Disclosure](progressive-disclosure.md) — The general technique that pyramid summaries implement
 - [Context Store](../components/context-store/README.md) — Structured memory when pyramid summaries in files aren't sufficient
