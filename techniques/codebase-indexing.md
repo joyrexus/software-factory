@@ -43,4 +43,5 @@ Codebase indexing is environment infrastructure — a precondition for scaling a
 
 - [Filesystem as Memory](filesystem-as-memory.md) — Local file structure as agent memory; codebase indexing extends this across repository boundaries
 - [Pyramid Summaries](pyramid-summaries.md) — Multi-level compression within hierarchies; indexing provides the search layer across those hierarchies
+- [Codebase Cartography](codebase-cartography.md) — The semantic layer that complements indexing: indexing finds code, cartography explains systems
 - [Agent Readiness Model](../meta/agent-native/maturity-model.md) — Codebase indexing as a technical pillar for measuring readiness

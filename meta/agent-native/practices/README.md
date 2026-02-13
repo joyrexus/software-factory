@@ -34,6 +34,16 @@ Codebase indexing provides three distinct capabilities: **deterministic enumerat
 
 This practice has a full treatment in [Codebase Indexing and Search](../../../techniques/codebase-indexing.md), which covers capabilities, the connection to the Agent Readiness Model, and implementation considerations.
 
+### Codebase Cartography
+
+Code indexing tells agents *where* things are. Cartography tells them *what they mean*. An agent can locate every call to `processInvoice()` across ten repositories without understanding the end-to-end flow that triggers it, the state machine governing invoice lifecycle, or the retry semantics when the payment provider fails.
+
+Codebase cartography produces structured documentation artifacts — component maps, flow narratives, contract definitions, operational runbooks — organized in a convention-driven `docs/` directory. The structure answers two questions code search cannot: "what is this piece and where does it fit?" (component folders with responsibilities, interfaces, data models, and runtime characteristics) and "how do parts relate under real conditions?" (flow folders with sequence diagrams, state machines, contracts, and runbooks). Flows are particularly valuable in polyglot environments where a single user journey crosses language boundaries, event-driven processing, and multiple services.
+
+The documentation architecture also provides a specification surface for agents: when asked to implement a new flow, the expected output includes not just code but a populated `docs/flows/<flow-name>/` folder that proves the agent understood the system well enough to document it.
+
+This practice has a full treatment in [Codebase Cartography](../../../techniques/codebase-cartography.md), which covers the documentation architecture, component and flow structures, and lightweight rules for consistency.
+
 ### Background Agents
 
 Background and cloud agents represent a fundamentally different interaction model — from synchronous pair programming to asynchronous delegation. Engineers describe tasks, kick off sessions, and return to finished work. The infrastructure requirements (sandboxed environments, rich context layers, automated review) and organizational effects (engineers shift from coding to management, non-engineers gain access to engineering workflows) are well documented.
@@ -127,6 +137,7 @@ Capability categories span code intelligence (LSP integration for type-aware nav
 - [Agent Readiness Model](../maturity-model.md) — maturity framework for evaluating environment readiness
 - [Takeaways for Engineering Leaders](../../takeaways.md) — phased adoption plan and organizational shifts
 - [Codebase Indexing and Search](../../../techniques/codebase-indexing.md) — full treatment of code indexing as agent infrastructure
+- [Codebase Cartography](../../../techniques/codebase-cartography.md) — structured documentation as semantic index
 - [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic for specs
 - [Agent-Native Environment](../../../principles/agent-native-environment.md) — the foundational principle
 - [Progressive Disclosure](../../../techniques/progressive-disclosure.md) — layered context management for agent consumption

@@ -49,7 +49,8 @@ software-factory/
 │   ├── scenarios-not-tests.md         — Holdout-set validation replacing unit tests
 │   ├── specification-discipline.md    — The self-check heuristic for specs
 │   ├── risk-tiered-automation.md      — Graduated autonomy levels
-│   └── codebase-indexing.md           — Organization-wide code search and navigation
+│   ├── codebase-indexing.md           — Organization-wide code search and navigation
+│   └── codebase-cartography.md       — Structured documentation as semantic index
 │
 ├── components/                        — Infrastructure a software factory needs
 │   ├── README.md
@@ -115,6 +116,7 @@ Repeatable patterns to evaluate and adopt, clustered by domain: environment, wor
 | [specification-discipline.md](techniques/specification-discipline.md) | The self-check heuristic for specifications |
 | [risk-tiered-automation.md](techniques/risk-tiered-automation.md) | Graduated autonomy levels for agent actions |
 | [codebase-indexing.md](techniques/codebase-indexing.md) | Organization-wide code search, navigation, and impact analysis |
+| [codebase-cartography.md](techniques/codebase-cartography.md) | Structured documentation as semantic index |
 
 ## [Components](components/README.md)
 
