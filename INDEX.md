@@ -24,7 +24,8 @@ software-factory/
 │   │   └── practices/               — Agent-native practices catalog
 │   │       └── README.md
 │   ├── conversation.md               — Community commentary on the source material
-│   └── takeaways.md                  — Practical synthesis for engineering leaders
+│   ├── takeaways.md                  — Practical synthesis for engineering leaders
+│   └── game-plan.md                  — Phased approach to agent-native adoption
 │
 ├── principles/                        — Assumptions behind the software factory concept
 │   ├── README.md
@@ -80,7 +81,8 @@ Context, paradigm, and commentary surrounding the software factory concept.
 | [questions.md](meta/questions.md) | Honest questions and design constraints |
 | [agent-native/](meta/agent-native/README.md) | Agent-native engineering in practice — cloud agents, case studies, and maturity model |
 | [conversation.md](meta/conversation.md) | Community commentary on the source material |
-| [takeaways.md](meta/takeaways.md) | Practical synthesis for engineering leaders — evidence, organizational shifts, and a phased game plan |
+| [takeaways.md](meta/takeaways.md) | Practical synthesis for engineering leaders — evidence, organizational shifts, and what remains unproven |
+| [game-plan.md](meta/game-plan.md) | Phased approach to agent-native adoption: assess, prepare, delegate, shift |
 
 ## [Principles](principles/README.md)
 

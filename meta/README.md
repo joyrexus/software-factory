@@ -9,7 +9,8 @@ In late 2024, multiple teams working independently reported a shift in agentic c
 - **[Honest questions](questions.md)** — surfaces hard design constraints: provability of agent-written code, token economics at $1,000/day, and what "readiness" really means — not feature checklists but proving loops
 - **[Agent-native engineering](agent-native/README.md)** — the principle in practice: background agents, case studies from Ramp and Stripe, the maturity framework for evaluating readiness, and a [catalog of adoptable practices](agent-native/practices/README.md)
 - **[The conversation](conversation.md)** — community perspectives, counterarguments, and experience reports from practitioners engaging with these ideas
-- **[Takeaways for engineering leaders](takeaways.md)** — practical synthesis: what the evidence says, what has to change, and where to start
+- **[Takeaways for engineering leaders](takeaways.md)** — practical synthesis: what the evidence says, what has to change, and what remains unproven
+- **[A game plan](game-plan.md)** — phased approach to agent-native adoption: assess, prepare, delegate, shift
 
 ---
 
@@ -20,4 +21,5 @@ In late 2024, multiple teams working independently reported a shift in agentic c
 | [questions.md](questions.md) | Honest questions and design constraints |
 | [agent-native/](agent-native/README.md) | Agent-native engineering in practice — cloud agents, case studies, maturity model, and practices catalog |
 | [conversation.md](conversation.md) | Community commentary on the source material |
-| [takeaways.md](takeaways.md) | Practical synthesis for engineering leaders — evidence, organizational shifts, and a phased game plan |
+| [takeaways.md](takeaways.md) | Practical synthesis for engineering leaders — evidence, organizational shifts, and what remains unproven |
+| [game-plan.md](game-plan.md) | Phased approach to agent-native adoption: assess, prepare, delegate, shift |
