@@ -2,6 +2,16 @@
 
 A practical synthesis of what this knowledge base finds — aimed at leaders evaluating or beginning the transition to agent-native engineering. The sections below distill the convergent findings from [multiple independent sources](../SOURCES.md), surface the organizational changes those findings imply, and outline a phased approach to getting started.
 
+## TL;DR
+
+Agent effectiveness depends on the engineering environment, not the model. The evidence converges on three findings, four organizational shifts, and a phased game plan:
+
+**[What the evidence says:](#what-the-evidence-says)** [The environment matters more than the model](#the-environment-matters-more-than-the-model) — invest in codebase readiness, not model upgrades. [Human attention should concentrate upstream](#human-attention-should-concentrate-upstream) — review specs and plans, not implementation code. [You must be able to prove it works before you automate it](#you-must-be-able-to-prove-it-works-before-you-automate-it) — validation infrastructure must exist independently of the agent.
+
+**[What has to change:](#what-has-to-change)** [Engineers shift from writing to directing](#the-engineers-role-shifts-from-writing-to-directing). [Specifications become the primary artifact](#specifications-become-the-primary-engineering-artifact). [Expertise must be encoded, not carried](#expertise-must-be-encoded-not-carried). [Review infrastructure must scale with agent output](#review-infrastructure-must-scale-with-agent-output).
+
+**[A game plan:](#a-game-plan)** [Assess and prove](#phase-1-assess-and-prove) → [Prepare the environment](#phase-2-prepare-the-environment) → [Start delegating](#phase-3-start-delegating) → [Shift the culture](#phase-4-shift-the-culture). Start small, compound fast — [what remains unproven](#what-remains-unproven) bounds how aggressively to invest.
+
 ## What the Evidence Says
 
 Three findings recur across independent sources and practitioner reports.
@@ -65,6 +75,8 @@ More parallel agent sessions produce more pull requests, and review becomes the 
 This is a prerequisite, not an afterthought. Organizations that scale agent adoption without scaling review infrastructure create a growing backlog of unreviewed changes — the opposite of the velocity improvement they sought.
 
 ## A Game Plan
+
+> "This shift doesn't require a radical overhaul; small, targeted workflows compound quickly as coding agents become more capable and reliable. Teams that start with well-scoped tasks, invest in guardrails, and iteratively expand agent responsibility see meaningful gains in speed, consistency, and developer focus." — [Harness Engineering](../SOURCES.md#harness-engineering)
 
 A phased approach synthesized from the [readiness model](agent-native/maturity-model.md) progression and practitioner reports. These are not prescriptive timelines — the focus is on sequencing and dependencies. Each phase creates the prerequisites for the next.
 
