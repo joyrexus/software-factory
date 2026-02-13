@@ -10,7 +10,19 @@ Codebase cartography closes this gap by producing structured documentation artif
 
 The practitioner evidence for this approach is direct. The [Harness Engineering](../SOURCES.md#harness-engineering) team tried the "one big AGENTS.md" approach and reports it failed in predictable ways: a giant instruction file crowded out the task and relevant code, too much guidance became non-guidance (agents pattern-matched locally instead of navigating intentionally), the monolith rotted instantly as no single person maintained it, and a single blob resisted mechanical verification for coverage, freshness, or cross-linking. Their solution: treat AGENTS.md as a table of contents (roughly 100 lines), not an encyclopedia, and make the repository's structured `docs/` directory the system of record. [Progressive Disclosure](progressive-disclosure.md) covers the general principle; cartography is its concrete implementation for system documentation.
 
-The key design constraint: folders encode intent, not team preferences. A predictable, convention-driven directory structure means agents can navigate documentation the same way across every repository in the organization. The structure itself becomes a queryable interface — an agent looking for "how does invoice generation work?" knows to check `docs/flows/invoice-generation/`, just as it knows to check `docs/components/billing-service/` for the billing service's responsibilities and interfaces.
+## The Goal: Agent Legibility
+
+The purpose of codebase cartography is **agent legibility** — making it possible for an agent to reason about the full business domain directly from the repository itself.
+
+From the agent's point of view, anything it cannot access in-context while running effectively does not exist. Knowledge that lives in Google Docs, chat threads, or people's heads is invisible to the system. Repository-local, versioned artifacts — code, markdown, schemas, executable plans — are all it can see. That Slack discussion where the team aligned on an architectural pattern? If it is not discoverable to the agent, it is as illegible as it would be unknown to a new hire joining three months later ([Harness Engineering](../SOURCES.md#harness-engineering)).
+
+This framing — optimize the repository first for agent legibility, the same way teams optimize for new-hire navigability — clarifies every tradeoff:
+
+- **Push context into the repo.** Architectural decisions, domain conventions, product principles, engineering norms — anything an agent needs to produce aligned output must be encoded as versioned artifacts, not left in external systems.
+- **Favor legible dependencies.** Technologies described as "boring" tend to be easier for agents to model due to composability, API stability, and representation in training data. In some cases it is cheaper to reimplement a subset of functionality than to work around opaque upstream behavior. One team reimplemented a concurrency helper rather than pulling in a generic library, gaining tight integration with their observability stack, 100% test coverage, and behavior that matches their runtime expectations exactly.
+- **Increase leverage for all agents.** Pulling more of the system into a form that agents can inspect, validate, and modify directly increases leverage not just for one agent but for every agent working on the codebase — the investment compounds across all current and future agent consumers.
+
+The key design constraint follows: folders encode intent, not team preferences. A predictable, convention-driven directory structure means agents can navigate documentation the same way across every repository in the organization. The structure itself becomes a queryable interface — an agent looking for "how does invoice generation work?" knows to check `docs/flows/invoice-generation/`, just as it knows to check `docs/components/billing-service/` for the billing service's responsibilities and interfaces.
 
 ## The Documentation Architecture
 
@@ -121,11 +133,11 @@ These checks run in CI alongside tests and type checks. A PR that adds a new ser
 
 The result is a knowledge base that is not merely written but *maintained* — mechanically verified, continuously gardened, and progressively hardened into enforceable rules. Without this enforcement layer, cartography is a one-time investment that decays; with it, the documentation compounds in accuracy and coverage over time.
 
-## Why This Matters for Agents
+## Cartography in Practice
 
-Code indexing tells an agent *where* things are. Cartography tells it *what they mean*. An agent asked to "add retry logic to the webhook ingestion pipeline" benefits enormously from a `docs/flows/webhook-ingestion/` folder that explains the current retry semantics, links to the relevant components, defines the contracts involved, and provides a runbook for when retries fail. Without cartography, the agent must reconstruct this understanding from scattered code comments, variable names, and test fixtures — a slow, error-prone process that degrades with system complexity.
+Agent legibility is abstract until you see what it enables concretely. An agent asked to "add retry logic to the webhook ingestion pipeline" benefits enormously from a `docs/flows/webhook-ingestion/` folder that explains the current retry semantics, links to the relevant components, defines the contracts involved, and provides a runbook for when retries fail. Without cartography, the agent must reconstruct this understanding from scattered code comments, variable names, and test fixtures — a slow, error-prone process that degrades with system complexity.
 
-The documentation architecture also provides a natural specification surface. When an agent is asked to implement a new flow, the expected output is not just code but a populated `docs/flows/<flow-name>/` folder — README, sequence diagram, contracts, runbook — that proves the agent understood the system well enough to document it.
+The documentation architecture also provides a natural specification surface. When an agent is asked to implement a new flow, the expected output is not just code but a populated `docs/flows/<flow-name>/` folder — README, sequence diagram, contracts, runbook — that proves the agent understood the system well enough to document it. The cartography structure doubles as the acceptance criteria: if the agent cannot fill in the flow folder, it has not achieved legibility for the work it just produced.
 
 ## Implements
 
