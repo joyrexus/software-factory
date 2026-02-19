@@ -157,6 +157,19 @@ The article's richest contributions are architectural. The "map not manual" prin
 
 ---
 
+## Building an AI-Native Engineering Team
+
+**URL:** [developers.openai.com/codex/guides/build-ai-native-engineering-team](https://developers.openai.com/codex/guides/build-ai-native-engineering-team/)
+**Author:** OpenAI
+
+A companion to the [Harness Engineering](#harness-engineering) case study, this guide translates the lessons from that zero-manual-code product into concrete, phase-by-phase recommendations for teams adopting agentic development. The guide's organizing structure maps agent integration opportunities to each phase of the software development lifecycle — planning, design, build, testing, review, documentation, and deployment — with specific actions at each stage. During planning, agents connect to issue trackers to analyze feasibility, flag ambiguities, and estimate difficulty from codebase review. During build, teams establish AGENTS.md guidelines for multi-step tasks, configure agents to run tests and linters for iterative self-correction, and implement planning tools. Testing uses separate agent sessions to generate test cases, with coverage guidelines and examples of available test infrastructure. Review curates gold-standard PR examples as evaluation sets and measures review effectiveness through community feedback signals. Deployment connects agents to logging infrastructure via MCP with defined access scopes and reusable prompts for common operational queries.
+
+A consistent delegate/review/own pattern runs through every phase: agents handle the initial pass, engineers review for accuracy and alignment, and humans retain ownership of strategic decisions requiring judgment. The guide also contributes a quantitative capability benchmark — agents capable of roughly two hours of continuous work at moderate confidence as of mid-2025, with capability doubling approximately every seven months — useful as a planning variable for scoping delegated work.
+
+**Key contributions:** Phase-by-phase SDLC integration playbook, the delegate/review/own pattern as a universal adoption framework, capability doubling rate as a task-scoping heuristic, concrete starter actions for each development phase.
+
+---
+
 ## Structuring Work Agent-First
 
 **URL:** [x.com/levie/status/2019634114874470819](https://x.com/levie/status/2019634114874470819)
