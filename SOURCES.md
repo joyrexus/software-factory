@@ -12,6 +12,8 @@ StrongDM's Software Factory is the most radical implementation of the agentic de
 
 **Key contributions:** Named principles and techniques vocabulary, digital twin universe concept, scenario-based validation, the Attractor pipeline spec.
 
+**Tags:** [software-factory](GLOSSARY.md#software-factory) | [digital-twin-universe](GLOSSARY.md#digital-twin-universe) | [scenarios-not-tests](GLOSSARY.md#scenarios-not-tests) | [probabilistic-satisfaction](GLOSSARY.md#probabilistic-satisfaction) | [shift-work](GLOSSARY.md#shift-work) | [semport](GLOSSARY.md#semport)
+
 ---
 
 ## Compound Engineering
@@ -22,6 +24,8 @@ StrongDM's Software Factory is the most radical implementation of the agentic de
 Klaassen's framework identifies four steps for effective agentic development: plan, work, review, and compound. The first three are variations on known practices; the fourth — having agents summarize learnings into structured formats consulted by future planning phases — is the key innovation. Klaassen's central insight is that agent output quality depends more on engineering environment quality (codebase maturity, test coverage, CI/CD systems) than on agent sophistication. The guide describes five adoption stages (from manual development through parallel cloud execution) and reframes the engineer's role: "plans are the new code." Each unit of engineering work should make subsequent units easier, not harder.
 
 **Key contributions:** The "environment matters more than agent" insight, the Compound step as explicit practice, five-stage adoption model, the plan-first engineering paradigm.
+
+**Tags:** [compound-knowledge](GLOSSARY.md#compound-knowledge) | [agent-native-environment](GLOSSARY.md#agent-native-environment) | [seed-quality](GLOSSARY.md#seed-quality) | [feedback-loop](GLOSSARY.md#feedback-loop)
 
 ---
 
@@ -34,6 +38,8 @@ Factory.ai's framework starts from the observation that standard development pra
 
 **Key contributions:** The self-check heuristic for specifications, risk-tiered automation framework, agent-native environment design principles, recovery patterns.
 
+**Tags:** [specification-discipline](GLOSSARY.md#specification-discipline) | [risk-tiered-automation](GLOSSARY.md#risk-tiered-automation) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
+
 ---
 
 ## Using Linters to Direct Agents
@@ -44,6 +50,8 @@ Factory.ai's framework starts from the observation that standard development pra
 The argument for shifting linters from style enforcement to machine-enforced architectural guardrails that agents can verify and self-correct against. As development moves from "developers writing code with AI" to "developers orchestrating agents that build software," traditional guardrails — code review, conventions, tribal knowledge — become insufficient. Agents need machine-verifiable rules, not suggestions. The article identifies seven categories of lint rules for agent-native codebases: grep-ability (consistent formatting for searchability), glob-ability (predictable file organization), architectural boundaries (cross-layer import prevention), security and privacy (secret blocking, input validation), testability and coverage (colocated tests, network call restrictions), observability (structured logging, telemetry naming), and documentation signals (module-level docstrings, ADR links). A repeatable five-step lint development cycle — observe anti-patterns, codify the rule, surface violations, remediate at scale using parallel agents, enforce on CI and agent toolchains — turns every lesson into an executable constraint that compounds over time.
 
 **Key contributions:** Seven lint rule categories for agent-native codebases, the lint development cycle (observe → codify → surface → remediate → enforce), the distinction between AGENTS.md (explains "why") and linting (enforces "how"), grep-ability as the highest-priority starting category.
+
+**Tags:** [linters-as-guardrails](GLOSSARY.md#linters-as-guardrails) | [agent-legibility](GLOSSARY.md#agent-legibility) | [compound-knowledge](GLOSSARY.md#compound-knowledge)
 
 ---
 
@@ -56,6 +64,8 @@ Willison's assessment of the Software Factory concept provides essential externa
 
 **Key contributions:** The "dark factory" framing, the central validation question, cost model skepticism, independent critical assessment.
 
+**Tags:** [dark-factory](GLOSSARY.md#dark-factory) | [validation](GLOSSARY.md#validation) | [tokens-as-fuel](GLOSSARY.md#tokens-as-fuel)
+
 ---
 
 ## Agent Readiness Model (Blog Post)
@@ -66,6 +76,8 @@ Willison's assessment of the Software Factory concept provides essential externa
 Factory.ai's introduction of the Agent Readiness Model — eight technical pillars and five maturity levels for evaluating codebase readiness for autonomous development. The conceptual framework shifts the question from "how good is the agent?" to "how ready is the codebase?" and provides a structured scoring methodology for measuring and improving readiness across an organization.
 
 **Key contributions:** The readiness-over-capability framing, maturity level progression model, pillar-based scoring methodology.
+
+**Tags:** [agent-readiness-model](GLOSSARY.md#agent-readiness-model) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
 
 ---
 
@@ -78,6 +90,8 @@ Detailed reference for the Agent Readiness framework — level definitions, ten 
 
 **Key contributions:** Full pillar definitions and per-level criteria, gating rule specification, ten-pillar taxonomy (expanded from original nine).
 
+**Tags:** [agent-readiness-model](GLOSSARY.md#agent-readiness-model) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
+
 ---
 
 ## Making Codebases Agent Ready (Talk)
@@ -89,6 +103,8 @@ Conference talk presenting the Agent Readiness Model — the conceptual case for
 
 **Key contributions:** Practitioner-oriented presentation of the readiness model, real-world application examples, the environment-readiness gap thesis.
 
+**Tags:** [agent-readiness-model](GLOSSARY.md#agent-readiness-model) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
+
 ---
 
 ## OpenClaw Memory System
@@ -98,6 +114,8 @@ Conference talk presenting the Agent Readiness Model — the conceptual case for
 OpenClaw's agent memory architecture uses markdown files as the source of truth — daily session logs and a long-term `MEMORY.md` — with hybrid retrieval combining vector similarity and BM25 full-text search. The system implements an agentic flush mechanism where the agent itself decides when to persist working memory to disk. The "files are the source of truth" principle aligns with the [filesystem-as-memory](techniques/filesystem-as-memory.md) technique while extending it with retrieval infrastructure.
 
 **Key contributions:** File-first memory model, hybrid retrieval combining vector similarity with full-text search, the "files are the source of truth" principle.
+
+**Tags:** [filesystem-as-memory](GLOSSARY.md#filesystem-as-memory) | [compound-knowledge](GLOSSARY.md#compound-knowledge)
 
 ---
 
@@ -110,6 +128,8 @@ The case that RAG is being superseded by agentic search — agents with tool acc
 
 **Key contributions:** Chunking fragmentation critique, the "agents investigate, not retrieve" framing, architectural implications for context systems.
 
+**Tags:** [codebase-indexing](GLOSSARY.md#codebase-indexing) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
+
 ---
 
 ## Lessons from Building AI Agents
@@ -121,6 +141,8 @@ Observations from production agent systems on S3-first architecture — using S3
 
 **Key contributions:** S3 as authoritative store with database as query index pattern, filesystem tools as agent-native abstractions.
 
+**Tags:** [filesystem-as-memory](GLOSSARY.md#filesystem-as-memory) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
+
 ---
 
 ## CXDB
@@ -130,6 +152,8 @@ Observations from production agent systems on S3-first architecture — using S3
 StrongDM's open-source AI context store — the reference implementation of the [context store](components/context-store/README.md) concept described in this knowledge base. Implements a Turn DAG with blob CAS architecture: immutable turn nodes with parent references, BLAKE3 content-addressed blob storage with Zstd compression, branch-from-any-turn forking with O(1) cost, and a type registry with forward-compatible schema evolution. Includes a built-in React UI for visual debugging.
 
 **Key contributions:** Turn DAG data model, BLAKE3 content-addressed blob storage, O(1) context forking, type registry with forward-compatible schema evolution.
+
+**Tags:** [feedback-loop](GLOSSARY.md#feedback-loop) | [compound-knowledge](GLOSSARY.md#compound-knowledge)
 
 ---
 
@@ -141,6 +165,8 @@ StrongDM's open-source AI context store — the reference implementation of the 
 Brockman's post describes OpenAI's internal approach to retooling engineering teams for agentic software development. He reports a "step function improvement" since December 2025, with engineers shifting from using Codex for unit tests to having it write essentially all code plus operations and debugging. The post outlines six recommendations: try the tools and designate "agents captains," create skills and AGENTS.md files, inventory and expose internal tools via CLI or MCP, structure codebases to be agent-first, maintain code quality standards ("say no to slop"), and build basic infrastructure including observability and agent trajectory tracking. The framing — "not just a technical but also a deep cultural change" — reinforces that adoption depends on environment readiness rather than model capability.
 
 **Key contributions:** The "agents captain" role, AGENTS.md as living documentation, the "say no to slop" quality principle, infrastructure priorities (observability, trajectory tracking, tool management).
+
+**Tags:** [agent-native-environment](GLOSSARY.md#agent-native-environment) | [compound-knowledge](GLOSSARY.md#compound-knowledge) | [playbooks](GLOSSARY.md#playbooks)
 
 ---
 
@@ -155,6 +181,8 @@ The article's richest contributions are architectural. The "map not manual" prin
 
 **Key contributions:** Zero-manual-code product development as end-state evidence, repository-first agent legibility, capability doubling rate as planning variable, TDD-for-agents, continuous preventive refactoring, progressive disclosure for context management, application legibility (runtime observability for agents), entropy management through automated garbage collection, agent-to-agent review loop, the diagnostic question framework.
 
+**Tags:** [agent-legibility](GLOSSARY.md#agent-legibility) | [progressive-disclosure](GLOSSARY.md#progressive-disclosure) | [entropy-management](GLOSSARY.md#entropy-management) | [validation](GLOSSARY.md#validation) | [linters-as-guardrails](GLOSSARY.md#linters-as-guardrails)
+
 ---
 
 ## Building an AI-Native Engineering Team
@@ -168,6 +196,8 @@ A consistent delegate/review/own pattern runs through every phase: agents handle
 
 **Key contributions:** Phase-by-phase SDLC integration playbook, the delegate/review/own pattern as a universal adoption framework, capability doubling rate as a task-scoping heuristic, concrete starter actions for each development phase.
 
+**Tags:** [human-leverage](GLOSSARY.md#human-leverage) | [task-classification](GLOSSARY.md#task-classification) | [playbooks](GLOSSARY.md#playbooks) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
+
 ---
 
 ## Structuring Work Agent-First
@@ -179,6 +209,8 @@ Levie observes that human workflows rely on implicit context — knowledge of pr
 
 **Key contributions:** The implicit-vs-explicit context gap, documentation as competitive advantage for agent adoption, agentic coding as leading indicator for all knowledge work.
 
+**Tags:** [compound-knowledge](GLOSSARY.md#compound-knowledge) | [agent-native-environment](GLOSSARY.md#agent-native-environment) | [specification-discipline](GLOSSARY.md#specification-discipline)
+
 ---
 
 ## Code Search at Scale
@@ -188,6 +220,8 @@ Levie observes that human workflows rely on implicit context — knowledge of pr
 The case for organization-wide code search when growing beyond a single repository. As codebases expand across hundreds or thousands of repositories, developers face a knowledge discovery bottleneck — custom patterns, subtle overrides, and cross-service dependencies remain invisible to tools scoped to local workspaces. Security and compliance scenarios demand exhaustive enumeration: when a vulnerability is disclosed, finding a representative sample of affected code is insufficient — every instance across every repository must be identified. The post argues that AI coding tools create an amplification paradox: agents that produce code faster generate more surface area for cross-service breakage, making organization-wide search more valuable, not less.
 
 **Key contributions:** The knowledge discovery bottleneck framing, exhaustive enumeration requirement for security and compliance, the AI-amplification paradox.
+
+**Tags:** [codebase-indexing](GLOSSARY.md#codebase-indexing) | [agent-legibility](GLOSSARY.md#agent-legibility)
 
 ---
 
@@ -200,6 +234,8 @@ The argument that background agents changed everything: "agent native engineerin
 
 **Key contributions:** Three-level task classification, organizational transformation effects, the delegation-first architecture projection, the "agent native or cease to exist" framing.
 
+**Tags:** [task-classification](GLOSSARY.md#task-classification) | [cloud-agents](GLOSSARY.md#cloud-agents) | [shift-work](GLOSSARY.md#shift-work)
+
 ---
 
 ## The Cloud Agent Thesis
@@ -210,6 +246,8 @@ The argument that background agents changed everything: "agent native engineerin
 Cloud agents as a distinct category from local agents — running on remote infrastructure with their own shell, IDE, and browser, accessible asynchronously through Slack, Jira, CLI, or API. The key distinctions from local tools: accessibility (non-engineers can invoke agents without Git knowledge or local environments), cross-codebase capability (agents configured against every organizational repository), async parallelism (ten tasks kicked off simultaneously yielding ten PRs), and org-wide scaling through playbooks — reusable workflows encoding expertise that anyone can trigger. The organizational transformation requirements are explicit: strategic project selection, knowledge codification, adoption analytics, governance frameworks, and workflow redesign. The pattern also demands a complementary review agent to handle the volume of PRs that parallel agent sessions generate.
 
 **Key contributions:** Cloud-vs-local agent taxonomy, playbooks as reusable expertise, the review agent corollary, organizational transformation prerequisites.
+
+**Tags:** [cloud-agents](GLOSSARY.md#cloud-agents) | [playbooks](GLOSSARY.md#playbooks) | [risk-tiered-automation](GLOSSARY.md#risk-tiered-automation)
 
 ---
 
@@ -222,6 +260,8 @@ A practitioner account of Cognition using their own coding agent as an autonomou
 
 **Key contributions:** Structured playbook specification patterns, event-driven programmatic agent triggering, session-to-session compounding through analytics, review agent as organized-diff system, non-engineering agent access extending to organizational analytics.
 
+**Tags:** [playbooks](GLOSSARY.md#playbooks) | [cloud-agents](GLOSSARY.md#cloud-agents) | [compound-knowledge](GLOSSARY.md#compound-knowledge) | [feedback-loop](GLOSSARY.md#feedback-loop)
+
 ---
 
 ## Why We Built Our Own Background Agent
@@ -232,6 +272,8 @@ A practitioner account of Cognition using their own coding agent as an autonomou
 Ramp's in-house background agent, Inspect, writes code and verifies its work through integrated tools and context. The rationale: "it only has to work on your code" — owning the tooling enables capabilities that off-the-shelf tools cannot match. Infrastructure runs on sandboxed VMs on Modal with images rebuilt every 30 minutes, providing the complete local engineering toolkit (Vite, Postgres, Temporal). The context layer is wired into Sentry, Datadog, LaunchDarkly, Braintrust, GitHub, Slack, and Buildkite. Within months of deployment, approximately 30% of all pull requests merged to frontend and backend repositories were written by Inspect, achieved through organic adoption rather than mandated usage. Multiplayer sessions support concurrent collaboration with attribution per contributor, enabling non-engineers to participate in engineering work.
 
 **Key contributions:** The "only has to work on your code" rationale for building in-house, 30% agent-written PR rate through organic adoption, multiplayer collaboration sessions.
+
+**Tags:** [cloud-agents](GLOSSARY.md#cloud-agents) | [agent-native-environment](GLOSSARY.md#agent-native-environment) | [validation](GLOSSARY.md#validation)
 
 ---
 
@@ -244,6 +286,8 @@ Stripe's homegrown coding agents produce more than 1,000 pull requests merged we
 
 **Key contributions:** 1,000+ weekly merged PRs at scale, Toolshed as centralized MCP infrastructure, deterministic context hydration, shift-left verification with selective testing from 3M+ tests.
 
+**Tags:** [codebase-indexing](GLOSSARY.md#codebase-indexing) | [linters-as-guardrails](GLOSSARY.md#linters-as-guardrails) | [validation](GLOSSARY.md#validation) | [cloud-agents](GLOSSARY.md#cloud-agents)
+
 ---
 
 ## Advanced Context Engineering for Coding Agents
@@ -254,6 +298,8 @@ Stripe's homegrown coding agents produce more than 1,000 pull requests merged we
 The argument that AI coding fails in production codebases not due to model limitations but due to poor context management. Introduces "human leverage" — errors in research cascade into thousands of bad lines of code, errors in plans cascade into hundreds, so human attention should concentrate on the highest-leverage stages (research validation and plan review) rather than code review. Reports shipping 35K LOC in 7 hours on an unfamiliar Rust project using a research→plan→implement workflow. Concludes that coding agents will be commoditized but "the hard part will be the team and workflow transformation" — organizations must drive the culture/process/tech shift to an AI-first coding world. Reinforces the spec-first paradigm: specs should be treated as "the real code," not discarded after agent compilation.
 
 **Key contributions:** The human leverage framework (research > plans > code in error cascade potential), the brownfield-vs-greenfield context gap, spec-first agentic workflows as organizational imperative, the team/workflow transformation thesis.
+
+**Tags:** [human-leverage](GLOSSARY.md#human-leverage) | [seed-quality](GLOSSARY.md#seed-quality) | [specification-discipline](GLOSSARY.md#specification-discipline)
 
 ---
 
@@ -266,6 +312,8 @@ Conference talk at AI Engineer Summit presenting the context engineering framewo
 
 **Key contributions:** Practitioner-oriented presentation of the context engineering framework, live demonstration of the research→plan→implement workflow.
 
+**Tags:** [human-leverage](GLOSSARY.md#human-leverage) | [seed-quality](GLOSSARY.md#seed-quality)
+
 ---
 
 ## Cross-Repository Code Navigation
@@ -275,6 +323,8 @@ Conference talk at AI Engineer Summit presenting the context engineering framewo
 The distinction between text-based search and semantic code navigation. Text search finds character patterns; semantic navigation understands relationships between code elements — resolving symbols to their actual definitions across repository boundaries, tracking which specific implementation version calling code depends on, and disambiguating identically-named functions across dozens of repositories. Language-agnostic indexing formats (such as SCIP) capture compiler-accurate semantic information — symbol definitions, external references, and package metadata — enabling go-to-definition and find-references that work across repository boundaries with version awareness.
 
 **Key contributions:** Text search vs. semantic navigation distinction, cross-repository symbol resolution, version-aware dependency tracking.
+
+**Tags:** [codebase-indexing](GLOSSARY.md#codebase-indexing)
 
 ---
 
@@ -286,6 +336,8 @@ Claude Code's plugin marketplace system as a reference implementation for intern
 
 **Key contributions:** Marketplace-as-catalog model for agent tool distribution, scope-based installation (user/project/local), team-level plugin configuration for automatic onboarding, plugin categories spanning code intelligence, external integrations, and development workflows.
 
+**Tags:** [playbooks](GLOSSARY.md#playbooks) | [progressive-disclosure](GLOSSARY.md#progressive-disclosure) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
+
 ---
 
 ## The Complete Guide to Building Skills for Claude
@@ -296,3 +348,5 @@ Claude Code's plugin marketplace system as a reference implementation for intern
 Anthropic's official guide to designing and distributing skills — the atomic unit of capability in the plugin marketplace model. A skill is a folder containing a `SKILL.md` file plus optional scripts, references, and assets, teaching an agent how to handle specific tasks consistently. The guide's most valuable contribution is the progressive disclosure architecture: YAML frontmatter is always loaded (triggering and routing), full instructions load only when relevant, and linked reference files are accessed on demand — minimizing token usage while maintaining specialized expertise. Five common skill patterns are identified: sequential workflow orchestration, multi-MCP coordination, iterative refinement through validation cycles, context-aware tool selection, and domain-specific intelligence embedding specialized knowledge beyond tool access. The guide provides concrete success metrics (90% triggering accuracy on relevant queries, workflow completion in expected tool calls, zero failed API calls) and emphasizes composability — skills should work alongside each other rather than assuming exclusive capability access.
 
 **Key contributions:** Progressive disclosure as skill architecture (frontmatter → instructions → references), five skill design patterns, composability as a design constraint, quantitative success metrics for skill evaluation.
+
+**Tags:** [progressive-disclosure](GLOSSARY.md#progressive-disclosure) | [playbooks](GLOSSARY.md#playbooks) | [compound-knowledge](GLOSSARY.md#compound-knowledge)

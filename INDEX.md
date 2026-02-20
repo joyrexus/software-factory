@@ -9,6 +9,7 @@ software-factory/
 ├── README.md                          — The software factory thesis
 ├── CLAUDE.md                          — Project instructions
 ├── INDEX.md                           — Master table of contents (this file)
+├── GLOSSARY.md                        — Cross-cutting vocabulary (30 terms)
 ├── SOURCES.md                         — Annotated bibliography
 │
 ├── meta/                              — Context, paradigm, and commentary
@@ -138,4 +139,4 @@ Known implementations applying these ideas.
 
 ---
 
-**Reference:** [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions
+**Reference:** [GLOSSARY.md](GLOSSARY.md) — Cross-cutting vocabulary | [SOURCES.md](SOURCES.md) — Annotated bibliography | [CLAUDE.md](CLAUDE.md) — Project conventions

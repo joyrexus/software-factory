@@ -1,6 +1,6 @@
 # Glossary
 
-Key terms used across the Attractor specs and Software Factory documentation.
+Key terms used across the Attractor specs and Software Factory documentation. For cross-cutting terms (principles, techniques, and concepts that span the full knowledge base), see the [project-wide glossary](../../../GLOSSARY.md).
 
 ## A
 

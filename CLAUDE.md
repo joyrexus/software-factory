@@ -10,7 +10,8 @@ See [INDEX.md](INDEX.md) for the full project layout and master table of content
 
 - **[INDEX.md](INDEX.md)** — Master table of contents (every file reachable from here)
 - **[README.md](README.md)** — The Software Factory Thesis
-- **[SOURCES.md](SOURCES.md)** — Annotated bibliography
+- **[GLOSSARY.md](GLOSSARY.md)** — Cross-cutting vocabulary (30 terms with anchor IDs for linking)
+- **[SOURCES.md](SOURCES.md)** — Annotated bibliography (each source tagged with glossary terms)
 - **[CLAUDE.md](CLAUDE.md)** — Project instructions (this file)
 - **[meta/](meta/README.md)** — Core context for the thesis: paradigm, open questions, and community commentary (README serves as the primary contextual framing, not just navigation)
 - **[principles/](principles/README.md)** — Seven principles behind the concept
@@ -78,7 +79,7 @@ When modifying any file in this project, you must:
 
 4. **Maintain the root INDEX.** The root `INDEX.md` is the authoritative table of contents. Any structural change (new sections, renamed sections, significant scope changes to a section) must be reflected there.
 
-5. **Preserve terminology.** Use terms consistently as defined in [components/attractor/05-reference/glossary.md](components/attractor/05-reference/glossary.md). If you introduce a new term, add it to the glossary.
+5. **Preserve terminology.** Use terms consistently as defined in [GLOSSARY.md](GLOSSARY.md) (cross-cutting terms) and [components/attractor/05-reference/glossary.md](components/attractor/05-reference/glossary.md) (Attractor-specific terms). If you introduce a new cross-cutting term, add it to GLOSSARY.md; if it's Attractor-specific, add it to the Attractor glossary.
 
 6. **No orphaned files.** Every markdown file must be reachable from the root INDEX through the directory README chain. After any structural change, verify this.
 
