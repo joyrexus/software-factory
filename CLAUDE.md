@@ -16,8 +16,7 @@ See [INDEX.md](INDEX.md) for the full project layout and master table of content
 - **[meta/](meta/README.md)** — Core context for the thesis: paradigm, open questions, and community commentary (README serves as the primary contextual framing, not just navigation)
 - **[principles/](principles/README.md)** — Seven principles behind the concept
 - **[techniques/](techniques/README.md)** — Nine repeatable patterns
-- **[components/](components/README.md)** — Infrastructure deep-dives (Attractor, Context Store, Agent Identity)
-- **[implementations/](implementations/README.md)** — Known implementations
+- **[components/](components/README.md)** — Infrastructure deep-dives (Attractor, Context Store, Agent Identity) and known implementations (Kilroy)
 
 Sub-level directories use `README.md` files for navigable overviews, rendered automatically by GitHub when browsing.
 

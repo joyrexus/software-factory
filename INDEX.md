@@ -61,13 +61,10 @@ software-factory/
 │   ├── context-store/                 — Persistent structured memory for agents
 │   │   ├── README.md
 │   │   └── architecture.md
-│   └── agent-identity/                — Auth/authz for mixed human-agent workforce
-│       ├── README.md
-│       └── architecture.md
-│
-└── implementations/                   — Known implementations
-    ├── README.md
-    └── kilroy.md                      — Local-first software factory CLI
+│   ├── agent-identity/                — Auth/authz for mixed human-agent workforce
+│   │   ├── README.md
+│   │   └── architecture.md
+│   └── kilroy.md                      — Local-first software factory CLI (Attractor implementation)
 ```
 
 ---
@@ -121,21 +118,14 @@ Repeatable patterns to evaluate and adopt, clustered by domain: environment, wor
 
 ## [Components](components/README.md)
 
-Infrastructure a software factory would need. Three architectural roles the concept implies.
+Infrastructure a software factory would need. Three architectural roles the concept implies, plus a known implementation.
 
-| Directory | Description |
-|-----------|-------------|
+| Entry | Description |
+|-------|-------------|
 | [attractor/](components/attractor/README.md) | Pipeline orchestrator — DOT-based graph engine for multi-agent workflows (56-file deep-dive) |
 | [context-store/](components/context-store/README.md) | Persistent structured memory for agents — DAG structure, deduplication, query patterns |
 | [agent-identity/](components/agent-identity/README.md) | Auth/authz for mixed human-agent workforce — federated identity, audit trails |
-
-## [Implementations](implementations/README.md)
-
-Known implementations applying these ideas.
-
-| File | Description |
-|------|-------------|
-| [kilroy.md](implementations/kilroy.md) | Dan Shapiro's Kilroy — local-first software factory CLI |
+| [kilroy.md](components/kilroy.md) | Dan Shapiro's Kilroy — local-first software factory CLI implementing the Attractor spec |
 
 ---
 
