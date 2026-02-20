@@ -133,6 +133,8 @@ The model works at three scopes: **user** (personal, across all projects), **pro
 
 Capability categories span code intelligence (LSP integration for type-aware navigation), external integrations (pre-configured MCP servers for services like GitHub, Jira, Sentry, and Slack), and development workflows (commit automation, PR review, agent SDK tooling). The organizational value lies in encoding team-specific workflows, conventions, and tool integrations as distributable, versionable packages — transforming implicit engineering practices into explicit, shareable infrastructure.
 
+Designing effective skills requires deliberate architecture. Anthropic's [skill builder guide](../../../SOURCES.md#the-complete-guide-to-building-skills-for-claude) describes a progressive disclosure pattern — YAML frontmatter is always loaded for triggering and routing, full instructions load only when the skill is relevant, and linked reference files are accessed on demand — that minimizes token usage while maintaining specialized expertise. Skills should be composable (working alongside other skills rather than assuming exclusive access) and follow one of five common patterns: sequential workflow orchestration, multi-MCP coordination, iterative refinement through validation cycles, context-aware tool selection, or domain-specific intelligence. The guide provides concrete success metrics — 90% triggering accuracy, workflow completion in expected tool calls, zero failed API calls — that give teams a benchmark for evaluating whether their packaged capabilities actually work reliably when distributed across the organization.
+
 ---
 
 **See also:**
