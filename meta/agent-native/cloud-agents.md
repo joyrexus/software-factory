@@ -2,6 +2,8 @@
 
 *From pair programming to delegation.*
 
+**Contents:** [The Shift](#the-shift) | [What Enables Delegation](#what-enables-delegation) | [Sandboxed Execution Environments](#sandboxed-execution-environments) | [Infrastructure Requirements](#infrastructure-requirements) | [Task Classification](#task-classification) | [Organizational Effects](#organizational-effects) | [The Road Ahead](#the-road-ahead) | [Key Takeaways](#key-takeaways)
+
 ## The Shift
 
 Background and cloud agents represent a fundamentally different interaction model from local coding tools. Where tools like Cursor and Claude Code operate as synchronous pair programmers — sharing the developer's environment, requiring real-time steering — background agents accept task descriptions and deliver completed pull requests asynchronously. As [Dabit](../../SOURCES.md#the-cloud-agent-thesis) frames it, "cloud agents are a different category from local agents, and the differences compound."
@@ -10,9 +12,11 @@ The shift is from collaboration to delegation. Engineers describe tasks, kick of
 
 The delegation model extends beyond human-initiated requests. REST APIs enable programmatic session triggering — crash logs can automatically spawn investigation PRs, bug reports trigger reproduction sessions, and failed deployments initiate analysis — shifting agents from tools humans invoke to services systems invoke ([Dabit](../../SOURCES.md#how-cognition-uses-devin-to-build-devin)).
 
-## What Makes Cloud Agents Effective
+Delegation is the mechanism through which the [agent-native environment](../../principles/agent-native-environment.md) principle becomes operationally real. The rest of this document explains what enables it, what it produces, and what organizations need to do.
 
-The shift from collaboration to delegation only works if the agents receiving delegated work can actually complete it. For cloud agents to be effective, four capabilities matter:
+## What Enables Delegation
+
+The shift from collaboration to delegation only works if the agents receiving delegated work can actually complete it. Four capabilities matter:
 
 - **They need to understand how work actually gets done across systems.** An agent that can write code but cannot navigate the surrounding context — ticket trackers, feature flags, deployment pipelines, monitoring dashboards — is operating with a fraction of the information a human engineer has. The rich context layers that [Ramp](../../SOURCES.md#why-we-built-our-own-background-agent) and [Stripe](../../SOURCES.md#minions-stripes-one-shot-coding-agents) built (Sentry, Datadog, LaunchDarkly, Sourcegraph, 400+ MCP tools) exist precisely because writing code is only part of doing engineering work. The goal is not merely connecting to individual tools but creating a semantic layer — a unified model of how information flows, where decisions happen, and what outcomes matter — that all agents can reference.
 
@@ -22,46 +26,7 @@ The shift from collaboration to delegation only works if the agents receiving de
 
 - **They need an identity, permissions, and boundaries teams can trust.** Agents operating autonomously in production codebases must have scoped permissions, audit trails, and governance frameworks that make their actions visible and controllable. [Dabit](../../SOURCES.md#the-cloud-agent-thesis) identifies governance frameworks as an explicit organizational transformation requirement — without them, scaling agent adoption means scaling unaccountable change.
 
-The practitioner evidence reinforces that these capabilities, not model improvements, are the primary drivers of agent effectiveness:
-
-- **Complete development environments** that mirror what engineers have — sandboxed VMs with full toolchains, databases, and CI access — enabling end-to-end verifiability without human intervention
-- **Rich context layers** giving agents access to telemetry, codebase search, internal APIs, architectural docs, feature flags, and specifications — the organizational knowledge that makes code meaningful
-- Organizations that invest in both report agents producing 30% or more of merged pull requests within months; those that deploy agents without this infrastructure discover that model capability alone is insufficient
-- **End-to-end delegation without manually-written code** — at least one team reports building a complete product (~1 million lines across 1,500 PRs) over five months with zero manually-written code and a team of three engineers, demonstrating that full delegation is achievable when the repository is optimized for agent legibility and architectural invariants are mechanically enforced ([Harness Engineering](../../SOURCES.md#harness-engineering))
-
-## Task Classification
-
-The [General Intelligence Company](../../SOURCES.md#agent-native-engineering) introduces a three-level task classification that maps the delegation model to engineering reality:
-
-1. **Simple (one-shottable)** — well-written prompts yield agent-coded solutions ready for merge. "Change the corner radius on this button" requires no feedback cycle.
-2. **Manageable** — background agents solve these with feedback cycles, typically completed within a day. The agent produces a draft, receives comments, and iterates.
-3. **Complex** — engineer-managed with synchronous coding agents, rarely exceeding one week. Only these tasks require the traditional model of a human actively coding.
-
-The implication is that only complex tasks require synchronous human involvement. As environments mature — better test suites, richer context, more robust rulesets — tasks migrate downward in the classification. Problems that were once complex become manageable; manageable tasks become simple. The ratio of delegatable to hands-on work shifts continuously in favor of delegation.
-
-## Organizational Effects
-
-Both [Pignanelli](../../SOURCES.md#agent-native-engineering) and [Dabit](../../SOURCES.md#the-cloud-agent-thesis) describe organizational effects that follow from the delegation model:
-
-**Engineers shift from coding to management and ideation.** When background agents handle the bulk of implementation, engineers spend more time decomposing problems, reviewing output, and designing systems. The General Intelligence Company reports that code review becomes a larger share of workflow than coding itself. Managers evolve into staff engineers; engineers function as both PM and technical lead for their projects.
-
-**Non-engineers gain access to engineering workflows.** Cloud agents accessible through Slack or web interfaces allow PMs, designers, support staff, and operations teams to initiate engineering work without Git knowledge, local environments, or command-line experience. Dabit observes that this eliminates friction in fixing documentation, bugs, and small features. The scope extends beyond code: dedicated data analyst agents allow non-engineers to answer metrics and operational questions through natural language, moving agent-mediated access from engineering workflows to organizational analytics ([Dabit](../../SOURCES.md#how-cognition-uses-devin-to-build-devin)).
-
-**Expertise becomes encoded and reusable.** Dabit's concept of *playbooks* — reusable workflows that anyone can trigger — transforms institutional knowledge from implicit to explicit. A senior engineer's approach to a migration can be captured as a playbook that junior engineers or even non-engineers can invoke against any repository. Effective playbooks include outcome definitions, required steps, postconditions, corrections to default agent behavior, and forbidden actions ([Dabit](../../SOURCES.md#how-cognition-uses-devin-to-build-devin)), mapping directly to the [specification discipline](../../techniques/specification-discipline.md) — each playbook is a specification in the self-check sense: the agent knows where to begin reading and what artifact proves completion. Plans themselves become first-class versioned artifacts — execution plans with progress and decision logs checked into the repository alongside active work, completed work, and known technical debt, allowing agents to operate without relying on external context ([Harness Engineering](../../SOURCES.md#harness-engineering)).
-
-**Agent performance compounds through structured feedback.** Session analytics that identify recurring issues and suggest improved prompts create continuous improvement loops — insights from one session inform the next ([Dabit](../../SOURCES.md#how-cognition-uses-devin-to-build-devin)). This is a concrete implementation of the [Compound Knowledge](../../principles/compound-knowledge.md) principle applied to the delegation workflow itself.
-
-**Review becomes the bottleneck.** More parallel agent sessions produce more PRs, creating a scaling challenge. Pignanelli recommends replacing the traditional two-engineer review requirement with code review bots, agentic pentesting, and AI SRE staging oversight. Dabit argues that the cloud agent pattern demands a complementary review agent as a corollary. The most mature implementations push further: agent-to-agent review loops where agents self-review locally, request additional agent reviews, respond to feedback, and iterate until all reviewers are satisfied — humans may review but are not required to ([Harness Engineering](../../SOURCES.md#harness-engineering)). High agent throughput also shifts the merge philosophy: minimal blocking merge gates, short-lived PRs, and test flakes addressed with follow-up runs rather than blocking progress — corrections become cheap when agents can produce fixes faster than humans can review them ([Harness Engineering](../../SOURCES.md#harness-engineering)).
-
-## Infrastructure Requirements
-
-Despite approaching the problem from different angles, both authors converge on the same infrastructure requirements for effective background agents:
-
-- **Sandboxed execution environments** — isolated VMs or containers with full development toolchains, separated from production
-- **Integration surfaces** — connections to Slack, Jira, GitHub, Sentry, Datadog, and other tools the organization already uses, so agents can gather context and report results through existing channels
-- **Robust rulesets and comprehensive tests** — AGENTS.md files, linter configurations, and test suites that serve as the agent's quality guardrails, replacing the implicit standards a human engineer would know
-- **Automated code review** — review agents or bots that can handle the volume of PRs that parallel agent sessions generate, preventing human reviewers from becoming the bottleneck
-- **Agent-legible technology choices** — technologies described as "boring" tend to be easier for agents to model due to composability, API stability, and representation in training data; in some cases it is cheaper to reimplement functionality than to work around opaque upstream behavior from external libraries ([Harness Engineering](../../SOURCES.md#harness-engineering))
+These four capabilities define the infrastructure agenda. The sections that follow explore the two most critical pieces — sandboxed execution environments and the broader infrastructure checklist — in detail.
 
 ## Sandboxed Execution Environments
 
@@ -101,11 +66,66 @@ Stripe's [Part 2 infrastructure writeup](../../SOURCES.md#minions-stripes-coding
 
 This double-dividend effect reinforces the [agent-native environment](../../principles/agent-native-environment.md) principle's core claim: the engineering environment matters more than agent sophistication. Organizations that invest in infrastructure quality create compounding returns — every improvement benefits an expanding population of both human and agent consumers.
 
-## Future Projections
+## Infrastructure Requirements
 
-The General Intelligence Company projects that by end of 2026: IDEs as currently known will disappear, human code review will be eliminated in favor of reviewing product and infrastructure changes, all engineers will become product managers, and delegation-first architecture will become the default. Pignanelli's assertion — "every organization must become agent native, or they will cease to exist" — frames this not as an optimization but as an existential imperative. Quantitative benchmarks give this trajectory a concrete shape: as of mid-2025, agents demonstrate roughly two hours of continuous autonomous work at moderate confidence, with capability doubling approximately every seven months ([Harness Engineering](../../SOURCES.md#harness-engineering)). If the doubling rate holds, tasks currently classified as complex migrate mechanically toward manageable within predictable timeframes — making the task classification above a snapshot, not a stable taxonomy.
+Beyond sandboxed execution environments, both [Pignanelli](../../SOURCES.md#agent-native-engineering) and [Dabit](../../SOURCES.md#the-cloud-agent-thesis) converge on additional infrastructure requirements for effective background agents:
+
+- **Integration surfaces** — connections to Slack, Jira, GitHub, Sentry, Datadog, and other tools the organization already uses, so agents can gather context and report results through existing channels
+- **Robust rulesets and comprehensive tests** — AGENTS.md files, linter configurations, and test suites that serve as the agent's quality guardrails, replacing the implicit standards a human engineer would know
+- **Automated code review** — review agents or bots that can handle the volume of PRs that parallel agent sessions generate, preventing human reviewers from becoming the bottleneck
+- **Agent-legible technology choices** — technologies described as "boring" tend to be easier for agents to model due to composability, API stability, and representation in training data; in some cases it is cheaper to reimplement functionality than to work around opaque upstream behavior from external libraries ([Harness Engineering](../../SOURCES.md#harness-engineering))
+
+## Task Classification
+
+The [General Intelligence Company](../../SOURCES.md#agent-native-engineering) introduces a three-level task classification that maps the delegation model to engineering reality:
+
+1. **Simple (one-shottable)** — well-written prompts yield agent-coded solutions ready for merge. "Change the corner radius on this button" requires no feedback cycle.
+2. **Manageable** — background agents solve these with feedback cycles, typically completed within a day. The agent produces a draft, receives comments, and iterates.
+3. **Complex** — engineer-managed with synchronous coding agents, rarely exceeding one week. Only these tasks require the traditional model of a human actively coding.
+
+The implication is that only complex tasks require synchronous human involvement. As environments mature — better test suites, richer context, more robust rulesets — tasks migrate downward in the classification. Problems that were once complex become manageable; manageable tasks become simple. The ratio of delegatable to hands-on work shifts continuously in favor of delegation.
+
+## Organizational Effects
+
+Both [Pignanelli](../../SOURCES.md#agent-native-engineering) and [Dabit](../../SOURCES.md#the-cloud-agent-thesis) describe organizational effects that follow from the delegation model:
+
+**Engineers shift from coding to management and ideation.** When background agents handle the bulk of implementation, engineers spend more time decomposing problems, reviewing output, and designing systems. The General Intelligence Company reports that code review becomes a larger share of workflow than coding itself. Managers evolve into staff engineers; engineers function as both PM and technical lead for their projects.
+
+**Non-engineers gain access to engineering workflows.** Cloud agents accessible through Slack or web interfaces allow PMs, designers, support staff, and operations teams to initiate engineering work without Git knowledge, local environments, or command-line experience. Dabit observes that this eliminates friction in fixing documentation, bugs, and small features. The scope extends beyond code: dedicated data analyst agents allow non-engineers to answer metrics and operational questions through natural language, moving agent-mediated access from engineering workflows to organizational analytics ([Dabit](../../SOURCES.md#how-cognition-uses-devin-to-build-devin)).
+
+**Expertise becomes encoded and reusable.** Dabit's concept of *playbooks* — reusable workflows that anyone can trigger — transforms institutional knowledge from implicit to explicit. A senior engineer's approach to a migration can be captured as a playbook that junior engineers or even non-engineers can invoke against any repository. Effective playbooks include outcome definitions, required steps, postconditions, corrections to default agent behavior, and forbidden actions ([Dabit](../../SOURCES.md#how-cognition-uses-devin-to-build-devin)), mapping directly to the [specification discipline](../../techniques/specification-discipline.md) — each playbook is a specification in the self-check sense: the agent knows where to begin reading and what artifact proves completion. Plans themselves become first-class versioned artifacts — execution plans with progress and decision logs checked into the repository alongside active work, completed work, and known technical debt, allowing agents to operate without relying on external context ([Harness Engineering](../../SOURCES.md#harness-engineering)).
+
+**Agent performance compounds through structured feedback.** Session analytics that identify recurring issues and suggest improved prompts create continuous improvement loops — insights from one session inform the next ([Dabit](../../SOURCES.md#how-cognition-uses-devin-to-build-devin)). This is a concrete implementation of the [Compound Knowledge](../../principles/compound-knowledge.md) principle applied to the delegation workflow itself.
+
+**Review becomes the bottleneck.** More parallel agent sessions produce more PRs, creating a scaling challenge. Pignanelli recommends replacing the traditional two-engineer review requirement with code review bots, agentic pentesting, and AI SRE staging oversight. Dabit argues that the cloud agent pattern demands a complementary review agent as a corollary. The most mature implementations push further: agent-to-agent review loops where agents self-review locally, request additional agent reviews, respond to feedback, and iterate until all reviewers are satisfied — humans may review but are not required to ([Harness Engineering](../../SOURCES.md#harness-engineering)). High agent throughput also shifts the merge philosophy: minimal blocking merge gates, short-lived PRs, and test flakes addressed with follow-up runs rather than blocking progress — corrections become cheap when agents can produce fixes faster than humans can review them ([Harness Engineering](../../SOURCES.md#harness-engineering)).
+
+## The Road Ahead
+
+The delegation model's trajectory is shaped by capability growth. The General Intelligence Company projects that by end of 2026: IDEs as currently known will disappear, human code review will be eliminated in favor of reviewing product and infrastructure changes, all engineers will become product managers, and delegation-first architecture will become the default. Pignanelli's assertion — "every organization must become agent native, or they will cease to exist" — frames this not as an optimization but as an existential imperative. Quantitative benchmarks give this trajectory a concrete shape: as of mid-2025, agents demonstrate roughly two hours of continuous autonomous work at moderate confidence, with capability doubling approximately every seven months ([Harness Engineering](../../SOURCES.md#harness-engineering)). If the doubling rate holds, tasks currently classified as complex migrate mechanically toward manageable within predictable timeframes — making the task classification above a snapshot, not a stable taxonomy.
 
 Whether or not this timeline proves accurate, the direction is consistent with [Klaassen's](../../SOURCES.md#compound-engineering) original insight: as environments mature, agent capability compounds, and the center of gravity shifts from implementation to design.
+
+## Key Takeaways
+
+The argument above reduces to a practical sequence: assess the environment, build the infrastructure, then shift how the organization works.
+
+**Ready**
+
+- **Assess your environment, not your agents.** Use the [Agent Readiness Model](maturity-model.md) to score your codebase across the ten pillars before selecting tooling. The evidence consistently shows that environment quality — not model sophistication — determines agent effectiveness.
+- **Invest in developer infrastructure knowing it pays double dividends.** What's good for humans is good for agents. Faster builds, better tooling, more reliable test suites, and smoother onboarding compound across an expanding population of both human and agent consumers.
+
+**Implement**
+
+- **Build or provision complete sandboxed environments.** Agents need the same toolchains engineers use, not stripped-down containers. Pre-warming and image freshness strategies determine whether parallel delegation is practical or theoretical.
+- **Wire agents into your existing context layer.** Telemetry, feature flags, codebase search, CI/CD, and internal APIs give agents organizational knowledge, not just code. The goal is a semantic layer all agents can reference.
+- **Start with simple, one-shottable tasks and let adoption be organic.** Mandate slows adoption; demonstrated value accelerates it. As the environment matures, tasks migrate downward in complexity — expanding the delegation surface naturally.
+
+**Leverage**
+
+- **Encode expertise as playbooks and invest in automated review.** The delegation model's scaling bottleneck is review, not implementation. Playbooks make institutional knowledge durable and invocable; review automation prevents human reviewers from gating throughput.
+- **Treat every agent failure as a signal about the environment, not the model.** The diagnostic question is "what capability is missing?" — and the answer compounds, because fixing the environment improves every future agent session.
+
+For a phased adoption approach with sequencing and dependencies, see the [game plan](../game-plan.md). For the full readiness framework, see the [Agent Readiness Model](maturity-model.md).
 
 ---
 
@@ -113,6 +133,7 @@ Whether or not this timeline proves accurate, the direction is consistent with [
 - [Agent-Native Environment](../../principles/agent-native-environment.md) — the foundational principle
 - [Building In-House: Ramp and Stripe](case-studies.md) — concrete implementations of the background agent model
 - [Agent Readiness Model](maturity-model.md) — maturity framework for evaluating environment readiness
+- [A Game Plan](../game-plan.md) — phased approach to agent-native adoption
 - [Shift Work](../../techniques/shift-work.md) — interactive vs. non-interactive agent modes
 - [Agent-Native Practices](practices/README.md) — concrete practices catalog: linters, refactors, review at scale, and more
 - [Progressive Disclosure](../../techniques/progressive-disclosure.md) — layered context management for agent consumption
