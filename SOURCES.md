@@ -350,3 +350,55 @@ Anthropic's official guide to designing and distributing skills — the atomic u
 **Key contributions:** Progressive disclosure as skill architecture (frontmatter → instructions → references), five skill design patterns, composability as a design constraint, quantitative success metrics for skill evaluation.
 
 **Tags:** [progressive-disclosure](GLOSSARY.md#progressive-disclosure) | [playbooks](GLOSSARY.md#playbooks) | [compound-knowledge](GLOSSARY.md#compound-knowledge)
+
+---
+
+## The StrongDM Software Factory (Blog Post)
+
+**URL:** [strongdm.com/blog/the-strongdm-software-factory-building-software-with-ai](https://www.strongdm.com/blog/the-strongdm-software-factory-building-software-with-ai)
+**Author:** StrongDM
+
+StrongDM's public-facing narrative of the software factory concept, distilling the technical site into a business case. The central claim: "Humans define intent: what the system should do, the scenarios it needs to handle, the constraints that matter. After that, the agents take it from there." The post frames the core innovation as replacing code review with validation — agents generate code, the system tests it against real-world scenarios through the digital twin universe, and the loop iterates without humans in it. The claimed result is autonomous convergence: the system runs real scenarios, validates real behavior, and corrects itself. The post attracted endorsements from figures including Wharton's Generative AI Lab co-director and Y Combinator's CEO, signaling interest from both academic and venture communities.
+
+**Key contributions:** The "validation replaces code review" framing as business case, autonomous convergence as claimed operating mode, external endorsements signaling broader interest.
+
+**Tags:** [software-factory](GLOSSARY.md#software-factory) | [validation](GLOSSARY.md#validation) | [digital-twin-universe](GLOSSARY.md#digital-twin-universe)
+
+---
+
+## The Five Levels: From Spicy Autocomplete to the Dark Factory
+
+**URL:** [danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/)
+**Author:** Dan Shapiro
+
+A maturity framework adapting NHTSA's five levels of driving automation to AI-assisted software development. Level 0 (Manual): AI as enhanced search. Level 1 (Assisted): discrete task delegation — unit tests, docstrings — with productivity gains but no role change. Level 2 (Autopilot): pair programming with AI, high productivity, but a false sense of completion. Level 3 (Safety Driver): the critical bottleneck — engineers shift from writing code to reviewing diffs, drowning in volume. Level 4 (Robotaxi): engineers become product managers, writing specifications and reviewing execution plans, then stepping away while agents operate autonomously. Level 5 (Dark Factory): fully automated, referencing the Fanuc robot-staffed factory that operates with the lights off. The framework's key insight is that Level 3 is a trap — organizations that try to scale by adding more human reviewers hit a ceiling that only architectural change (shifting to specification-first workflows with automated validation) can break through.
+
+**Key contributions:** Five-level maturity framework for AI coding adoption, the Level 3 bottleneck as organizational trap, the driving-automation analogy as communication device.
+
+**Tags:** [software-factory](GLOSSARY.md#software-factory) | [dark-factory](GLOSSARY.md#dark-factory) | [human-leverage](GLOSSARY.md#human-leverage) | [risk-tiered-automation](GLOSSARY.md#risk-tiered-automation)
+
+---
+
+## You Don't Write the Code. You Don't Read the Code Either.
+
+**URL:** [danshapiro.com/blog/2026/02/you-dont-write-the-code](https://www.danshapiro.com/blog/2026/02/you-dont-write-the-code/)
+**Author:** Dan Shapiro
+
+The argument that engineers stop both writing and reading code, shifting entirely to building validation and self-healing systems. StrongDM's internal practice: CXDB serves as an observability layer for agent execution, and a "Healer" agent diagnoses and fixes bugs autonomously — no humans file bug reports or write fixes. One engineer built working local replicas of GSuite, Slack, Jira, and Okta in weeks using AI, creating the digital twin universe that enables risk-free scenario testing. The driving question for every manual process: "Why am I doing this manually?" The post frames this as a categorical shift where software becomes a means to an end rather than the end itself, and engineering becomes the design of the factory rather than the production of individual components.
+
+**Key contributions:** The "you don't read the code either" extension of the delegation thesis, Healer as autonomous bug-fix agent, "Why am I doing this manually?" as the driving question, engineering as factory design rather than component production.
+
+**Tags:** [software-factory](GLOSSARY.md#software-factory) | [validation](GLOSSARY.md#validation) | [digital-twin-universe](GLOSSARY.md#digital-twin-universe) | [feedback-loop](GLOSSARY.md#feedback-loop)
+
+---
+
+## Minions: Stripe's Coding Agents (Part 2 — Infrastructure)
+
+**URL:** [stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2)
+**Author:** Alistair Gray, Stripe
+
+The infrastructure architecture behind Stripe's Minions agents, complementing Part 1's developer-experience focus. Devboxes — standardized AWS EC2 instances pre-loaded with source code and services — provide parallelizability, predictability, and isolation, with warm pools targeting 10-second startup. A customized fork of Block's Goose is optimized for fully unattended operation: no interruptibility features, full permissions within the isolated environment. Blueprints — a hybrid workflow-agent orchestration system — blend deterministic nodes (linting, pushing code) with agentic subtasks (implementing features, fixing CI), "putting LLMs into contained boxes" to save tokens and improve reliability. Scoped rule files (using Cursor's format) attach automatically during filesystem traversal, sharing context rules across Minions, Cursor, and Claude Code without flooding the context window. Toolshed has grown to nearly 500 MCP tools with security controls preventing destructive actions. The iteration loop follows shift-left principles: pre-push hooks and cached linting provide rapid local feedback, followed by one full CI round, autofixes, and a single retry — a two-iteration limit balancing speed against token costs.
+
+**Key contributions:** Blueprints as hybrid deterministic-agentic orchestration, scoped rule files shared across human and agent tools, devbox warm-pool infrastructure, two-iteration limit as cost-quality tradeoff, "what's good for humans is good for agents" as infrastructure thesis.
+
+**Tags:** [cloud-agents](GLOSSARY.md#cloud-agents) | [validation](GLOSSARY.md#validation) | [linters-as-guardrails](GLOSSARY.md#linters-as-guardrails) | [playbooks](GLOSSARY.md#playbooks)
