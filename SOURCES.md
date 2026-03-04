@@ -68,6 +68,19 @@ Willison's assessment of the Software Factory concept provides essential externa
 
 ---
 
+## Agentic Engineering Patterns
+
+**URL:** [simonwillison.net/guides/agentic-engineering-patterns](https://simonwillison.net/guides/agentic-engineering-patterns/)
+**Author:** Simon Willison
+
+A living guide of professional practices for developers using coding agents, organized as evolving "chapters" that Willison updates as the field matures. The guide draws a sharp line between "vibe coding" (unstructured prompting for throwaway experiments) and "agentic engineering" (disciplined practices for production work). The central economic reframing: "writing code is cheap now" — which means the expensive parts shift to knowing what to build, verifying it works, and accumulating reusable knowledge. Key practices include red/green TDD as an agent verification discipline (write a failing test, let the agent make it pass), "hoard things you know how to do" as a principle of compound knowledge (capture every successful pattern for reuse), linear walkthroughs that narrate code changes as a review aid, and annotated prompts that document the reasoning behind instructions. The living-document format itself is notable — it models the kind of evolving practitioner reference that organizations might maintain internally.
+
+**Key contributions:** The "writing code is cheap" economic reframing, TDD as agent verification discipline, "hoard what you know" as compound knowledge, the living-document format as an evolving practitioner reference.
+
+**Tags:** [compound-knowledge](GLOSSARY.md#compound-knowledge) | [validation](GLOSSARY.md#validation) | [tokens-as-fuel](GLOSSARY.md#tokens-as-fuel)
+
+---
+
 ## Agent Readiness Model (Blog Post)
 
 **URL:** [factory.ai/news/agent-readiness](https://www.factory.ai/news/agent-readiness)
@@ -402,3 +415,42 @@ The infrastructure architecture behind Stripe's Minions agents, complementing Pa
 **Key contributions:** Blueprints as hybrid deterministic-agentic orchestration, scoped rule files shared across human and agent tools, devbox warm-pool infrastructure, two-iteration limit as cost-quality tradeoff, "what's good for humans is good for agents" as infrastructure thesis.
 
 **Tags:** [cloud-agents](GLOSSARY.md#cloud-agents) | [validation](GLOSSARY.md#validation) | [linters-as-guardrails](GLOSSARY.md#linters-as-guardrails) | [playbooks](GLOSSARY.md#playbooks)
+
+---
+
+## The Self-Driving Codebase
+
+**URL:** [background-agents.com](https://background-agents.com)
+**Author:** Ona
+
+An overview of background agents as autonomous development infrastructure — systems triggered by events (pull requests, CVE disclosures, Slack messages, scheduled jobs) that reason about context, generate code, run tests, and submit pull requests without human initiation. The framing distinguishes background agents from CI/CD: where CI/CD executes predefined steps, background agents reason about what needs to happen and adapt their approach. Three infrastructure pillars are identified: **isolated compute** (sandboxed environments where agents operate safely), **event routing** (the system that maps triggers to agent workflows), and **governance layer** (human review gates, audit trails, and bounded blast radius). Safety is addressed through sandboxed environments, approval workflows, and audit logging rather than restricting agent capability. The developer role shift is described as moving "on the loop" — setting direction and reviewing outcomes rather than performing each step — complementing the "collaboration to delegation" framing used elsewhere in this knowledge base.
+
+**Key contributions:** Three-pillar infrastructure model (isolated compute, event routing, governance), the "on the loop" developer role framing, the distinction between background agents and CI/CD.
+
+**Tags:** [cloud-agents](GLOSSARY.md#cloud-agents) | [agent-native-environment](GLOSSARY.md#agent-native-environment) | [risk-tiered-automation](GLOSSARY.md#risk-tiered-automation)
+
+---
+
+## Towards Self-Driving Codebases
+
+**URL:** [cursor.com/blog/self-driving-codebases](https://cursor.com/blog/self-driving-codebases)
+**Author:** Wilson Lin, Cursor
+
+A multi-agent orchestration research report documenting the construction of a web browser through autonomous agent coordination — approximately 1,000 commits per hour, over 10 million tool calls across one week of continuous operation. The architecture evolved through three stages: **self-coordination** (agents managing their own work), **planner-executor** (a planning layer directing implementation agents), and **hierarchical recursive delegation** (a tree structure where any agent can spawn sub-agents, mirroring how real engineering teams decompose work). Key findings challenge conventional assumptions: error tolerance outperforms perfect correctness at scale (agents that recover from mistakes beat agents that try never to make them), constraints are more effective than instructions (restricting the action space works better than explaining the desired behavior), and infrastructure — not model capability — becomes the bottleneck first (disk I/O and compilation speed limited throughput before reasoning quality did). The practical heuristic "treat the model like a brilliant new hire" captures the recurring insight that agents need clear context and structure, not hand-holding.
+
+**Key contributions:** Hierarchical recursive delegation architecture, error tolerance over perfect correctness at scale, constraints over instructions as a design principle, infrastructure as the binding bottleneck before model capability.
+
+**Tags:** [cloud-agents](GLOSSARY.md#cloud-agents) | [validation](GLOSSARY.md#validation) | [shift-work](GLOSSARY.md#shift-work)
+
+---
+
+## Organization-Level Skills
+
+**URL:** [ona.com/docs/ona/skills](https://ona.com/docs/ona/skills)
+**Author:** Ona
+
+The case for codifying organizational best practices into reusable skills that agents can discover and anyone can run. Skills encode the workflow knowledge that typically lives in senior engineers' heads — the specific review criteria, migration checklists, deployment procedures, and debugging approaches that define how an organization actually operates. Two access patterns are described: **proactive discovery** (agents automatically trigger relevant skills based on context, such as applying a team's review standards when reviewing a PR in that team's repository) and **manual invocation** (engineers explicitly call skills by name, like `/review-like-mads` to apply a specific colleague's refined review approach). The organizational value proposition is threefold: **scaling expertise** (senior engineer workflows available org-wide without requiring their time), **standardization** (consistent application of best practices across teams and repositories), and **accelerated onboarding** (new engineers access institutional knowledge through discoverable skills rather than tribal knowledge). The `/review-like-mads` example illustrates the core pattern concretely: one engineer's refined code review approach — accumulated over years — becomes a skill that any team member can invoke, making the organization's best thinking available everywhere.
+
+**Key contributions:** Proactive discovery and manual invocation as dual access patterns, skills as encoded organizational expertise, the `/review-like-mads` example as concrete illustration of expertise scaling.
+
+**Tags:** [playbooks](GLOSSARY.md#playbooks) | [compound-knowledge](GLOSSARY.md#compound-knowledge) | [agent-native-environment](GLOSSARY.md#agent-native-environment)
