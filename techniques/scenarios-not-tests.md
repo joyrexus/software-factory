@@ -10,6 +10,8 @@ The problem with traditional tests in a software factory is circular validation:
 
 Scenarios break this circularity. They describe what a user would observe — "a new user can sign up, receive a confirmation email, and log in with their credentials" — without specifying implementation details. The implementing agent never sees the scenarios; an independent judge evaluates whether the implementation satisfies them.
 
+BDD's Given-When-Then syntax provides a structured format for writing such scenarios, and as [Jain](../SOURCES.md#how-to-kill-the-code-review) argues, BDD specifications become newly practical when agents handle implementation. However, there is an important distinction: traditional BDD scenarios are deterministic and visible to the implementer — they serve as both specification and test fixture. Factory scenarios are probabilistic holdout sets that the implementing agent never sees. BDD is a practical on-ramp: teams can start with visible, deterministic BDD specs and graduate to holdout-set validation as the factory matures and the need for independent, ungameable evaluation grows.
+
 ## Scenarios as Holdout Sets
 
 The analogy to machine learning is deliberate. In ML, you never evaluate a model on its training data — you use a held-out evaluation set that the model hasn't seen. Scenarios serve the same function: they're the evaluation set for agent-produced code.

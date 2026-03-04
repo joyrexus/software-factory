@@ -444,6 +444,21 @@ A multi-agent orchestration research report documenting the construction of a we
 
 ---
 
+## How to Kill the Code Review
+
+**URL:** [latent.space/p/reviews-dead](https://latent.space/p/reviews-dead)
+**Author:** Ankit Jain
+
+The argument that manual code review is becoming obsolete: when agents generate code faster than humans can review it, the review bottleneck becomes the constraint on the entire system. The solution is shifting quality gates upstream to specification review — review the spec, not the diff. The post's richest contribution is its treatment of BDD (Behavior-Driven Development) as newly relevant in an agentic context. BDD was always a good idea, but writing Given-When-Then specifications felt like extra work when you were also writing the code. With agents, the spec IS the primary artifact — the human writes the behavioral specification, the agent implements, the BDD framework verifies. The gap between intent and proof closes because the specification format simultaneously serves as instruction and acceptance criteria.
+
+The post also introduces a layered trust architecture — five verification layers (multiple implementation options, deterministic guardrails, acceptance criteria, permission systems, adversarial verification) — and the principle "shift from judgment to artifact," arguing that engineers should ask agents to produce verification scripts rather than relying on human judgment of correctness.
+
+**Key contributions:** BDD as newly relevant specification format for agentic development, the "spec IS the work" reframing, layered trust architecture for agent verification, "shift from judgment to artifact" principle.
+
+**Tags:** [validation](GLOSSARY.md#validation) | [specification-discipline](GLOSSARY.md#specification-discipline) | [risk-tiered-automation](GLOSSARY.md#risk-tiered-automation)
+
+---
+
 ## Organization-Level Skills
 
 **URL:** [ona.com/docs/ona/skills](https://ona.com/docs/ona/skills)

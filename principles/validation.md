@@ -18,6 +18,8 @@ The response is an evolution through three stages:
 2. **Scenarios** — End-to-end user stories describing observable trajectories through the system. Stored outside the codebase, written independently of implementation, resistant to reward-hacking.
 3. **Satisfaction** — A probabilistic metric: what fraction of observed trajectories through scenarios likely satisfy the user? Not a binary pass/fail but a confidence level.
 
+BDD specifications (Given-When-Then) occupy the bridge between stages 1 and 2 — more structured than unit tests, executable as acceptance criteria, and as [Jain](../SOURCES.md#how-to-kill-the-code-review) argues, newly practical when agents handle implementation. BDD provides a concrete entry point for teams moving toward scenario-based validation: deterministic and visible, but oriented around user-observable behavior rather than implementation details.
+
 StrongDM's approach stores scenarios as holdout sets — like evaluation datasets in machine learning — that the implementing agent never sees. An independent judge evaluates whether the implementation satisfies the scenario. This separation of concerns is the key insight: the entity that builds must not be the entity that validates.
 
 ## Environment as Validator

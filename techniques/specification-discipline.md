@@ -32,6 +32,24 @@ Before submitting a specification, ask:
 
 If any answer is no, the specification needs work. The discipline of writing good specs is itself valuable — it forces clarity of thought that benefits human implementers just as much as agent ones.
 
+## BDD as Specification Format
+
+Behavior-Driven Development (BDD) provides a concrete syntax that directly answers the self-check heuristic. A Given-When-Then scenario maps precisely onto the specification anatomy: *Given* establishes the starting state (where the agent begins reading), *When* defines the action (what the agent must implement), and *Then* specifies the observable artifact that proves completion.
+
+As [Jain](../SOURCES.md#how-to-kill-the-code-review) observes, BDD was always a good idea — but writing structured behavioral specifications felt like extra work when the same engineer was also writing the implementation. In an agentic workflow, this calculation inverts: the specification IS the work. The human writes the Given-When-Then scenario, the agent implements the code, and the BDD framework verifies satisfaction. There is no gap between intent and proof because the specification format simultaneously serves as instruction to the agent and acceptance criteria for validation.
+
+Consider a password reset flow:
+
+```gherkin
+Given a registered user who has forgotten their password
+When they request a password reset and follow the email link
+Then they can set a new password and log in with it
+```
+
+This single artifact tells the agent where to start (the existing auth system), what to build (the reset flow), and how to prove it works (the end-to-end verification). The specification is simultaneously human-readable intent and machine-executable acceptance criteria.
+
+BDD scenarios also provide a practical on-ramp to the more radical [scenarios-not-tests](scenarios-not-tests.md) approach. Teams can begin with visible BDD specs — deterministic, implementation-coupled, and familiar — then graduate to holdout-set validation as the factory matures. The progression from BDD to probabilistic satisfaction mirrors the [validation evolution](../principles/validation.md) from tests to scenarios to satisfaction.
+
 ## Implements
 
 - [The Seed](../principles/seed.md) — Specification discipline produces high-quality seeds
