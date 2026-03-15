@@ -114,7 +114,7 @@ Spec verification tools treat these specs as authoritative artifacts for validat
 
 ---
 
-### 2. Spec Graph (Behavior Model)
+### 2. [Spec Graph](../../../GLOSSARY.md#spec-graph) (Behavior Model)
 
 Specs compile into a graph of system behavior. This graph models domain workflows, event propagation, and system dependencies — becoming the **behavioral map of the product**.
 
@@ -130,7 +130,7 @@ The spec graph serves a similar purpose to the structured flow documentation in 
 
 ---
 
-### 3. Behavioral Index
+### 3. [Behavioral Index](../../../GLOSSARY.md#behavioral-index)
 
 The index connects the spec graph to implementation, enabling behavior-first navigation.
 

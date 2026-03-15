@@ -23,7 +23,7 @@ In this model:
 
 ## The Four-Layer Architecture
 
-### 1. Executable Specifications (Intent Layer)
+### 1. [Executable Specifications](../../../GLOSSARY.md#executable-spec) (Intent Layer)
 
 Features begin with structured behavioral specifications rather than implementation. These specifications act as machine-readable behavioral contracts — a concrete application of [Specification Discipline](../../../techniques/specification-discipline.md).
 
@@ -56,7 +56,7 @@ This format directly answers the [self-check heuristic](../../../techniques/spec
 
 ---
 
-### 2. Spec Graph (System Behavior Model)
+### 2. [Spec Graph](../../../GLOSSARY.md#spec-graph) (System Behavior Model)
 
 Individual specs connect into domain-level graphs describing how behaviors compose.
 
@@ -80,7 +80,7 @@ This graph becomes the behavioral model of the product — a machine-readable fo
 
 ---
 
-### 3. Behavioral Index (Code Navigation Layer)
+### 3. [Behavioral Index](../../../GLOSSARY.md#behavioral-index) (Code Navigation Layer)
 
 The spec graph becomes a behavioral index over the codebase — mapping specifications to the code that implements them.
 
@@ -145,7 +145,7 @@ Together they verify both **intended behavior** and **emergent system behavior**
 
 ## The Behavioral Control Plane
 
-The four layers above compose into what practitioners describe as a **behavioral control plane** — a governance layer above the code that separates three concerns traditional SDLC mixes together.
+The four layers above compose into what practitioners describe as a **[behavioral control plane](../../../GLOSSARY.md#behavioral-control-plane)** — a governance layer above the code that separates three concerns traditional SDLC mixes together.
 
 ### Implementation Plane
 

@@ -31,10 +31,10 @@ Agentic SDLC:       intent → plan → implement → verify
 
 | Concept | Description |
 |---|---|
-| **Executable Spec** | Machine-readable behavioral contract defining inputs, outputs, invariants, and effects |
-| **Spec Graph** | A directed graph of system behaviors connected by dependencies, events, and state transitions |
-| **Behavioral Index** | A mapping from spec nodes to implementing code, enabling behavior-first navigation |
-| **Behavioral Control Plane** | The governance layer above code — specs + graph + index — that governs agentic development |
+| **[Executable Spec](../../../GLOSSARY.md#executable-spec)** | Machine-readable behavioral contract defining inputs, outputs, invariants, and effects |
+| **[Spec Graph](../../../GLOSSARY.md#spec-graph)** | A directed graph of system behaviors connected by dependencies, events, and state transitions |
+| **[Behavioral Index](../../../GLOSSARY.md#behavioral-index)** | A mapping from spec nodes to implementing code, enabling behavior-first navigation |
+| **[Behavioral Control Plane](../../../GLOSSARY.md#behavioral-control-plane)** | The governance layer above code — specs + graph + index — that governs agentic development |
 
 These terms are defined in the [Glossary](../../../GLOSSARY.md).
 

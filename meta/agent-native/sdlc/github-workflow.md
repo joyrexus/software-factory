@@ -101,7 +101,7 @@ This single file serves as instruction to agents, acceptance criteria for CI, an
 
 ### Step 2 — CI Compiles the Spec Into the Spec Graph
 
-The spec graph is a structured model of system behavior.
+The [spec graph](../../../GLOSSARY.md#spec-graph) is a structured model of system behavior.
 
 **Example node:**
 

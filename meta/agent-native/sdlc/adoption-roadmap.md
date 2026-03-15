@@ -110,7 +110,7 @@ Specs describe inputs, outputs, invariants, domain rules, and expected events. S
 
 ## Stage 3 — Behavioral Graph Platform
 
-This is where the architecture becomes significantly more powerful. Executable specs compile into a **spec graph** representing system behavior across domains.
+This is where the architecture becomes significantly more powerful. Executable specs compile into a **[spec graph](../../../GLOSSARY.md#spec-graph)** representing system behavior across domains.
 
 **Example:**
 ```
@@ -122,7 +122,7 @@ create_invoice
 
 ### New Capabilities
 
-**Behavioral indexing** maps behaviors to code — extending [codebase indexing](../../../techniques/codebase-indexing.md) into behavioral navigation:
+**[Behavioral indexing](../../../GLOSSARY.md#behavioral-index)** maps behaviors to code — extending [codebase indexing](../../../techniques/codebase-indexing.md) into behavioral navigation:
 ```
 create_invoice
    → InvoiceService.create()

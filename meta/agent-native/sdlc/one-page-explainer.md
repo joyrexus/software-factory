@@ -85,13 +85,13 @@ Instead of relying on human code review and large regression suites, spec-driven
 - **Graph-aware verification** — impact analysis determines what needs testing
 - **Spec-gated CI/CD** — behavioral correctness as the merge criterion
 
-The spec graph becomes the behavioral control plane for the system — a concrete implementation of the principles described in [Spec-Driven Architecture](spec-driven-architecture.md).
+The spec graph becomes the [behavioral control plane](../../../GLOSSARY.md#behavioral-control-plane) for the system — a concrete implementation of the principles described in [Spec-Driven Architecture](spec-driven-architecture.md).
 
 ---
 
 ## What This Means for a SaaS Organization
 
-Engineering teams shift from **code-centric development** to **behavior-centric development**. The primary artifacts become executable specs, spec graphs, and behavioral indexes. These artifacts guide AI coding agents, CI/CD verification, and system evolution.
+Engineering teams shift from **code-centric development** to **behavior-centric development**. The primary artifacts become [executable specs](../../../GLOSSARY.md#executable-spec), [spec graphs](../../../GLOSSARY.md#spec-graph), and [behavioral indexes](../../../GLOSSARY.md#behavioral-index). These artifacts guide AI coding agents, CI/CD verification, and system evolution.
 
 For how this maps to organizational maturity, see the [Adoption Roadmap](adoption-roadmap.md). For a concrete starting point, see the [90-Day Pilot Guide](pilot-guide.md).
 

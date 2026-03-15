@@ -227,7 +227,7 @@ for (const scenario of spec.scenarios) {
 
 The `spec-verify.yml` workflow runs this against every spec touched by the PR. Fail means no merge.
 
-**Milestone:** You have a behavior-gated PR workflow running on real features. The spec graph is the control plane.
+**Milestone:** You have a behavior-gated PR workflow running on real features. The [spec graph](../../../GLOSSARY.md#spec-graph) is the control plane.
 
 ---
 
