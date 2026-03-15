@@ -44,15 +44,10 @@ Every file should include a "See Also" section linking to related content. Princ
 
 ## Filesystem Technique
 
-This hierarchy follows StrongDM's own [filesystem technique](https://factory.strongdm.ai/techniques/filesystem):
-
-- **Root `INDEX.md`** is the full quick-reference index for the entire knowledge base — every file reachable in one table
-- **Sub-level `README.md` files** provide navigable overviews at each directory level, rendered by GitHub when browsing
-- **`meta/README.md`** is an exception to the typical navigational role — it serves as the core contextual piece for understanding the thesis and the conversation being explored, providing the essential framing that other content files elaborate on
-- **On-disk state** serves as a practical memory substrate — the filesystem itself is the knowledge graph
-- This is a lightweight application of the [Pyramid Summaries](techniques/pyramid-summaries.md) technique: root INDEX is Level 0, directory READMEs are Level 1, individual files are Level 2
-
-The structure is designed to be **genrefied** — reorganized as understanding deepens, following the library-science principle of restructuring information to optimize future retrieval.
+- `INDEX.md` — full index, every file reachable in one table (Level 0)
+- Directory `README.md` files — navigable overviews (Level 1); rendered by GitHub
+- `meta/README.md` — exception: it is the primary conceptual framing, not just navigation
+- Individual content files are Level 2
 
 ## File Naming
 
@@ -60,28 +55,24 @@ The structure is designed to be **genrefied** — reorganized as understanding d
 
 **Content files** use lowercase names (e.g., `seed.md`, `paradigm.md`, `maturity-model.md`). This applies to all files that contain subject-matter content.
 
-## Living Document
-
-This is not a finished artifact. It's a starting point intended to be iterated upon:
-
-- Sections can be expanded, restructured, or split as specific areas require deeper analysis
-- Implementation decisions, spikes, and learnings should be captured back into this hierarchy
-- The components section is expected to grow as more factory infrastructure is documented
-
 ## Internal Consistency
 
-When modifying any file in this project, you must:
+The rules below apply to the **editable knowledge base**: `meta/`, `principles/`, `techniques/`, and the top-level structural files (`INDEX.md`, `README.md`, `GLOSSARY.md`, `SOURCES.md`).
+
+**`components/` is excluded from these rules.** Its content is largely static reference material. Do not read files inside `components/` when making editorial judgements, checking cross-references, or verifying consistency — the context cost outweighs the benefit. Treat `components/README.md` as a boundary: you may read it for a summary, but do not descend into subdirectories unless the user explicitly asks.
+
+When modifying any file in the editable knowledge base, you must:
 
 1. **Read related documents first.** Before editing a file, read the files it cross-references (check its "See Also" section) and any files that reference it. Understand the surrounding context so your changes don't contradict or duplicate existing content.
 
-2. **Update cross-references.** If you add, rename, move, or remove a file, update every document that links to it. Use `Grep` to find all references to the affected filename.
+2. **Update cross-references.** If you add, rename, move, or remove a file, update every document that links to it. Use `Grep` to find all references to the affected filename. Limit this search to `meta/`, `principles/`, `techniques/`, and top-level files — exclude `components/`.
 
 3. **Update README files.** Every content file must be listed in its directory's `README.md`. If you add a new file, add it to the directory README. If you add a new section, add it to the root `INDEX.md` as well.
 
 4. **Maintain the root INDEX.** The root `INDEX.md` is the authoritative table of contents. Any structural change (new sections, renamed sections, significant scope changes to a section) must be reflected there.
 
-5. **Preserve terminology.** Use terms consistently as defined in [GLOSSARY.md](GLOSSARY.md) (cross-cutting terms) and [components/attractor/05-reference/glossary.md](components/attractor/05-reference/glossary.md) (Attractor-specific terms). If you introduce a new cross-cutting term, add it to GLOSSARY.md; if it's Attractor-specific, add it to the Attractor glossary.
+5. **Preserve terminology.** Use terms consistently as defined in [GLOSSARY.md](GLOSSARY.md). If you introduce a new cross-cutting term, add it to GLOSSARY.md.
 
-6. **No orphaned files.** Every markdown file must be reachable from the root INDEX through the directory README chain. After any structural change, verify this.
+6. **No orphaned files.** Every markdown file in the editable knowledge base must be reachable from the root INDEX through the directory README chain. After any structural change, verify this — but do not descend into `components/` to check.
 
 7. **Keep READMEs current.** When adding, removing, or renaming files in a subdirectory, update that directory's `README.md` to reflect the change. This maintains navigability and is a practical application of the [Pyramid Summaries](techniques/pyramid-summaries.md) technique — each README is a summary of its directory's contents, regenerable from the files below it.
