@@ -60,3 +60,4 @@ BDD scenarios also provide a practical on-ramp to the more radical [scenarios-no
 - [Shift Work](shift-work.md) — Specification quality determines whether a task can run non-interactively
 - [Scenarios Not Tests](scenarios-not-tests.md) — Scenario-level specifications for validation
 - [The Seed](../principles/seed.md) — The principle behind specification discipline
+- [Spec-Driven Agentic SDLC](../meta/agent-native/sdlc/README.md) — a workflow architecture where executable specs become the control plane; the spec format is a specific implementation of specification discipline

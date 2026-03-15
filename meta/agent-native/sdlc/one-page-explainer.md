@@ -1,8 +1,6 @@
-# One-Page Explainer: AI-Native Engineering
+# One-Page Explainer
 
-> A single-slide architecture view suitable for CTO briefings, engineering RFCs, and internal strategy decks.
-
----
+*A condensed architecture view suitable for CTO briefings, engineering RFCs, and internal strategy decks.*
 
 ## Architecture Overview
 
@@ -75,61 +73,39 @@ Behavioral      Planning       Impact
 | **Spec-Driven SDLC** | `spec → code → verify` |
 | **Agentic SDLC** | `intent → plan → implement → verify` |
 
-Traditional software development revolves around **code**. AI-native development revolves around **behavior models**.
-
----
-
-## Where the Tools Fit
-
-### Spec Verification
-
-Ensures implementation satisfies declared intent.
-
-| Tool | Focus |
-|---|---|
-| Aviator Verify | Spec → implementation correctness |
-
-### Scenario Exploration
-
-Discovers unexpected runtime behavior.
-
-| Tool | Focus |
-|---|---|
-| Ranger | System → exploration → emergent bugs |
+Traditional software development revolves around **code**. Emerging practice suggests that AI-native development increasingly revolves around **behavior models** — structured specifications that define what the system should do, independent of how it is implemented.
 
 ---
 
 ## The Architectural Shift
 
-Instead of relying on:
-- Human code review
-- Large regression suites
+Instead of relying on human code review and large regression suites, spec-driven engineering relies on:
 
-AI-native engineering relies on:
-- Explicit behavioral models
-- Graph-aware verification
-- Spec-gated CI/CD
+- **Explicit behavioral models** — the spec graph serves as a machine-readable system map
+- **Graph-aware verification** — impact analysis determines what needs testing
+- **Spec-gated CI/CD** — behavioral correctness as the merge criterion
 
-The spec graph becomes the **behavioral control plane** for the system.
+The spec graph becomes the behavioral control plane for the system — a concrete implementation of the principles described in [Spec-Driven Architecture](spec-driven-architecture.md).
 
 ---
 
 ## What This Means for a SaaS Organization
 
-Engineering teams move from **code-centric development** to **behavior-centric development**.
+Engineering teams shift from **code-centric development** to **behavior-centric development**. The primary artifacts become executable specs, spec graphs, and behavioral indexes. These artifacts guide AI coding agents, CI/CD verification, and system evolution.
 
-The primary artifacts become:
-- Executable specs
-- Spec graphs
-- Behavioral indexes
-
-These artifacts guide:
-- AI coding agents
-- CI/CD verification
-- System evolution
+For how this maps to organizational maturity, see the [Adoption Roadmap](adoption-roadmap.md). For a concrete starting point, see the [90-Day Pilot Guide](pilot-guide.md).
 
 ---
 
 ## One-Sentence Explanation
 
-> Our engineering platform is evolving toward a spec-driven SDLC where executable behavioral specifications form a system-wide spec graph that guides AI implementation, impact analysis, and CI/CD verification.
+> An engineering platform where executable behavioral specifications form a system-wide spec graph that guides AI implementation, impact analysis, and CI/CD verification — shifting the source of truth from code to behavior.
+
+---
+
+## See Also
+
+- [Spec-Driven Architecture](spec-driven-architecture.md) — full conceptual treatment
+- [Architecture Reference](architecture-reference.md) — detailed platform diagram with layer explanations
+- [Adoption Roadmap](adoption-roadmap.md) — staged adoption path mapped to the Agent Readiness Model
+- [Pilot Guide](pilot-guide.md) — concrete repo structure and 90-day implementation plan

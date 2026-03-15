@@ -9,7 +9,7 @@ software-factory/
 ├── README.md                          — The software factory thesis
 ├── CLAUDE.md                          — Project instructions
 ├── INDEX.md                           — Master table of contents (this file)
-├── GLOSSARY.md                        — Cross-cutting vocabulary (30 terms)
+├── GLOSSARY.md                        — Cross-cutting vocabulary (34 terms)
 ├── SOURCES.md                         — Annotated bibliography
 │
 ├── meta/                              — Context, paradigm, and commentary
@@ -22,8 +22,16 @@ software-factory/
 │   │   ├── cloud-agents.md            — Cloud agents and the background revolution
 │   │   ├── case-studies.md            — Building in-house: Ramp and Stripe
 │   │   ├── maturity-model.md          — Agent Readiness Model — maturity levels and pillars
-│   │   └── practices/               — Agent-native practices catalog
-│   │       └── README.md
+│   │   ├── practices/               — Agent-native practices catalog
+│   │   │   └── README.md
+│   │   └── sdlc/                   — Spec-driven agentic SDLC
+│   │       ├── README.md
+│   │       ├── spec-driven-architecture.md
+│   │       ├── architecture-reference.md
+│   │       ├── github-workflow.md
+│   │       ├── adoption-roadmap.md
+│   │       ├── one-page-explainer.md
+│   │       └── pilot-guide.md
 │   ├── conversation.md               — Community commentary on the source material
 │   ├── takeaways.md                  — Practical synthesis for engineering leaders
 │   └── game-plan.md                  — Phased approach to agent-native adoption
@@ -78,7 +86,7 @@ Context, paradigm, and commentary surrounding the software factory concept.
 | [meta.md](meta/meta.md) | The moment, paradigm, and formula |
 | [paradigm.md](meta/paradigm.md) | Three lineages converging on the factory concept |
 | [questions.md](meta/questions.md) | Honest questions and design constraints |
-| [agent-native/](meta/agent-native/README.md) | Agent-native engineering in practice — cloud agents, case studies, and maturity model |
+| [agent-native/](meta/agent-native/README.md) | Agent-native engineering in practice — cloud agents, case studies, maturity model, practices, and spec-driven SDLC |
 | [conversation.md](meta/conversation.md) | Community commentary on the source material |
 | [takeaways.md](meta/takeaways.md) | Practical synthesis for engineering leaders — evidence, organizational shifts, and what remains unproven |
 | [game-plan.md](meta/game-plan.md) | Phased approach to agent-native adoption: assess, prepare, delegate, shift |

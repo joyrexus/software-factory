@@ -1,6 +1,6 @@
-# Repo Structure and 90-Day Pilot
+# Pilot Guide: Repo Structure and 90-Day Pilot
 
-> A concrete GitHub repo layout and a realistic first pilot for SaaS teams adopting spec-driven agentic SDLC without rebuilding their platform.
+*A concrete implementation guide for teams ready to act — delivering Stage 2 of the [adoption roadmap](adoption-roadmap.md) with Stage 3 infrastructure already in place.*
 
 ---
 
@@ -55,7 +55,10 @@ my-saas/
 
 - `specs/` files are authored by engineers and PMs. They gate feature PRs — no spec, no implementation PR.
 - `graph/` and `behavior-index/` are **generated** by CI, committed back, and diffed in PRs so impact is visible in review.
-- `AGENTS.md` is the agent entry point — tells coding agents where to look, how to validate, and what not to touch.
+- `AGENTS.md` is the agent entry point — tells coding agents where to look, how to validate, and what not to touch. This follows the [progressive disclosure](../../../techniques/progressive-disclosure.md) pattern: a small entry point pointing into structured directories.
+- The `docs/` directory follows the [codebase cartography](../../../techniques/codebase-cartography.md) convention: `components/` for what the pieces are, `flows/` for how they relate.
+
+**Polyrepo variant:** In a polyrepo organization, each service maintains its own `specs/` directory with local spec compilation. A separate "platform" repository aggregates cross-service edges into a unified graph and runs cross-service impact analysis. The behavioral index spans repositories through a shared registry. The architecture is the same; the compilation boundary shifts from directory to repository.
 
 ---
 
@@ -88,7 +91,7 @@ scenarios:
     then: 422 Unprocessable
 ```
 
-This single file serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers.
+This single file serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers — applying [specification discipline](../../../techniques/specification-discipline.md) to produce artifacts that satisfy the self-check heuristic: the agent knows where to start, what to implement, and what proves completion.
 
 ---
 
@@ -96,7 +99,7 @@ This single file serves as instruction to the agent, acceptance criteria for CI,
 
 **Domain:** Pick one bounded domain — billing or invoicing is ideal. High business value, existing tests to compare against, and a clear event boundary (`invoice_created_event`) that makes graph edges visible.
 
-**Goal:** Reach Stage 2 of the maturity model (executable specs + verification) with the graph infrastructure already in place for Stage 3.
+**Goal:** Reach [Stage 2](adoption-roadmap.md) of the adoption roadmap (executable specs + verification) with the graph infrastructure already in place for Stage 3. In [Agent Readiness Model](../maturity-model.md) terms, this targets L2–L3 across the Task Discovery, Documentation, and Testing pillars.
 
 ---
 
@@ -239,16 +242,18 @@ The `spec-verify.yml` workflow runs this against every spec touched by the PR. F
 | Spec verification gate in CI | ✅ |
 | `AGENTS.md` making the graph navigable for AI agents | ✅ |
 
+In [Agent Readiness Model](../maturity-model.md) terms, you have reached L3 (Standardized) for the pilot domain across the Task Discovery, Documentation, and Testing pillars.
+
 ---
 
 ## What Comes Next
 
-The pilot delivers Stage 2 of the maturity model with the graph infrastructure already in place. Stage 3 — graph-aware CI, AI agent navigation, and planning-layer integration — is a straight-line extension, not a rearchitecture.
+The pilot delivers Stage 2 with graph infrastructure already in place. Stage 3 — graph-aware CI, AI agent navigation, and planning-layer integration — is a straight-line extension, not a rearchitecture. See the [Adoption Roadmap](adoption-roadmap.md) for the full progression.
 
 | Stage | Builds On Pilot With |
 |---|---|
-| **Stage 3 — Behavioral Graph Platform** | Add planning engine; route agents through behavioral index |
-| **Stage 4 — Fully Agentic Development** | Connect intent layer to AI planner; close the feedback loop from runtime telemetry |
+| **Stage 3 — Behavioral Graph Platform** | Add planning engine; route agents through behavioral index; expand to additional domains |
+| **Stage 4 — Agentic Development** | Connect intent layer to AI planner; close the feedback loop from runtime telemetry |
 
 ```
 Pilot output
@@ -260,3 +265,14 @@ Pilot output
 ```
 
 The spec graph you build in 90 days becomes the foundation every subsequent stage compiles against.
+
+---
+
+## See Also
+
+- [Adoption Roadmap](adoption-roadmap.md) — the full staged progression this pilot enters at Stage 2
+- [Spec-Driven Architecture](spec-driven-architecture.md) — the conceptual foundation
+- [Agent Readiness Model](../maturity-model.md) — the maturity framework the pilot targets
+- [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic for writing specs
+- [Progressive Disclosure](../../../techniques/progressive-disclosure.md) — the AGENTS.md pattern referenced in the repo structure
+- [Codebase Cartography](../../../techniques/codebase-cartography.md) — the docs/ convention used in the repo layout

@@ -9,6 +9,16 @@ Making a repository and its running application navigable by agents — document
 
 See [Codebase Cartography](techniques/codebase-cartography.md), [Practices](meta/agent-native/practices/README.md).
 
+### Behavioral Control Plane
+The governance layer above code in a spec-driven architecture — the combination of the spec graph, behavioral index, and executable specifications that together model, map, and verify system behavior. Separates implementation concerns (how code is written) from behavioral concerns (what the system does), allowing AI agents and CI systems to reason about system behavior structurally rather than heuristically.
+
+See [Spec-Driven Agentic SDLC](meta/agent-native/sdlc/README.md), [Spec-Driven Architecture](meta/agent-native/sdlc/spec-driven-architecture.md).
+
+### Behavioral Index
+A mapping from spec graph nodes to the code that implements each behavior, enabling behavior-first navigation of a codebase. Extends [codebase indexing](techniques/codebase-indexing.md) beyond symbol search ("where is this function?") into behavioral navigation ("what code implements this behavior?"). AI agents and CI systems use the index to navigate via behavior rather than file search.
+
+See [Spec-Driven Architecture](meta/agent-native/sdlc/spec-driven-architecture.md), [Pilot Guide](meta/agent-native/sdlc/pilot-guide.md).
+
 ### Agent-Native Environment
 An engineering environment designed for non-human workers rather than adapted from human-centric practices. Requires objective verification through CI and type systems, machine-readable context (e.g., AGENTS.md), small bounded scopes, and recovery paths when work drifts. Agent output quality depends more on environment quality than on agent sophistication — the environment is the lever.
 
@@ -53,6 +63,11 @@ See [Deliberate Naivete](principles/deliberate-naivete.md).
 A set of in-memory behavioral clones of external services — Okta, Slack, Jira, and others — that agents can run tests against at high volume without rate limits, API costs, or non-determinism. Functions as a holdout set that the implementing agent never sees, with an independent judge evaluating whether the implementation satisfies scenarios against the twin.
 
 See [Digital Twin Universe](techniques/digital-twin-universe.md).
+
+### Executable Spec
+A machine-readable behavioral contract defining a feature's inputs, outputs, invariants, preconditions, postconditions, and emitted events. Serves triple duty: instruction to AI agents, acceptance criteria for CI, and behavioral documentation for engineers. Executable specs are the concrete artifact produced by [specification discipline](techniques/specification-discipline.md) and the input to the spec graph.
+
+See [Spec-Driven Architecture](meta/agent-native/sdlc/spec-driven-architecture.md), [Pilot Guide](meta/agent-native/sdlc/pilot-guide.md).
 
 ### Entropy Management
 Using recurring background agents to scan for deviations from architectural standards, update quality grades, and open targeted refactoring PRs — continuous preventive maintenance rather than periodic cleanup sprints. Most resulting PRs are reviewable in under a minute and eligible for automerge, turning technical debt accumulation into a steady-state process.
@@ -128,6 +143,11 @@ See [Semport](techniques/semport.md).
 Separating agent tasks into interactive mode (requiring real-time human judgment, design decisions, or exploratory specification) and non-interactive mode (complete enough for autonomous execution overnight, on weekends, or in parallel). The most token-efficient organizations front-load interactive work to produce complete specifications, then maximize non-interactive implementation.
 
 See [Shift Work](techniques/shift-work.md).
+
+### Spec Graph
+A directed graph of system behaviors where nodes represent individual features or capabilities (expressed as executable specs) and edges represent dependencies, event propagation, and state transitions between them. The spec graph serves as the behavioral model of the product — a machine-readable counterpart to the flow documentation in [codebase cartography](techniques/codebase-cartography.md). Compiled from individual specs, it enables automated impact analysis, targeted verification, and behavior-first navigation.
+
+See [Spec-Driven Agentic SDLC](meta/agent-native/sdlc/README.md), [Architecture Reference](meta/agent-native/sdlc/architecture-reference.md).
 
 ### Software Factory
 An engineering organization where coding agents produce and validate software under human architectural direction, structured around a core formula: Seed (precise specification) → Validation (end-to-end proof of correctness) → Feedback Loop (compounding correctness across iterations), all fueled by tokens as the economic unit of production. The environment — not the model — is the primary lever of agent effectiveness.

@@ -1,8 +1,6 @@
-# Spec-Gated Agentic GitHub Workflow
+# Spec-Gated GitHub Workflow
 
-> How a SaaS organization operationalizes spec-driven agentic SDLC within a GitHub-centric development process.
-
----
+*How a SaaS organization operationalizes spec-driven development within a GitHub-centric process.*
 
 ## Workflow Diagram
 
@@ -49,14 +47,9 @@
          │          CI PIPELINE            │
          │                                 │
          │ 1. Spec Verification            │
-         │    Aviator-style checks         │
-         │                                 │
          │ 2. Impact Analysis              │
-         │    Spec Graph Traversal         │
-         │                                 │
+         │    (Spec Graph Traversal)       │
          │ 3. Scenario Exploration         │
-         │    Ranger-style testing         │
-         │                                 │
          │ 4. Regression + Contract Tests  │
          └───────────────┬─────────────────┘
                          │
@@ -75,11 +68,11 @@
 
 ---
 
-## How This Workflow Actually Operates
+## How This Workflow Operates
 
 ### Step 1 — Feature Development Begins With a Spec PR
 
-Instead of starting with code, the team proposes a spec file:
+Instead of starting with code, the team proposes a spec file — applying [specification discipline](../../../techniques/specification-discipline.md) to produce a machine-readable intent artifact.
 
 ```
 specs/invoicing/create_invoice.yaml
@@ -102,7 +95,7 @@ effects:
   - invoice_created_event
 ```
 
-This becomes the **intent layer artifact**.
+This single file serves as instruction to agents, acceptance criteria for CI, and behavioral documentation for engineers.
 
 ---
 
@@ -119,18 +112,13 @@ create_invoice
   └ affects: ledger
 ```
 
-Edges represent:
-- Behavior dependency
-- Event propagation
-- State transition
-
-This becomes the **behavioral model of the product**.
+Edges represent behavior dependency, event propagation, and state transition. This graph becomes the **behavioral model of the product** — a machine-readable counterpart to the flow documentation described in [Codebase Cartography](../../../techniques/codebase-cartography.md).
 
 ---
 
 ### Step 3 — Behavioral Indexing Connects Specs to Code
 
-The system records mappings such as:
+The system records mappings from behaviors to their implementations:
 
 ```
 create_invoice
@@ -139,18 +127,13 @@ create_invoice
   → invoice_repository.save()
 ```
 
-This index enables:
-- Agent navigation
-- Impact analysis
-- Targeted verification
+This index enables agent navigation, impact analysis, and targeted verification — extending [code indexing](../../../techniques/codebase-indexing.md) into behavioral navigation.
 
 ---
 
 ### Step 4 — Planning Layer Generates an Implementation Plan
 
-The spec is converted into a task graph.
-
-**Example:**
+The spec converts into a task graph that drives AI coding agents and developer implementation tasks:
 
 ```
 create_invoice
@@ -161,38 +144,26 @@ create_invoice
  └ send notification
 ```
 
-This graph drives AI coding agents and developer implementation tasks.
-
 ---
 
 ### Step 5 — Code Is Implemented
 
-Implementation may come from:
-- Developers
-- Internal AI coding agents
-- Automated refactoring systems
-
-All code changes happen through normal **GitHub pull requests**.
+Implementation may come from developers, AI coding agents, or automated refactoring systems. All code changes happen through normal **GitHub pull requests**.
 
 ---
 
 ### Step 6 — CI Runs Behavior-Aware Verification
 
-Instead of running the entire test suite blindly, the spec graph determines what must be verified.
+Instead of running the entire test suite, the spec graph determines what must be verified. This is a form of [risk-tiered automation](../../../techniques/risk-tiered-automation.md) — verification effort scales with behavioral impact.
 
 #### A. Spec Verification
 
-Checks whether the implementation satisfies the intent specification.
-
-| Tool | Focus |
-|---|---|
-| Aviator Verify | Constraint validation, API contract checks, policy enforcement, state invariants |
+Checks whether the implementation satisfies the intent specification. Spec verification tools (e.g., Aviator Verify) validate constraints, API contracts, policy enforcement, and state invariants.
 
 #### B. Impact Analysis
 
-The spec graph determines which behaviors may be affected.
+The spec graph determines which behaviors may be affected:
 
-**Example:**
 ```
 create_invoice change
      ↓ affects
@@ -205,11 +176,7 @@ Only impacted tests are prioritized.
 
 #### C. Scenario Exploration
 
-Explores emergent runtime behavior.
-
-| Tool | Detects |
-|---|---|
-| Ranger | Unexpected UI states, race conditions, integration failures, edge cases |
+Explores emergent runtime behavior. Scenario exploration tools (e.g., Ranger) detect unexpected UI states, race conditions, integration failures, and edge cases. This complements deterministic spec verification — together they address both intended behavior and [emergent behavior](../../../techniques/scenarios-not-tests.md).
 
 ---
 
@@ -223,59 +190,42 @@ A PR can merge only if:
 ✓ scenario exploration passes
 ```
 
-This turns CI into a **behavioral guardrail system**.
+This turns CI into a **behavioral guardrail system** — implementing the [validation](../../../principles/validation.md) principle that the entity verifying must be independent of the entity implementing.
 
 ---
 
 ### Step 8 — Runtime Telemetry Feeds Back Into the Spec Graph
 
-Production signals update the behavioral model.
+Production signals update the behavioral model — closing the [feedback loop](../../../principles/feedback-loop.md):
 
-Examples of triggers:
-- New runtime state discovered
-- Unexpected workflow path
-- Rare edge case observed
+- New runtime state → new spec nodes
+- Unexpected workflow path → new verification scenarios
+- Rare edge case → new constraints
 
-These may produce:
-- New spec nodes
-- New verification scenarios
-- New constraints
-
-This creates a **continuous learning loop**.
-
----
-
-## The Key Architectural Idea
-
-| Approach | What It Checks |
-|---|---|
-| Traditional CI/CD | Code correctness |
-| Spec-driven CI/CD | Behavioral correctness |
-
-```
-code change
-   ↓
-behavior impact
-   ↓
-targeted verification
-```
-
-The spec graph becomes the **control plane for development**.
+This creates a continuous learning loop where the spec graph becomes more accurate over time.
 
 ---
 
 ## Why This Model Works Well With AI Coding
 
-AI coding increases PR volume, code generation speed, and the surface area of changes. Spec-driven workflows introduce guardrails that scale with it:
+AI coding increases PR volume, code generation speed, and the surface area of changes. The spec-driven workflow introduces guardrails that scale with velocity:
 
 | Problem | Solution |
 |---|---|
-| Spec drift | Spec defines intent |
-| Silent regressions | Graph defines dependencies |
-| Review overload | CI enforces correctness |
+| Spec drift | Spec defines intent; verification enforces it |
+| Silent regressions | Graph traversal identifies dependencies |
+| Review overload | CI enforces correctness; humans review architecture |
+
+This addresses the same review bottleneck that [Automated Review at Scale](../practices/README.md#automated-review-at-scale) identifies — behavioral CI reduces the volume of issues that require human judgment.
 
 ---
 
-## Executive-Level Summary
+## See Also
 
-> A modern SaaS engineering organization should treat behavioral specifications as the authoritative model of the system. AI agents and developers implement features against these specs, while CI pipelines enforce correctness through spec verification, graph-based impact analysis, and exploratory scenario testing. Together, these create a spec-gated development loop where the spec graph becomes the behavioral control plane for the entire software lifecycle.
+- [Spec-Driven Architecture](spec-driven-architecture.md) — core concepts and the behavioral control plane
+- [Architecture Reference](architecture-reference.md) — visual diagram of the full platform
+- [Pilot Guide](pilot-guide.md) — concrete repo structure and 90-day pilot implementing this workflow
+- [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic for writing agent-ready specs
+- [Scenarios Not Tests](../../../techniques/scenarios-not-tests.md) — holdout-set validation complementing spec verification
+- [Risk-Tiered Automation](../../../techniques/risk-tiered-automation.md) — graduated verification levels
+- [Linters as Architectural Guardrails](../practices/README.md#linters-as-architectural-guardrails) — spec verification as a behavioral linter
