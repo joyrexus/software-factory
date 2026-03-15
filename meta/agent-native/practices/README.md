@@ -1,6 +1,6 @@
 # Agent-Native Practices
 
-This section catalogs concrete practices that make engineering environments agent-native, organized by scope. **Key practices** are foundational capabilities that most organizations pursuing agent-native engineering will need. **Targeted practices** are more specific techniques for particular contexts or organizational stages.
+This section catalogs concrete practices that make engineering environments agent-native, organized by scope. **Key practices** are foundational capabilities that most organizations pursuing agent-native engineering will need. **Targeted practices** are more specific techniques for particular contexts or organizational stages. For how these practices compose into a complete development lifecycle, see [Spec-Driven Agentic SDLC](../sdlc/README.md).
 
 **Key Practices:** [Linters as Architectural Guardrails](#linters-as-architectural-guardrails) | [Code Indexing and Search](#code-indexing-and-search) | [Codebase Cartography](#codebase-cartography) | [Background Agents](#background-agents) | [Application Legibility](#application-legibility) | [Entropy Management](#entropy-management)
 
@@ -153,3 +153,4 @@ Designing effective skills requires deliberate architecture. Anthropic's [skill 
 - [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic for specs
 - [Agent-Native Environment](../../../principles/agent-native-environment.md) — the foundational principle
 - [Progressive Disclosure](../../../techniques/progressive-disclosure.md) — layered context management for agent consumption
+- [Spec-Driven Agentic SDLC](../sdlc/README.md) — workflow architecture composing these practices into an end-to-end development lifecycle

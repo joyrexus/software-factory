@@ -50,4 +50,5 @@ A codebase that scores well across all ten pillars is one where the formula can 
 **See also:**
 - [questions.md](../questions.md) — the provability question and proving loops
 - [Agent-Native Practices](practices/README.md) — concrete practices that implement readiness across pillars
+- [Spec-Driven Agentic SDLC](sdlc/README.md) — a workflow architecture that shows what advancing through readiness levels looks like in practice; the [adoption roadmap](sdlc/adoption-roadmap.md) maps four SDLC stages to ARM levels with gating criteria and failure modes
 - [SOURCES.md](../../SOURCES.md) — annotated bibliography

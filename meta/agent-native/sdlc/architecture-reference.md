@@ -1,10 +1,10 @@
-# AI-Native SaaS Engineering Platform
+# Architecture Reference
 
-> The complete platform architecture combining executable specs, spec graphs, behavioral indexing, AI coding agents, and CI/CD guardrails.
+*Visual reference for the spec-driven agentic SDLC platform.*
 
----
+## Platform Architecture
 
-## Platform Architecture Diagram
+The diagram below shows the complete closed-loop architecture, from product intent through implementation and verification back to spec graph evolution.
 
 ```
                       ┌───────────────────────────────┐
@@ -87,11 +87,11 @@
 
 ---
 
-## The Key Architectural Layers
+## Layer-by-Layer Explanation
 
 ### 1. Intent Layer (Source of Truth)
 
-The system begins with structured behavioral specifications.
+Engineers define structured behavioral specifications describing inputs, outputs, invariants, domain events, preconditions, and postconditions. This layer represents **what the product should do** — the [seed](../../../principles/seed.md) from which implementation grows.
 
 **Example spec:**
 
@@ -110,13 +110,13 @@ effects:
   - invoice_event_emitted
 ```
 
-This layer represents **what the product should do**. Systems like Aviator Verify treat these specs as authoritative artifacts for validation.
+Spec verification tools treat these specs as authoritative artifacts for validation.
 
 ---
 
 ### 2. Spec Graph (Behavior Model)
 
-Specs are compiled into a graph of system behavior.
+Specs compile into a graph of system behavior. This graph models domain workflows, event propagation, and system dependencies — becoming the **behavioral map of the product**.
 
 **Example:**
 ```
@@ -126,18 +126,13 @@ create_invoice
    → notification_sent
 ```
 
-This graph models:
-- Domain workflows
-- Event propagation
-- System dependencies
-
-It becomes the **behavioral map of the product**.
+The spec graph serves a similar purpose to the structured flow documentation in [Codebase Cartography](../../../techniques/codebase-cartography.md), but in machine-readable form suitable for automated traversal and impact analysis.
 
 ---
 
 ### 3. Behavioral Index
 
-The index connects the spec graph to implementation.
+The index connects the spec graph to implementation, enabling behavior-first navigation.
 
 **Example mapping:**
 ```
@@ -147,16 +142,13 @@ create_invoice
   → invoice_repository.save()
 ```
 
-This enables:
-- AI agents to navigate the codebase
-- CI to determine impacted behaviors
-- Engineers to reason about system changes
+This extends [code indexing](../../../techniques/codebase-indexing.md) beyond symbol search into behavioral navigation — agents and CI systems can ask "what code implements this behavior?" rather than just "where is this function defined?"
 
 ---
 
 ### 4. Planning Engine
 
-Specs are converted into implementation plans.
+Specs convert into implementation plans — task DAGs that guide AI coding agents and developer workstreams.
 
 **Example plan DAG:**
 ```
@@ -168,52 +160,25 @@ create_invoice
  └ send notification
 ```
 
-These plans guide AI coding agents and developer workstreams.
-
 ---
 
 ### 5. Implementation Layer
 
-Features are implemented by developers, AI coding agents, or automated refactoring tools.
-
-Standard output artifacts:
-- Services
-- APIs
-- Schemas
-- Tests
+Features are implemented by developers, AI coding agents, or automated refactoring tools. Standard output artifacts: services, APIs, schemas, tests.
 
 ---
 
 ### 6. Verification Layer
 
-Every change is verified against the behavioral model using three strategies:
+Every change is verified against the behavioral model using complementary strategies:
 
-#### Spec Verification
+| Strategy | Focus | Example tools |
+|---|---|---|
+| **Spec verification** | Implementation satisfies declared intent — invariant validation, API contract enforcement, policy compliance | Aviator Verify |
+| **Scenario exploration** | Runtime robustness — state inconsistencies, UI regressions, integration issues | Ranger |
+| **Impact analysis** | Graph traversal determines what needs testing based on behavioral dependencies | Custom (see [Pilot Guide](pilot-guide.md)) |
 
-| Tool | Checks |
-|---|---|
-| Aviator Verify | Invariant validation, API contract enforcement, policy compliance |
-
-#### Scenario Exploration
-
-| Tool | Finds |
-|---|---|
-| Ranger | State inconsistencies, UI regressions, integration issues |
-
-#### Impact Analysis
-
-The spec graph determines what needs testing.
-
-**Example:**
-```
-create_invoice change
-      ↓ affects
-billing pipeline
-      ↓ affects
-ledger
-```
-
-Only impacted areas are verified.
+This layered verification approach applies [risk-tiered automation](../../../techniques/risk-tiered-automation.md): deterministic spec checks gate every PR, while deeper scenario exploration runs for changes affecting critical behavioral paths.
 
 ---
 
@@ -227,55 +192,44 @@ Pull requests merge only when:
 ✓ scenario exploration passes
 ```
 
-This turns CI/CD into **behavioral governance**.
+This turns CI/CD into **behavioral governance** — a concrete implementation of the [validation](../../../principles/validation.md) principle where the verifier operates independently of the implementer.
 
 ---
 
 ### 8. Runtime Feedback Loop
 
-Production telemetry feeds back into the spec graph.
+Production telemetry feeds back into the spec graph, closing the [feedback loop](../../../principles/feedback-loop.md):
 
 | Trigger | Outcome |
 |---|---|
-| New user path detected | New scenarios |
-| Unexpected workflow discovered | New constraints |
-| Rare edge case observed | New spec nodes |
+| New user path detected | New scenarios added |
+| Unexpected workflow discovered | New constraints identified |
+| Rare edge case observed | New spec nodes created |
 
-The system **continuously improves** its behavioral model.
+The system continuously improves its behavioral model — an application of [compound knowledge](../../../principles/compound-knowledge.md) where each production observation strengthens the specification base.
 
 ---
 
-## The Big Idea
+## The Architectural Shift
 
 | Paradigm | Source of Truth |
 |---|---|
 | Traditional software | Code repository |
-| AI-native software | Behavior model |
+| Spec-driven software | Behavior model |
 
 ```
-specs
-  ↓
-behavior graph
-  ↓
-code generation
-  ↓
-behavior verification
+specs → behavior graph → code generation → behavior verification
 ```
 
-Code becomes an **implementation artifact** inside a behavioral system.
+Code becomes an **implementation artifact** inside a behavioral system. This parallels the broader pattern where the [environment](../../../principles/agent-native-environment.md) — not the agent — is the primary lever of effectiveness.
 
 ---
 
-## Why This Matters for SaaS Organizations
+## See Also
 
-AI coding dramatically increases PR volume, change velocity, and system complexity. Spec-driven platforms introduce governance mechanisms that scale with AI:
-
-- Explicit system models
-- Automated impact analysis
-- Behavioral verification pipelines
-
----
-
-## Executive Summary
-
-> An AI-native SaaS engineering platform organizes development around behavioral specifications and spec graphs, allowing AI agents to implement features while CI/CD pipelines enforce correctness through spec verification, scenario exploration, and graph-based impact analysis. This architecture creates a behavioral control plane that governs automated code generation and keeps large systems reliable as development accelerates.
+- [Spec-Driven Architecture](spec-driven-architecture.md) — core concepts and the behavioral control plane
+- [GitHub Workflow](github-workflow.md) — how this architecture operationalizes in practice
+- [Adoption Roadmap](adoption-roadmap.md) — staged path to adopting this architecture
+- [Pilot Guide](pilot-guide.md) — concrete repo structure and 90-day implementation plan
+- [Codebase Cartography](../../../techniques/codebase-cartography.md) — structured documentation that the spec graph extends
+- [Risk-Tiered Automation](../../../techniques/risk-tiered-automation.md) — graduated verification levels

@@ -1,72 +1,12 @@
-# Agentic SDLC — Knowledge Base
+# Spec-Driven Agentic SDLC
 
-> A structured collection of documents covering spec-driven agentic SDLC concepts, architecture patterns, and adoption strategies. Derived from an in-depth conversation exploring how behavioral specifications, spec graphs, and AI coding agents combine to form a modern engineering platform.
-
----
-
-## Documents
-
-### [01 — Spec-Driven Agentic SDLC](./01-spec-driven-agentic-sdlc.md)
-
-The foundational overview. Introduces the core principle of behavior-centric development and describes the four-layer architecture: Executable Specifications, Spec Graphs, Behavioral Index, and Behavioral CI Guardrails. Includes an adoption strategy and strategic outcome summary.
+*A workflow architecture composing agent-native practices into an end-to-end development lifecycle.*
 
 ---
 
-### [02 — Visual Architecture](./02-visual-architecture.md)
+The [practices catalog](../practices/README.md) maps *what* to adopt — linters, code indexing, background agents, entropy management. This section maps *how* these practices compose into a coherent development workflow built around behavioral specifications.
 
-A detailed ASCII architecture diagram of the full spec-driven SDLC stack, with layer-by-layer explanations covering the Intent Layer, Spec Graph, Behavioral Index, Planning Layer, Implementation Layer, and Verification Layer (Aviator Verify + Ranger). Includes a one-sentence architectural takeaway.
-
----
-
-### [03 — Spec-Gated GitHub Workflow](./03-spec-gated-github-workflow.md)
-
-A GitHub-centric operationalization of the spec-driven model. Walks through the full development lifecycle from spec PR through CI merge gate, covering spec compilation, behavioral indexing, planning, implementation, and the three-stage CI verification pipeline (spec verification, impact analysis, scenario exploration).
-
----
-
-### [04 — Behavioral Control Plane](./04-behavioral-control-plane.md)
-
-The conceptual model that "unlocks" the architecture for engineering leadership. Explains why the behavioral control plane — the combination of spec graph and behavioral index — becomes the operating system for AI-native engineering teams, separating implementation, behavior modeling, intent, and verification into distinct planes.
-
----
-
-### [05 — AI-Native SaaS Engineering Platform](./05-ai-native-saas-platform.md)
-
-The complete end-to-end platform architecture. Combines all prior concepts into a unified diagram showing how product teams, intent layer, spec graph, behavioral index, planning engine, AI coding agents, CI/CD pipeline, and runtime telemetry form a closed feedback loop around behavioral correctness.
-
----
-
-### [06 — Maturity Roadmap](./06-maturity-roadmap.md)
-
-A four-stage adoption roadmap from test-centric development through fully agentic development. Describes the characteristics, capabilities, and limitations of each stage, with a realistic Year 1–3+ adoption timeline for SaaS organizations.
-
----
-
-### [07 — One-Page Explainer](./07-one-page-explainer.md)
-
-A single-slide condensation of the entire architecture suitable for CTO briefings and leadership presentations. Includes the consolidated architecture diagram, SDLC paradigm comparison table, tool placement (Aviator Verify, Ranger), and a ready-to-use one-sentence internal explanation.
-
----
-
-### [08 — Repo Structure and 90-Day Pilot](./08-repo-structure-and-pilot.md)
-
-A concrete implementation guide for teams ready to act. Covers the recommended GitHub monorepo layout (`specs/`, `graph/`, `behavior-index/`, CI workflows, and `AGENTS.md`), the spec file format, and a phased 90-day pilot scoped to a single domain. Includes working TypeScript for spec graph compilation, impact analysis, and spec verification. Delivers Stage 2 of the maturity model with Stage 3 infrastructure already in place.
-
----
-
-## Key Concepts at a Glance
-
-| Concept | Description |
-|---|---|
-| **Executable Spec** | Machine-readable behavioral contract defining inputs, outputs, invariants, and effects |
-| **Spec Graph** | A directed graph of system behaviors connected by dependencies, events, and state transitions |
-| **Behavioral Index** | A mapping from spec nodes to implementing code, enabling behavior-first navigation |
-| **Planning Engine** | Converts specs into implementation task DAGs for developers and AI agents |
-| **Spec Verification** | CI verification that implementation satisfies declared spec (e.g. Aviator Verify) |
-| **Scenario Exploration** | Dynamic runtime testing that discovers emergent and unexpected behaviors (e.g. Ranger) |
-| **Behavioral Control Plane** | The governance layer above code — specs + graph + index — that governs agentic development |
-
----
+The central architectural idea: system behavior, expressed as structured executable specifications compiled into a spec graph, becomes the control plane for AI-assisted software development. Code becomes the implementation layer; the spec graph becomes the behavioral model of the product. This approach instantiates several principles from the broader framework — [specification discipline](../../../techniques/specification-discipline.md) for writing agent-ready specs, [codebase cartography](../../../techniques/codebase-cartography.md) for structured system documentation, and [validation](../../../principles/validation.md) for independent behavioral verification.
 
 ## The Core Progression
 
@@ -75,3 +15,46 @@ Traditional SDLC:   code → tests → deploy
 Spec-Driven SDLC:   spec → code → verify
 Agentic SDLC:       intent → plan → implement → verify
 ```
+
+## Documents
+
+| File | Description |
+|------|-------------|
+| [spec-driven-architecture.md](spec-driven-architecture.md) | Core concepts — the four-layer architecture and behavioral control plane |
+| [architecture-reference.md](architecture-reference.md) | Visual reference — closed-loop platform diagram with layer-by-layer explanation |
+| [github-workflow.md](github-workflow.md) | Operationalization — spec-gated GitHub workflow from spec PR through verification to deployment |
+| [adoption-roadmap.md](adoption-roadmap.md) | Staged adoption — four stages mapped to the [Agent Readiness Model](../maturity-model.md), with gating criteria and failure modes |
+| [one-page-explainer.md](one-page-explainer.md) | Executive summary — single-slide architecture view for CTO briefings |
+| [pilot-guide.md](pilot-guide.md) | Implementation guide — concrete repo structure, spec format, and 90-day pilot plan with working TypeScript |
+
+## Key Concepts
+
+| Concept | Description |
+|---|---|
+| **Executable Spec** | Machine-readable behavioral contract defining inputs, outputs, invariants, and effects |
+| **Spec Graph** | A directed graph of system behaviors connected by dependencies, events, and state transitions |
+| **Behavioral Index** | A mapping from spec nodes to implementing code, enabling behavior-first navigation |
+| **Behavioral Control Plane** | The governance layer above code — specs + graph + index — that governs agentic development |
+
+These terms are defined in the [Glossary](../../../GLOSSARY.md).
+
+## Connection to the Broader Framework
+
+The spec-driven SDLC directly instantiates several existing practices and techniques:
+
+| SDLC Concept | Existing Practice/Technique | Connection |
+|---|---|---|
+| Executable specs as CI gate | [Linters as Architectural Guardrails](../practices/README.md#linters-as-architectural-guardrails) | Spec verification is a behavioral linter |
+| Behavioral index | [Code Indexing and Search](../practices/README.md#code-indexing-and-search) | Spec-to-code mapping extends code search into behavioral navigation |
+| Spec graph as documentation | [Codebase Cartography](../../../techniques/codebase-cartography.md) | The spec graph is a machine-readable cartographic artifact |
+| AI agents navigating via index | [Background Agents](../practices/README.md#background-agents) | The behavioral index is the context layer background agents need |
+| Spec drift detection | [Entropy Management](../practices/README.md#entropy-management) | Spec-code drift is a form of entropy requiring continuous cleanup |
+| Spec format | [Specification Discipline](../../../techniques/specification-discipline.md) | Executable specs are a concrete implementation of the self-check heuristic |
+
+---
+
+**See also:**
+- [Agent-Native Engineering](../README.md) — the parent directory: what agents need and how organizations are providing it
+- [Agent Readiness Model](../maturity-model.md) — maturity framework the adoption roadmap maps to
+- [Practices Catalog](../practices/README.md) — the individual practices this workflow composes
+- [Takeaways](../../takeaways.md) — broader adoption guidance for engineering leaders

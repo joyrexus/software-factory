@@ -151,3 +151,4 @@ The documentation architecture also provides a natural specification surface. Wh
 - [Filesystem as Memory](filesystem-as-memory.md) — the underlying substrate; cartography is a specific application of filesystem-as-memory to system documentation
 - [Pyramid Summaries](pyramid-summaries.md) — the compression technique; cartography's overview → component → flow hierarchy is a pyramid structure
 - [Specification Discipline](specification-discipline.md) — flow folders provide the starting location and done criteria that good specifications require
+- [Spec-Driven Agentic SDLC](../meta/agent-native/sdlc/README.md) — the spec graph is a machine-readable cartographic artifact; the pilot guide's repo structure builds on the docs/ convention described here
