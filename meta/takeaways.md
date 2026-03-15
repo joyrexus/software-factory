@@ -44,6 +44,8 @@ The [honest questions](questions.md) section surfaces the practical answer: prov
 
 The key insight is sequencing. Organizations that build proving loops first find that agents slot in naturally — the validation infrastructure already exists, and agent output is just another input to the same verification pipeline. Organizations that skip straight to agent adoption discover, expensively, that they cannot distinguish agent-written regressions from pre-existing fragility.
 
+The [spec-driven SDLC](agent-native/sdlc/README.md) operationalizes this sequencing as a staged progression: test-centric development first, then executable specs with behavioral verification, then a behavioral graph platform — each stage building the proving infrastructure the next requires.
+
 ## What Has to Change
 
 Four organizational shifts recur across the sources.
@@ -59,6 +61,8 @@ The shift is not just in what engineers do, but in what they optimize for. Writi
 The [specification discipline](../techniques/specification-discipline.md) technique provides a practical self-check: can you identify where the agent begins reading and what artifact proves completion? If either answer is unclear, you have written a wish, not a specification.
 
 When agents write the code, the specification is the code — in the sense that it is the artifact that most determines the quality of the outcome. [Horthy](../SOURCES.md#advanced-context-engineering-for-coding-agents) argues that specs should be treated as "the real code," not discarded after agent compilation. The [seed quality](../principles/seed.md) principle formalizes this: specification quality determines the output ceiling.
+
+The [spec-driven architecture](agent-native/sdlc/spec-driven-architecture.md) takes this further: structured executable specifications compile into a behavioral graph that becomes the control plane for both human review and agent navigation — making the specification not just the primary artifact but the governing model.
 
 ### Expertise must be encoded, not carried
 
@@ -101,3 +105,5 @@ These uncertainties do not invalidate the patterns — they bound the confidence
 - [Specification Discipline](../techniques/specification-discipline.md) — the self-check heuristic for specifications
 - [Agent-Native Practices](agent-native/practices/README.md) — concrete practices catalog: linters, code indexing, plugin marketplaces
 - [Agent Readiness Model](agent-native/maturity-model.md) — maturity levels and technical pillars
+- [Spec-Driven SDLC](agent-native/sdlc/README.md) — workflow architecture: executable specs, behavioral graph, and staged adoption
+- [Pilot Guide](agent-native/sdlc/pilot-guide.md) — concrete 90-day implementation plan for teams ready to start

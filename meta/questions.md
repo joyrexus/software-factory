@@ -26,6 +26,16 @@ Most existing codebases are nowhere near this. They lack the observability and r
 
 Organizations that build these proving loops first will find that agents slot in naturally — the validation infrastructure already exists. Organizations that skip straight to agent adoption will discover, expensively, that they cannot distinguish agent-written regressions from pre-existing fragility.
 
+Spec verification — validating implementation against executable behavioral specifications in CI — represents a complementary form of proving loop: one that operates at the feature level rather than the system level. The [spec-driven SDLC](agent-native/sdlc/README.md) describes how organizations can build this capability incrementally, starting with a [90-day pilot](agent-native/sdlc/pilot-guide.md) for a single bounded domain.
+
 Brockman's six-point framework offers concrete examples of this infrastructure: AGENTS.md as living documentation that agents consult before acting, observability for agent trajectories so teams can audit what agents did and why, structured tool access via CLI or MCP, and quality gates that enforce standards on AI-generated code. Levie's call for "authoritative documented approaches to how things get done" maps directly to the [seed quality](../principles/seed.md) principle — the better the documentation, the higher the ceiling on agent output.
 
 For a structured assessment of where a codebase stands, Factory.ai's [Agent Readiness Model](agent-native/maturity-model.md) provides a maturity framework with five levels and ten technical pillars. The pillars map directly to the formula: Seed, Validation, and Feedback Loop — a codebase that scores well across them is one where the proving loops are already in place.
+
+---
+
+**See also:**
+- [Takeaways for engineering leaders](takeaways.md) — practical synthesis of evidence and organizational shifts
+- [A game plan](game-plan.md) — phased approach to adoption
+- [Agent Readiness Model](agent-native/maturity-model.md) — maturity framework referenced above
+- [Spec-Driven SDLC](agent-native/sdlc/README.md) — spec verification as a complementary proving loop

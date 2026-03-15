@@ -14,6 +14,8 @@ Before adopting agents, build the infrastructure that makes correctness demonstr
 - **Build proving loops** for your most critical paths. If you cannot prove the system works today, you cannot prove agents have not broken it tomorrow. Start with service-level invariants, golden signals, and synthetic journeys for the workflows that matter most.
 - **Invest in validation infrastructure.** CI/CD that runs automatically, test suites with clear pass/fail signals, observability that makes outcomes measurable. The evidence suggests these investments pay for themselves independent of agent adoption — they are good engineering practice that also happens to be an agent prerequisite.
 
+For teams ready to go further, the [spec-driven SDLC adoption roadmap](agent-native/sdlc/adoption-roadmap.md) maps a more granular technical progression — from test-centric development through executable specs to a behavioral graph platform — with gating criteria at each stage.
+
 ## Phase 2: Prepare the environment
 
 Create the conditions that make agents effective.
@@ -29,6 +31,7 @@ Create the conditions that make agents effective.
 Begin with tasks where the environment provides clear feedback.
 
 - **Start with simple, one-shottable tasks** — well-scoped, clear specifications, strong test coverage, unambiguous done criteria. [Pignanelli's](../SOURCES.md#agent-native-engineering) task classification provides the framework: simple (one-shottable), manageable (background agents with feedback cycles), complex (engineer-managed with synchronous agents). Start at the bottom.
+- The [90-day pilot guide](agent-native/sdlc/pilot-guide.md) provides a concrete starting point: executable specs, a compiled spec graph, and spec verification in CI for a single bounded domain.
 - **Measure.** What percentage of PRs come from agents? What is the rework rate? How does cycle time compare? These metrics inform whether the environment is ready for more complex delegation.
 - **Let adoption be organic.** [Ramp](../SOURCES.md#why-we-built-our-own-background-agent) reached approximately 30% agent-written PRs without mandating usage — engineers adopted the tool because it worked. Forced adoption before the environment is ready creates frustration and undermines confidence in the approach.
 
@@ -49,3 +52,5 @@ As agent adoption matures, the organizational model changes.
 - [Agent-Native Practices](agent-native/practices/README.md) — concrete practices catalog: linters, code indexing, plugin marketplaces
 - [Honest questions](questions.md) — provability, token economics, and what readiness really means
 - [Agent-native engineering](agent-native/README.md) — background agents, case studies, and the maturity framework
+- [Spec-Driven SDLC](agent-native/sdlc/README.md) — workflow architecture composing practices into an end-to-end spec-driven lifecycle
+- [Adoption Roadmap](agent-native/sdlc/adoption-roadmap.md) — four-stage technical progression mapped to the Agent Readiness Model
