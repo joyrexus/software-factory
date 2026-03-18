@@ -431,6 +431,19 @@ An overview of background agents as autonomous development infrastructure — sy
 
 ---
 
+## Why You're Overthinking Background Agents
+
+**URL:** [ranger.net/blog/background-agents](https://www.ranger.net/blog/background-agents)
+**Author:** Daniel Griffin
+
+A practical walkthrough of building background agent infrastructure on GCP with roughly 500 lines of infrastructure glue — YAML, bash, and a thin Python orchestration layer. Griffin's central argument is a deliberate counterpoint to the sophisticated setups described by Stripe and Ramp: you don't need Kubernetes, Terraform, warm pools, or monitoring dashboards to start. Cold-start VMs (~3 minutes), on-demand spin-up, and a simple YAML task definition are sufficient for many teams. The article walks through concrete implementation details including Neon database branching for per-session data isolation and an application-layer side-effect containment pattern: a `SANDBOX_ENV` flag plus notification outbox (~100 lines of code) that intercepts outbound calls — email, Slack posts, webhooks — and logs them to a local file instead of reaching real services.
+
+**Key contributions:** The simplicity counterpoint (background agents are achievable with ~500 lines of glue code), application-layer side-effect containment via environment flags, database branching for session-level data isolation.
+
+**Tags:** [cloud-agents](GLOSSARY.md#cloud-agents) | [agent-native-environment](GLOSSARY.md#agent-native-environment) | [digital-twin-universe](GLOSSARY.md#digital-twin-universe)
+
+---
+
 ## Towards Self-Driving Codebases
 
 **URL:** [cursor.com/blog/self-driving-codebases](https://cursor.com/blog/self-driving-codebases)
