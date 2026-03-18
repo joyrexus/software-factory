@@ -131,12 +131,13 @@ CI then runs targeted verification for those behaviors.
 
 **Verification approaches include:**
 
-| Approach | Focus |
-|---|---|
-| **Spec verification** | Ensures implementation satisfies the specification (e.g., [Aviator Verify](../../../SOURCES.md)) |
-| **Scenario exploration** | Explores realistic workflows to discover failures (e.g., [Ranger](../../../SOURCES.md)) |
+| Approach | Focus | Expected behavior source |
+|---|---|---|
+| **Spec verification** | Ensures implementation satisfies an explicit behavioral contract (e.g., Aviator Verify, Momentic) | Written specifications or assertions |
+| **Scenario exploration** | Explores realistic workflows to discover failures (e.g., Ranger) | Autonomous traversal |
+| **Baseline regression** | Replays recorded user sessions and flags visual/functional drift (e.g., Meticulous) | Recorded production behavior |
 
-Together they verify both **intended behavior** and **emergent system behavior** — applying the principle of [independent validation](../../../principles/validation.md) where the verifier is structurally separate from the implementer.
+Spec verification and scenario exploration verify **intended behavior** and **emergent system behavior** respectively. Baseline regression adds a third angle: verifying that *observed behavior hasn't changed*, using recorded real user sessions as an implicit specification. Together the three approaches apply the principle of [independent validation](../../../principles/validation.md) where the verifier is structurally separate from the implementer.
 
 **Benefits:**
 - Behavior-aware CI
