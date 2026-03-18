@@ -49,6 +49,8 @@ emits:
 
 This format directly answers the [self-check heuristic](../../../techniques/specification-discipline.md): the agent knows where to start (the spec), what to implement (the postconditions), and what proves completion (the emitted events and persisted state).
 
+Note that this format intentionally captures *what* the system should do (behavioral contract) without prescribing *how* it is architectured. Some practitioners separate these concerns further — maintaining distinct requirement documents (what/why) alongside architectural blueprints (how components compose to deliver the behavior). The tradeoff is precision vs. coupling: architectural blueprints give agents more navigation context but create specifications that break on refactoring. The behavioral contract approach favored here is more resilient, at the cost of leaving architectural composition to the planning layer.
+
 **Benefits:**
 - Clearer feature intent
 - Improved cross-team communication

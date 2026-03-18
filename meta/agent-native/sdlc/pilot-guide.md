@@ -93,6 +93,8 @@ scenarios:
 
 This single file serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers — applying [specification discipline](../../../techniques/specification-discipline.md) to produce artifacts that satisfy the self-check heuristic: the agent knows where to start, what to implement, and what proves completion.
 
+For non-obvious design choices, consider adding an `decisions:` section to the spec — lightweight architecture decision records (context, decision, consequences) that preserve the *why* behind structural choices. Agents benefit from this context when the spec alone doesn't explain why one approach was chosen over alternatives.
+
 ---
 
 ## Part 2 — 90-Day Pilot
@@ -107,7 +109,7 @@ This single file serves as instruction to the agent, acceptance criteria for CI,
 
 **Goal:** Write 8–12 specs for existing features. Compile them into a graph. Commit it.
 
-You are not building new features — you are describing what already exists. This forces clarity about what the system actually does.
+You are not building new features — you are describing what already exists. This forces clarity about what the system actually does. (A practical question that arises immediately: how granular should each spec be? A useful heuristic — each spec should deliver independently testable value. If a feature has sub-capabilities that different roles own or that could ship independently, split them. If the behaviors are interdependent and only make sense together, keep them in one spec.)
 
 ```typescript
 // scripts/compile-spec-graph.ts
