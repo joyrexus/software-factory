@@ -2,6 +2,15 @@
 
 *A condensed architecture view suitable for CTO briefings, engineering RFCs, and internal strategy decks.*
 
+## Contents
+
+- [Architecture Overview](#architecture-overview) — closed-loop diagram from product intent through spec graph, CI, and runtime feedback
+- [The Core Idea](#the-core-idea) — the three-row paradigm table contrasting traditional, spec-driven, and agentic SDLC
+- [The Architectural Shift](#the-architectural-shift) — how behavior models replace code review as the control mechanism
+- [What This Means for a SaaS Organization](#what-this-means-for-a-saas-organization) — how teams and primary artifacts change
+- [One-Sentence Explanation](#one-sentence-explanation) — a single-line summary for briefings
+- [See Also](#see-also)
+
 ## Architecture Overview
 
 ```

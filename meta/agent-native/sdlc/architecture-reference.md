@@ -87,6 +87,13 @@ The diagram below shows the complete closed-loop architecture, from product inte
 
 ---
 
+## Contents
+
+- [Platform Architecture](#platform-architecture) — full closed-loop ASCII diagram from product teams through runtime feedback
+- [Layer-by-Layer Explanation](#layer-by-layer-explanation) — detailed walkthrough of all eight platform layers
+- [The Architectural Shift](#the-architectural-shift) — source-of-truth comparison between traditional and spec-driven software
+- [See Also](#see-also)
+
 ## Layer-by-Layer Explanation
 
 ### 1. Intent Layer (Source of Truth)

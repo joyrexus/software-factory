@@ -4,6 +4,18 @@
 
 ---
 
+## Contents
+
+- [Part 1 — Repo Structure](#part-1--repo-structure) — monorepo layout with specs/, graph/, behavior-index/, and CI workflows
+  - [Spec File Format](#spec-file-format) — YAML schema for inputs, invariants, effects, scenarios, and decisions
+- [Part 2 — 90-Day Pilot](#part-2--90-day-pilot) — three-phase plan to reach Stage 2 with Stage 3 infrastructure in place
+  - [Phase 1 — Weeks 1–4: Spec Authoring and Compilation](#phase-1--weeks-14-spec-authoring-and-compilation) — write 8–12 specs, compile the graph, commit it
+  - [Phase 2 — Weeks 5–10: Behavior Index and Impact Analysis](#phase-2--weeks-510-behavior-index-and-impact-analysis) — automated impact scoping on every code PR
+  - [Phase 3 — Weeks 11–13: Spec Verification Gate](#phase-3--weeks-1113-spec-verification-gate) — behavior-gated PR merge enforcement
+- [What You Have at Day 90](#what-you-have-at-day-90) — artifact checklist and ARM level achieved
+- [What Comes Next](#what-comes-next) — Stage 3 and Stage 4 extensions built on the pilot output
+- [See Also](#see-also)
+
 ## Part 1 — Repo Structure
 
 The layout below is a monorepo. The three new directories — `specs/`, `graph/`, and `behavior-index/` — are the artifacts this architecture introduces on top of normal code. Everything else is familiar.

@@ -2,6 +2,13 @@
 
 *How a SaaS organization operationalizes spec-driven development within a GitHub-centric process.*
 
+## Contents
+
+- [Workflow Diagram](#workflow-diagram) — end-to-end ASCII diagram from spec PR through deployment and runtime feedback
+- [How This Workflow Operates](#how-this-workflow-operates) — step-by-step walkthrough of the eight-step spec-gated process
+- [Why This Model Works Well With AI Coding](#why-this-model-works-well-with-ai-coding) — how spec-driven guardrails scale with AI-generated PR volume
+- [See Also](#see-also)
+
 ## Workflow Diagram
 
 ```

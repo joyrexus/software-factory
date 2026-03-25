@@ -21,6 +21,16 @@ In this model:
 
 ---
 
+## Contents
+
+- [Overview](#overview) — the shift from code-centric to behavior-centric development
+- [The Four-Layer Architecture](#the-four-layer-architecture) — executable specs, spec graph, behavioral index, and CI guardrails
+- [The Behavioral Control Plane](#the-behavioral-control-plane) — how the four layers compose into a governance layer above the code
+- [The Resulting Development Model](#the-resulting-development-model) — before/after comparison of the development loop
+- [How AI Agents Fit Into This Model](#how-ai-agents-fit-into-this-model) — the read-plan-navigate-generate-validate loop
+- [Organizational Impact](#organizational-impact) — engineering conversation shift from code to behavior
+- [See Also](#see-also)
+
 ## The Four-Layer Architecture
 
 ### 1. [Executable Specifications](../../../GLOSSARY.md#executable-spec) (Intent Layer)

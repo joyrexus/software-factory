@@ -10,6 +10,14 @@ That gap is what this document addresses. Spec authoring is not a preliminary st
 
 ---
 
+## Contents
+
+- [The Expanded Progression](#the-expanded-progression) — how the full intent→verify pipeline expands beyond the common summary
+- [Why Authoring Is the Critical Stage](#why-authoring-is-the-critical-stage) — the temporal argument for why specs are the cheapest place to be wrong
+- [The Four Stages](#the-four-stages) — surface context → elicit constraints → draft → graph integration check
+- [What This Produces](#what-this-produces) — the spec PR artifact the rest of the framework operates on
+- [See Also](#see-also)
+
 ## The Expanded Progression
 
 The framework's development model is typically summarized as:

@@ -10,6 +10,13 @@ This document sorts them by the actual argument each is making, assesses what ea
 
 ---
 
+## Contents
+
+- [The Claims](#the-claims) — seven distinct arguments for why specs are structurally necessary, not merely useful
+- [The Synthesis](#the-synthesis) — what the seven claims add up to as a single coherent position
+- [Mapping to the Framework](#mapping-to-the-framework) — each claim mapped to its implication and the document that operationalizes it
+- [See Also](#see-also)
+
 ## The Claims
 
 ### Claim 1: The bottleneck is always clarity, not capability

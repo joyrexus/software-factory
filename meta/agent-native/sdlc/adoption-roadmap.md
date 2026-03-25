@@ -8,6 +8,19 @@ Adopting a spec-driven architecture is not a single transition — it is a stage
 
 ---
 
+## Contents
+
+- [The Four Stages](#the-four-stages) — progression diagram from test-centric through spec-driven agentic development
+- [Stage-to-ARM Mapping](#stage-to-arm-mapping) — how SDLC stages map to Agent Readiness Model levels and pillars
+- [Stage 1 — Test-Centric Development](#stage-1--test-centric-development) — current state: CI, tests, implicit architecture knowledge
+- [Stage 2 — Executable Specs](#stage-2--executable-specs) — machine-readable specs as first-class artifacts, with failure modes
+- [Stage 3 — Behavioral Graph Platform](#stage-3--behavioral-graph-platform) — spec graph, behavioral index, graph-aware CI
+- [Stage 4 — Spec-Driven Agentic Development](#stage-4--spec-driven-agentic-development) — agents navigating, planning, and verifying against the behavioral model
+- [Legacy Code Strategy](#legacy-code-strategy) — incremental adoption path for existing codebases
+- [Organizational Considerations](#organizational-considerations) — who authors specs, PM↔engineer interface, ongoing cost
+- [Realistic Adoption Timeline](#realistic-adoption-timeline) — month-by-month milestones for a mid-size SaaS team
+- [See Also](#see-also)
+
 ## The Four Stages
 
 ```
