@@ -93,7 +93,7 @@ scenarios:
 
 This single file serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers — applying [specification discipline](../../../techniques/specification-discipline.md) to produce artifacts that satisfy the self-check heuristic: the agent knows where to start, what to implement, and what proves completion.
 
-For non-obvious design choices, consider adding an `decisions:` section to the spec — lightweight architecture decision records (context, decision, consequences) that preserve the *why* behind structural choices. Agents benefit from this context when the spec alone doesn't explain why one approach was chosen over alternatives.
+For non-obvious design choices, add a `decisions:` section to the spec — lightweight architecture decision records (context, decision, consequences) that preserve the *why* behind structural choices. Agents navigating a new domain read this section for the architectural context the behavioral contract intentionally omits. The [spec authoring workflow](spec-authoring.md) describes how this section gets populated from constraint elicitation, not written after the fact.
 
 ---
 
@@ -108,6 +108,8 @@ For non-obvious design choices, consider adding an `decisions:` section to the s
 ### Phase 1 — Weeks 1–4: Spec Authoring and Compilation
 
 **Goal:** Write 8–12 specs for existing features. Compile them into a graph. Commit it.
+
+For the discipline behind writing specs that are complete and grounded in system context before the first commit, see [Spec Authoring Workflow](spec-authoring.md).
 
 You are not building new features — you are describing what already exists. This forces clarity about what the system actually does. (A practical question that arises immediately: how granular should each spec be? A useful heuristic — each spec should deliver independently testable value. If a feature has sub-capabilities that different roles own or that could ship independently, split them. If the behaviors are interdependent and only make sense together, keep them in one spec.)
 
@@ -272,6 +274,7 @@ The spec graph you build in 90 days becomes the foundation every subsequent stag
 
 ## See Also
 
+- [Spec Authoring Workflow](spec-authoring.md) — the upstream process for authoring complete, grounded specs before Phase 1 begins
 - [Adoption Roadmap](adoption-roadmap.md) — the full staged progression this pilot enters at Stage 2
 - [Spec-Driven Architecture](spec-driven-architecture.md) — the conceptual foundation
 - [Agent Readiness Model](../maturity-model.md) — the maturity framework the pilot targets

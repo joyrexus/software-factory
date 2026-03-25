@@ -51,6 +51,8 @@ This format directly answers the [self-check heuristic](../../../techniques/spec
 
 Note that this format intentionally captures *what* the system should do (behavioral contract) without prescribing *how* it is architectured. Some practitioners separate these concerns further — maintaining distinct requirement documents (what/why) alongside architectural blueprints (how components compose to deliver the behavior). The tradeoff is precision vs. coupling: architectural blueprints give agents more navigation context but create specifications that break on refactoring. The behavioral contract approach favored here is more resilient, at the cost of leaving architectural composition to the planning layer.
 
+Writing a spec that satisfies the self-check heuristic requires a structured authoring process upstream of this format — surfacing system context from the behavioral index, eliciting constraints from stakeholders, and populating the `decisions:` field before drafting begins. See [Spec Authoring Workflow](spec-authoring.md).
+
 **Benefits:**
 - Clearer feature intent
 - Improved cross-team communication
@@ -179,7 +181,7 @@ requirements → code → tests → deploy
 
 **Spec-driven SDLC:**
 ```
-spec → plan → implement → behavioral verification → deploy
+spec authoring → spec → plan → implement → behavioral verification → deploy
 ```
 
 Behavior becomes the control plane of development. Code becomes the implementation layer. This reframing is particularly powerful for AI agents, which operate most effectively when they have explicit intent, navigable system structure, and deterministic guardrails.
@@ -215,6 +217,7 @@ The shift parallels the broader pattern described in the [Agent Readiness Model]
 
 ## See Also
 
+- [Spec Authoring Workflow](spec-authoring.md) — the upstream process that produces the executable spec this architecture operates on
 - [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic that executable specs implement
 - [Codebase Cartography](../../../techniques/codebase-cartography.md) — structured documentation architecture that the spec graph extends
 - [Codebase Indexing](../../../techniques/codebase-indexing.md) — code search that the behavioral index builds on

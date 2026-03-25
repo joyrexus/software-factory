@@ -71,7 +71,9 @@ Behavioral      Planning       Impact
 |---|---|
 | **Traditional SDLC** | `code → tests → deploy` |
 | **Spec-Driven SDLC** | `spec → code → verify` |
-| **Agentic SDLC** | `intent → plan → implement → verify` |
+| **Agentic SDLC** | `intent → spec authoring → compile → plan → implement → verify` |
+
+The spec authoring stage — surfacing system context, eliciting constraints, drafting, and integration checking — is what separates a grounded executable spec from aspirational requirements. See [Spec Authoring Workflow](spec-authoring.md).
 
 Traditional software development revolves around **code**. Emerging practice suggests that AI-native development increasingly revolves around **behavior models** — structured specifications that define what the system should do, independent of how it is implemented.
 
@@ -105,6 +107,7 @@ For how this maps to organizational maturity, see the [Adoption Roadmap](adoptio
 
 ## See Also
 
+- [Spec Authoring Workflow](spec-authoring.md) — how intent becomes a grounded executable spec, upstream of everything shown here
 - [Spec-Driven Architecture](spec-driven-architecture.md) — full conceptual treatment
 - [Architecture Reference](architecture-reference.md) — detailed platform diagram with layer explanations
 - [Adoption Roadmap](adoption-roadmap.md) — staged adoption path mapped to the Agent Readiness Model

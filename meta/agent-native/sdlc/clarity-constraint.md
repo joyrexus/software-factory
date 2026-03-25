@@ -100,6 +100,7 @@ The gap the claims point to — tribal knowledge teams carry informally — is t
 
 ## See Also
 
+- [spec-authoring.md](spec-authoring.md) — the operational workflow that turns these claims into a disciplined authoring process
 - [spec-driven-architecture.md](spec-driven-architecture.md) — the four-layer architecture these claims justify
 - [pilot-guide.md](pilot-guide.md) — concrete spec format with `decisions:` field for capturing tribal knowledge
 - [Specification Discipline](../../../techniques/specification-discipline.md) — the self-check heuristic for writing agent-ready specs
