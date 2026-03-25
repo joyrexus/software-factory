@@ -1,6 +1,6 @@
 # The Clarity Constraint
 
-*Six claims about why specs are the central artifact — and what they add up to.*
+*Seven claims about why specs are the central artifact — and what they add up to.*
 
 ---
 
@@ -34,15 +34,21 @@ This maps directly to the [Seed Quality](../../../GLOSSARY.md#seed-quality) prin
 
 > "Developers define what should be built and delegate the execution to their coding agents. You focus on what should be built; agents handle how it's executed."
 
+> "Engineers define the intent and constraints in the spec, agents explore the implementation space, and the system continuously refers back to the spec as the source of truth."
+
 This is a role-separation claim. Humans hold the "what" and "why"; agents hold the "how." The insight is not novel — every sufficiently abstract system draws this distinction. What is different in the agent context is the consequence of leaving the division implicit.
 
 An agent with no spec will make "what" decisions constantly. Intent gaps do not pause execution; they get filled with implementation choices nobody authorized. The agent is not being disobedient — it is doing exactly what it was asked to do, under conditions of insufficient specification. The spec is the mechanism by which the division of labor is enforced structurally rather than just intended conceptually. Without it, the boundary between human judgment and agent execution collapses into the implementation.
+
+The second quote sharpens the picture in two ways. "Explore" is more precise than "execute": agents are not simply executing instructions, they are navigating a bounded implementation space defined by the spec. The spec does not prescribe the path; it defines the boundaries within which the agent searches. And "continuously refers back" names something the existing framing leaves implicit: the spec is not a one-time instruction issued at the start of work. It is the reference point the system returns to throughout implementation — the authority that settles ambiguity when the agent encounters a decision the spec did not anticipate.
 
 ### Claim 4: The spec is bidirectional
 
 > "Work should start from a spec that evolves as you make progress. As code changes, your coding agent reads from and updates the spec so every human and agent stays aligned."
 
 > "The spec isn't a human artifact or an agent artifact. Both sides read from it and write to it."
+
+> "The spec and the implementation evolve together."
 
 Traditional specs are write-once human artifacts: authored before development, consulted occasionally during implementation, abandoned as the code diverges from the original document. These claims describe a different artifact entirely. Information flows in both directions: humans write intent; agents write back what was actually built, what decisions were made, what constraints were discovered during implementation. The spec stays current not because someone is maintaining documentation but because updating the spec is part of executing the work.
 
@@ -74,6 +80,16 @@ The gap between these two halves is where AI-assisted spec generation becomes ge
 
 The "spec as system of record" formulation follows from this: if the spec is where correctness is evaluated, it must contain enough system context to make that evaluation meaningful — not just what was intended, but what the system actually constrains and what patterns the implementation must respect.
 
+### Claim 7: The spec becomes operational infrastructure
+
+> "The spec becomes operational infrastructure. It stops being a document that describes the system and becomes one that actively governs how it's built."
+
+The previous claims establish what a spec should contain and how it should behave. This claim is about what a spec *is* — its ontological status in the development system. The shift the quote describes is from documentation to infrastructure: a spec that describes is passive, consulted occasionally, and tolerated when stale; a spec that governs is active, authoritative, and treated as a first-class system component whose integrity must be maintained.
+
+This distinction is what separates spec-driven development from spec-*first* development. Spec-first means writing requirements before coding — a timing rule. Spec-driven means the spec remains the authority throughout: it gates implementation PRs, drives CI verification, and is the artifact agents refer back to when implementation choices arise. The spec does not retire when coding begins; it becomes load-bearing infrastructure that the rest of the system depends on.
+
+The governance framing also resolves an apparent tension in Claim 4 (the bidirectional spec). If agents write back to the spec, who decides what is authoritative — the spec or the implementation? The answer the governance model gives: the spec is authoritative, and implementation discoveries that reveal spec gaps result in spec updates, not silent implementation overrides. The spec evolves; it is not overwritten.
+
 ---
 
 ## The Synthesis
@@ -88,13 +104,21 @@ The deeper insight: **the spec is not upstream of the work — it is the work, a
 
 ---
 
-## What This Means for the Framework
+## Mapping to the Framework
 
-The six claims collectively justify the Behavioral Control Plane as a structural necessity. Mapped to the architecture described in [spec-driven-architecture.md](spec-driven-architecture.md):
+Each claim is not just an argument — it is a requirement that the framework must satisfy. The table below maps each claim to the implication it carries and the document in this directory where that implication is operationalized.
 
-The [Spec Graph](../../../GLOSSARY.md#spec-graph) is the system-context half of a complete spec — it externalizes the patterns, dependencies, and failure modes that traditionally live in engineers' heads. The [Executable Spec](../../../GLOSSARY.md#executable-spec) YAML captures the human-judgment half — invariants, effects, and success criteria that an agent cannot infer from code alone.
+| Claim | Implication | Operationalized in |
+|---|---|---|
+| **1. Clarity is the bottleneck** | Behavior-centric development is a structural response to the clarity constraint, not a stylistic preference | [Spec-Driven Architecture](spec-driven-architecture.md) |
+| **2. Specs shift when failure is discovered** | Spec-gated PRs are upstream leverage, not process overhead | [GitHub Workflow](github-workflow.md) |
+| **3. Division of labor** | The authoring process must enforce the human/agent boundary structurally, not just conceptually | [Spec Authoring Workflow](spec-authoring.md) |
+| **4. The spec is bidirectional** | The spec format must support agent write-back; the `decisions:` field is the mechanism | [Pilot Guide — Spec File Format](pilot-guide.md#spec-file-format) |
+| **5. Multi-agent coherence** | The spec graph is the shared substrate that prevents parallel agents from diverging | [Spec-Driven Architecture](spec-driven-architecture.md), [Architecture Reference](architecture-reference.md) |
+| **6. Two components** | Spec authoring requires structured elicitation of both human judgment and system context | [Spec Authoring Workflow](spec-authoring.md) |
+| **7. Operational infrastructure** | The spec governs the full lifecycle — from authoring through deployment — not just initial requirements | [GitHub Workflow](github-workflow.md), [Adoption Roadmap](adoption-roadmap.md) |
 
-The gap the claims point to — tribal knowledge teams carry informally — is the hardest element to address in a spec authoring workflow. The [`decisions:` field](pilot-guide.md#spec-file-format) in the executable spec format is the right location for it: lightweight records of context, decision, and consequences that preserve the *why* behind structural choices. Eliciting this material (what existing patterns apply here? what are the known failure modes in this domain? what invariants does an adjacent spec impose?) is where an agent with deep codebase access is most useful. The agent's contribution is not writing requirements — it is surfacing the system context that makes human-authored requirements actually grounded.
+The documents in this directory are the answer to these claims collectively. [spec-driven-architecture.md](spec-driven-architecture.md) establishes the architectural model the claims justify. [spec-authoring.md](spec-authoring.md) documents the upstream workflow. [github-workflow.md](github-workflow.md) operationalizes the spec as governance. [adoption-roadmap.md](adoption-roadmap.md) stages the transition from code-centric to spec-governed development. [pilot-guide.md](pilot-guide.md) provides the concrete starting point. The claims are the *why*; those documents are the *how*.
 
 ---
 
