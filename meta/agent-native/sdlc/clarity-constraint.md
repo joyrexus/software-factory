@@ -13,6 +13,13 @@ This document sorts them by the actual argument each is making, assesses what ea
 ## Contents
 
 - [The Claims](#the-claims) — seven distinct arguments for why specs are structurally necessary, not merely useful
+  - [Claim 1: The bottleneck is always clarity, not capability](#claim-1-the-bottleneck-is-always-clarity-not-capability)
+  - [Claim 2: Specs shift when failure is discovered](#claim-2-specs-shift-when-failure-is-discovered)
+  - [Claim 3: The division of labor between humans and agents](#claim-3-the-division-of-labor-between-humans-and-agents)
+  - [Claim 4: The spec is bidirectional](#claim-4-the-spec-is-bidirectional)
+  - [Claim 5: Multi-agent coherence requires a shared spec](#claim-5-multi-agent-coherence-requires-a-shared-spec)
+  - [Claim 6: A good spec has two components — human judgment and system context](#claim-6-a-good-spec-has-two-components--human-judgment-and-system-context)
+  - [Claim 7: The spec becomes operational infrastructure](#claim-7-the-spec-becomes-operational-infrastructure)
 - [The Synthesis](#the-synthesis) — what the seven claims add up to as a single coherent position
 - [Mapping to the Framework](#mapping-to-the-framework) — each claim mapped to its implication and the document that operationalizes it
 - [See Also](#see-also)
