@@ -57,6 +57,7 @@ software-factory/
 │   ├── pyramid-summaries.md           — Reversible multi-level context compression
 │   ├── scenarios-not-tests.md         — Holdout-set validation replacing unit tests
 │   ├── specification-discipline.md    — The self-check heuristic for specs
+│   ├── living-spec.md                 — Canonical living spec format (Markdown, human + agent)
 │   ├── risk-tiered-automation.md      — Graduated autonomy levels
 │   ├── codebase-indexing.md           — Organization-wide code search and navigation
 │   └── codebase-cartography.md       — Structured documentation as semantic index
@@ -120,6 +121,7 @@ Repeatable patterns to evaluate and adopt, clustered by domain: environment, wor
 | [pyramid-summaries.md](techniques/pyramid-summaries.md) | Reversible multi-level context compression |
 | [scenarios-not-tests.md](techniques/scenarios-not-tests.md) | Holdout-set validation replacing unit tests |
 | [specification-discipline.md](techniques/specification-discipline.md) | The self-check heuristic for specifications |
+| [living-spec.md](techniques/living-spec.md) | Canonical living spec format — Markdown document co-authored by human and agent |
 | [risk-tiered-automation.md](techniques/risk-tiered-automation.md) | Graduated autonomy levels for agent actions |
 | [codebase-indexing.md](techniques/codebase-indexing.md) | Organization-wide code search, navigation, and impact analysis |
 | [codebase-cartography.md](techniques/codebase-cartography.md) | Structured documentation as semantic index |

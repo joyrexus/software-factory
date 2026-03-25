@@ -65,9 +65,9 @@ A set of in-memory behavioral clones of external services — Okta, Slack, Jira,
 See [Digital Twin Universe](techniques/digital-twin-universe.md).
 
 ### Executable Spec
-A machine-readable behavioral contract defining a feature's inputs, outputs, invariants, preconditions, postconditions, and emitted events. Serves triple duty: instruction to AI agents, acceptance criteria for CI, and behavioral documentation for engineers. Executable specs are the concrete artifact produced by [specification discipline](techniques/specification-discipline.md) and the input to the spec graph.
+A behavioral contract for a feature, expressed as a [Living Spec](techniques/living-spec.md) — a Markdown document co-authored by human and agent. The human authors goal and constraints; the agent seeds inputs, outputs, invariants, scenarios, success criteria, and an initial task list from codebase analysis; both maintain the document as implementation proceeds. Serves triple duty: instruction to AI agents, acceptance criteria for CI, and behavioral documentation for engineers. The YAML frontmatter is the machine-parseable subset that feeds the spec graph compiler.
 
-See [Spec-Driven Architecture](meta/agent-native/sdlc/spec-driven-architecture.md), [Pilot Guide](meta/agent-native/sdlc/pilot-guide.md).
+See [Living Spec](techniques/living-spec.md), [Spec-Driven Architecture](meta/agent-native/sdlc/spec-driven-architecture.md), [Pilot Guide](meta/agent-native/sdlc/pilot-guide.md).
 
 ### Entropy Management
 Using recurring background agents to scan for deviations from architectural standards, update quality grades, and open targeted refactoring PRs — continuous preventive maintenance rather than periodic cleanup sprints. Most resulting PRs are reviewable in under a minute and eligible for automerge, turning technical debt accumulation into a steady-state process.

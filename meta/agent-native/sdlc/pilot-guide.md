@@ -76,66 +76,65 @@ my-saas/
 
 ### Spec File Format
 
-```yaml
-# specs/invoicing/create_invoice.yaml
+Specs are Markdown documents with YAML frontmatter. The frontmatter is the machine-parseable subset the graph compiler reads; the Markdown body is the [Living Spec](../../../techniques/living-spec.md) — co-authored by human and agent, evolving through authoring, implementation, and verification.
 
-# ── Human-authored ──────────────────────────────────────────────────────────
-goal: enable billing team to create invoices without manual data-entry errors
-  # Name the goal, not the solution. Goals survive implementation changes; solutions don't.
-
-constraints:
-  frozen: [invoice_schema_v2, payment-service HTTP API]
-  limits: [no new database tables]
-  # State these before any agent starts. Late-discovered constraints are the
-  # leading cause of scope drift.
-
-# ── Agent-seeded (spec-seed skill, from codebase analysis) ──────────────────
-feature: create_invoice
-domain: invoicing
-
-success_criteria:
-  - invoice creation error rate < 2% measured over first 30 days post-deploy
-  - end-to-end latency < 500ms at p95 under normal load
-  # Define done measurably. A measurable criterion is worth a hundred vague requirements.
-
-inputs:
-  - authenticated_user
-  - invoice_items[]
-
-invariants:
-  - total == sum(item.amount for item in invoice_items)
-  - invoice_items is non-empty
-
-effects:
-  - invoice_persisted
-  - invoice_created_event emitted
-
-scenarios:
-  - given: valid user with 3 line items
-    when: POST /api/invoices
-    then: 201 + invoice_created_event on queue
-
-  - given: empty line items
-    when: POST /api/invoices
-    then: 422 Unprocessable
-
-tasks:
-  - [ ] implement POST /api/invoices handler
-  - [ ] add invariant validation (empty items, total check)
-  - [ ] emit invoice_created_event on successful persist
-  # Agent checks off items as it works; verifies against success_criteria before surfacing for review.
-
-decisions:
-  - context: invoice_schema_v2 is frozen per billing-service contract
-    decision: validate against existing schema; no new fields
-    consequences: no new columns needed; constrains the input model
-  # Record decisions as they're made. An undocumented decision is an ambiguity
-  # waiting to cause a merge conflict.
+```
+specs/invoicing/create_invoice.md
 ```
 
-The human authors `goal` and `constraints`; the `spec-seed` skill seeds the rest from codebase analysis; the human then reviews and edits before any implementation begins. After the checkpoint, the agent maintains `tasks` and `decisions` as it works. At any given moment the spec reads like a cross between an RFC, an ADR, and a project tracker — which is more or less exactly what it is.
+````markdown
+---
+feature: create_invoice
+domain: invoicing
+inputs: [authenticated_user, invoice_items[]]
+effects: [invoice_persisted, invoice_created_event]
+---
 
-This single file serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers — applying [specification discipline](../../../techniques/specification-discipline.md) to produce artifacts that satisfy the self-check heuristic: the agent knows where to start, what to implement, and what proves completion. The [spec authoring workflow](spec-authoring.md) describes the full seeding process, including how `decisions:` gets populated from constraint elicitation rather than written after the fact.
+# Create Invoice — Living Spec
+
+<!-- BEGIN USER-SPECIFIED -->
+## Goal
+Enable billing team to create invoices without manual data-entry errors.
+
+## Constraints
+- Frozen: `invoice_schema_v2`, payment-service HTTP API (v3)
+- No new database tables
+<!-- END USER-SPECIFIED -->
+
+## Output Specification
+- POST /api/invoices endpoint, authenticated user + line items
+- Middleware validation for invariants
+- invoice_created_event emitted on successful persist
+- Unit tests: happy path + 3 error cases
+
+## Success Criteria
+- [ ] Invoice creation error rate < 2% over first 30 days post-deploy
+- [ ] End-to-end latency < 500ms at p95
+
+## Invariants
+- `total == sum(item.amount for item in invoice_items)`
+- `invoice_items` is non-empty
+
+## Scenarios
+- Given: authenticated user with 3 valid line items
+  When: POST /api/invoices
+  Then: 201 + invoice_created_event on queue
+
+- Given: empty line items
+  When: POST /api/invoices
+  Then: 422 Unprocessable Entity
+
+## Tasks
+- [ ] Implement POST handler — Impl Agent
+- [ ] Verify against success criteria — Verifier Agent
+
+## Decision Log
+- 2026-03-15: Using invoice_schema_v2 without extension — frozen per billing-service contract
+````
+
+The human authors Goal and Constraints (inside the protected markers); the `spec-seed` skill seeds the rest from codebase analysis; the human reviews and edits before implementation begins. After the checkpoint, the agent maintains Tasks and Decision Log as it works. See [Living Spec](../../../techniques/living-spec.md) for the full section anatomy and lifecycle.
+
+The `compile-spec-graph.ts` script reads the YAML frontmatter block from each spec file. This single document serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers — applying [specification discipline](../../../techniques/specification-discipline.md) to produce artifacts that satisfy the self-check heuristic: the agent knows where to start, what to implement, and what proves completion.
 
 ---
 

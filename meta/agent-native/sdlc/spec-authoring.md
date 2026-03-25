@@ -126,11 +126,13 @@ A spec that passes the integration check is structurally coherent with the rest 
 
 The output of a completed spec authoring workflow is a spec PR containing:
 
-- A YAML file that passes the self-check heuristic, with:
-  - Human-authored `goal` and `constraints` sections
-  - Agent-seeded `inputs`, `invariants`, `effects`, `scenarios`, `success_criteria`, and `tasks`
-- A `decisions:` section that captures constraint reasoning and architectural context (populated throughout, not written after the fact)
+- A [Living Spec](../../../techniques/living-spec.md) Markdown document with YAML frontmatter, including:
+  - Human-authored Goal and Constraints (inside protected markers)
+  - Agent-seeded Output Specification, Success Criteria, Invariants, Scenarios, and Tasks
+- A Decision Log populated throughout authoring (not written after the fact)
 - A graph integration check that confirms structural coherence
+
+The full section anatomy — who writes what, when, and the protected markers pattern — is documented in [Living Spec](../../../techniques/living-spec.md).
 
 That PR is the artifact the rest of the framework operates on. The pilot guide's CI pipeline, the GitHub workflow's spec gate, and the adoption roadmap's Stage 2 criteria all assume this artifact exists and is complete. Spec authoring is the stage that produces it.
 
@@ -138,9 +140,10 @@ That PR is the artifact the rest of the framework operates on. The pilot guide's
 
 ## See Also
 
+- [Living Spec](../../../techniques/living-spec.md) — the canonical artifact format this workflow produces
 - [clarity-constraint.md](clarity-constraint.md) — the argumentative foundation for why specs require both human judgment and system context
 - [spec-driven-architecture.md](spec-driven-architecture.md) — the four-layer architecture the authored spec feeds into
-- [pilot-guide.md](pilot-guide.md) — the executable spec format, including the `decisions:` section
+- [pilot-guide.md](pilot-guide.md) — the repo structure that hosts living specs and the graph compiler that reads their frontmatter
 - [github-workflow.md](github-workflow.md) — the spec PR gate this workflow feeds into
 - [Specification Discipline](../../../techniques/specification-discipline.md) — quality criteria and the self-check heuristic
 - [Codebase Cartography](../../../techniques/codebase-cartography.md) — the technique for producing the architectural map Stage 1 queries

@@ -24,6 +24,7 @@ Patterns for structuring how agents do work.
 |-----------|-------------|
 | [Shift Work](shift-work.md) | Separating interactive (needs human) from non-interactive (fully specified) modes |
 | [Specification Discipline](specification-discipline.md) | The self-check heuristic for writing agent-ready specifications |
+| [Living Spec](living-spec.md) | The canonical artifact format — Markdown document co-authored by human and agent |
 | [Scenarios Not Tests](scenarios-not-tests.md) | Holdout-set validation replacing narrow unit tests |
 
 ## Knowledge

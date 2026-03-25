@@ -22,6 +22,44 @@ A specification ready for agent consumption includes:
 
 **What the spec should not include:** internal algorithms or implementation details. The specification describes *what* and *why*, not *how*. Prescribing the implementation prevents the agent from finding a better solution.
 
+## The Mixed-Concerns Anti-Pattern
+
+Specification discipline fails most visibly when functional requirements, implementation mandates, performance targets, and aesthetic preferences are mixed into a single undifferentiated block:
+
+```
+Create a user dashboard that shows analytics. Use Redux for state management.
+It should load fast. Use Material-UI. Make it look modern.
+```
+
+This gives the agent four different kinds of instruction with no separation: what to build, how to build it, an unmeasurable performance target, and subjective design language. The agent cannot distinguish what is fixed from what is flexible, what is measurable from what is aspirational, or where implementation authority lies.
+
+The structured alternative separates these concerns into distinct fields:
+
+```markdown
+## User Authentication
+
+Context: New users cannot access protected endpoints. JWT-based auth is needed.
+
+Constraints:
+- Use only standard libraries; no external auth services
+- Tokens expire in 15 minutes
+- Refresh tokens valid for 7 days
+- Must work with existing user DB schema
+
+Output Specification:
+- POST /auth/login endpoint returning JWT
+- Middleware function for route protection
+- Unit tests: happy path + 3 error cases
+- Return format: JSON with {token, refreshToken, expiresIn}
+
+Success Criteria:
+- All tests pass
+- No breaking changes to existing user endpoints
+- Response time < 100ms for token validation
+```
+
+Context explains why the change is needed. Constraints are the non-negotiable rails. Output Specification describes what to produce. Success Criteria are the machine-checkable assertions that prove it is done. An agent working from this structure knows exactly what it owns, what it cannot change, and what done looks like. The [Living Spec](living-spec.md) format operationalizes this structure across a feature's full lifecycle.
+
 ## The Self-Check in Practice
 
 Before submitting a specification, ask:
@@ -57,6 +95,7 @@ BDD scenarios also provide a practical on-ramp to the more radical [scenarios-no
 
 ## See Also
 
+- [Living Spec](living-spec.md) — The canonical artifact format that operationalizes specification discipline across a feature's full lifecycle
 - [Shift Work](shift-work.md) — Specification quality determines whether a task can run non-interactively
 - [Scenarios Not Tests](scenarios-not-tests.md) — Scenario-level specifications for validation
 - [The Seed](../principles/seed.md) — The principle behind specification discipline
