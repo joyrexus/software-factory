@@ -20,6 +20,7 @@ Agentic SDLC:       intent → plan → implement → verify
 
 | File | Description |
 |------|-------------|
+| [clarity-constraint.md](clarity-constraint.md) | Argumentative foundation — six claims about why specs are the central artifact and the synthesis they produce |
 | [spec-driven-architecture.md](spec-driven-architecture.md) | Core concepts — the four-layer architecture and behavioral control plane |
 | [architecture-reference.md](architecture-reference.md) | Visual reference — closed-loop platform diagram with layer-by-layer explanation |
 | [github-workflow.md](github-workflow.md) | Operationalization — spec-gated GitHub workflow from spec PR through verification to deployment |
