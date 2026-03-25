@@ -13,7 +13,7 @@ This document sorts them by the actual argument each is making, assesses what ea
 ## Contents
 
 - [The Claims](#the-claims) — seven distinct arguments for why specs are structurally necessary, not merely useful
-  - [Claim 1: The bottleneck is always clarity, not capability](#claim-1-the-bottleneck-is-always-clarity-not-capability)
+  - [Claim 1: The bottleneck is clarity, not capability](#claim-1-the-bottleneck-is-always-clarity-not-capability)
   - [Claim 2: Specs shift when failure is discovered](#claim-2-specs-shift-when-failure-is-discovered)
   - [Claim 3: The division of labor between humans and agents](#claim-3-the-division-of-labor-between-humans-and-agents)
   - [Claim 4: The spec is bidirectional](#claim-4-the-spec-is-bidirectional)
@@ -26,7 +26,7 @@ This document sorts them by the actual argument each is making, assesses what ea
 
 ## The Claims
 
-### Claim 1: The bottleneck is always clarity, not capability
+### Claim 1: The bottleneck is clarity, not capability
 
 > "The scarce resource has always been clarity: knowing what to build, defining boundaries, making implicit knowledge explicit, recognizing failure modes before they become production incidents."
 
