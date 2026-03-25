@@ -13,20 +13,20 @@ This document sorts them by the actual argument each is making, assesses what ea
 ## Contents
 
 - [The Claims](#the-claims) — seven distinct arguments for why specs are structurally necessary, not merely useful
-  - [Claim 1: The bottleneck is clarity, not capability](#claim-1-the-bottleneck-is-always-clarity-not-capability)
-  - [Claim 2: Specs shift when failure is discovered](#claim-2-specs-shift-when-failure-is-discovered)
-  - [Claim 3: The division of labor between humans and agents](#claim-3-the-division-of-labor-between-humans-and-agents)
-  - [Claim 4: The spec is bidirectional](#claim-4-the-spec-is-bidirectional)
-  - [Claim 5: Multi-agent coherence requires a shared spec](#claim-5-multi-agent-coherence-requires-a-shared-spec)
-  - [Claim 6: A good spec has two components — human judgment and system context](#claim-6-a-good-spec-has-two-components--human-judgment-and-system-context)
-  - [Claim 7: The spec becomes operational infrastructure](#claim-7-the-spec-becomes-operational-infrastructure)
+  - [The bottleneck is clarity, not capability](#the-bottleneck-is-clarity-not-capability)
+  - [Specs shift when failure is discovered](#specs-shift-when-failure-is-discovered)
+  - [The division of labor between humans and agents](#the-division-of-labor-between-humans-and-agents)
+  - [The spec is bidirectional](#the-spec-is-bidirectional)
+  - [Multi-agent coherence requires a shared spec](#multi-agent-coherence-requires-a-shared-spec)
+  - [A good spec has two components — human judgment and system context](#a-good-spec-has-two-components--human-judgment-and-system-context)
+  - [Specs should function as operational infrastructure](#specs-should-function-as-operational-infrastructure)
 - [The Synthesis](#the-synthesis) — what the seven claims add up to as a single coherent position
 - [Mapping to the Framework](#mapping-to-the-framework) — each claim mapped to its implication and the document that operationalizes it
 - [See Also](#see-also)
 
 ## The Claims
 
-### Claim 1: The bottleneck is clarity, not capability
+### The bottleneck is clarity, not capability
 
 > "The scarce resource has always been clarity: knowing what to build, defining boundaries, making implicit knowledge explicit, recognizing failure modes before they become production incidents."
 
@@ -36,7 +36,7 @@ AI removes the implementation constraint. Generating code becomes cheap. But gen
 
 The rest of the claims in this document are downstream of this one.
 
-### Claim 2: Specs shift when failure is discovered
+### Specs shift when failure is discovered
 
 > "Make the definition of 'done' explicit before any code is written, and spot failure modes at the plan level instead of in generated output."
 
@@ -44,7 +44,7 @@ This is a temporal argument. The claim is not just that explicitness is good —
 
 This maps directly to the [Seed Quality](../../../GLOSSARY.md#seed-quality) principle: errors compound upstream. A mistake in the plan cascades into hundreds of lines of bad code. A mistake caught at the spec stage costs almost nothing. The spec is upstream of everything — it is the point where the cost of error is lowest and the leverage over subsequent work is highest.
 
-### Claim 3: The division of labor between humans and agents
+### The division of labor between humans and agents
 
 > "Developers define what should be built and delegate the execution to their coding agents. You focus on what should be built; agents handle how it's executed."
 
@@ -56,7 +56,7 @@ An agent with no spec will make "what" decisions constantly. Intent gaps do not 
 
 The second quote sharpens the picture in two ways. "Explore" is more precise than "execute": agents are not simply executing instructions, they are navigating a bounded implementation space defined by the spec. The spec does not prescribe the path; it defines the boundaries within which the agent searches. And "continuously refers back" names something the existing framing leaves implicit: the spec is not a one-time instruction issued at the start of work. It is the reference point the system returns to throughout implementation — the authority that settles ambiguity when the agent encounters a decision the spec did not anticipate.
 
-### Claim 4: The spec is bidirectional
+### The spec is bidirectional
 
 > "Work should start from a spec that evolves as you make progress. As code changes, your coding agent reads from and updates the spec so every human and agent stays aligned."
 
@@ -68,7 +68,7 @@ Traditional specs are write-once human artifacts: authored before development, c
 
 The deeper structural claim is that the spec is the *synchronization substrate* between human intent and agent execution. It is not documentation layered on top of code; it is the medium through which both sides stay coordinated. Keeping spec and implementation aligned — what the [Spec Graph](../../../GLOSSARY.md#spec-graph) approach calls spec-code drift — is a form of entropy that accumulates whenever this bidirectional discipline breaks down.
 
-### Claim 5: Multi-agent coherence requires a shared spec
+### Multi-agent coherence requires a shared spec
 
 > "If you don't make the goal, constraints, and success criteria explicit, each agent will interpret the task in isolation. That's how you end up with five implementations that technically work and still don't fit together."
 
@@ -76,7 +76,7 @@ The previous claims apply to single-agent development. This one is specific to p
 
 A missing spec in a multi-agent context is not a multiplier of productivity; it is a multiplier of inconsistency. Parallelism amplifies whatever coordination mechanism is in place. A shared [Executable Spec](../../../GLOSSARY.md#executable-spec) is the mechanism that makes parallel agents productive rather than divergent.
 
-### Claim 6: A good spec has two components — human judgment and system context
+### A good spec has two components — human judgment and system context
 
 > "Specs that work make two things explicit: human judgment about what success means and which constraints matter, and system context about the patterns, dependencies, and failure modes the code needs to respect."
 
@@ -94,7 +94,7 @@ The gap between these two halves is where AI-assisted spec generation becomes ge
 
 The "spec as system of record" formulation follows from this: if the spec is where correctness is evaluated, it must contain enough system context to make that evaluation meaningful — not just what was intended, but what the system actually constrains and what patterns the implementation must respect.
 
-### Claim 7: The spec becomes operational infrastructure
+### Specs should function as operational infrastructure
 
 > "The spec becomes operational infrastructure. It stops being a document that describes the system and becomes one that actively governs how it's built."
 
@@ -102,7 +102,7 @@ The previous claims establish what a spec should contain and how it should behav
 
 This distinction is what separates spec-driven development from spec-*first* development. Spec-first means writing requirements before coding — a timing rule. Spec-driven means the spec remains the authority throughout: it gates implementation PRs, drives CI verification, and is the artifact agents refer back to when implementation choices arise. The spec does not retire when coding begins; it becomes load-bearing infrastructure that the rest of the system depends on.
 
-The governance framing also resolves an apparent tension in Claim 4 (the bidirectional spec). If agents write back to the spec, who decides what is authoritative — the spec or the implementation? The answer the governance model gives: the spec is authoritative, and implementation discoveries that reveal spec gaps result in spec updates, not silent implementation overrides. The spec evolves; it is not overwritten.
+The governance framing also resolves an apparent tension in [The spec is bidirectional](#the-spec-is-bidirectional). If agents write back to the spec, who decides what is authoritative — the spec or the implementation? The answer the governance model gives: the spec is authoritative, and implementation discoveries that reveal spec gaps result in spec updates, not silent implementation overrides. The spec evolves; it is not overwritten.
 
 ---
 
