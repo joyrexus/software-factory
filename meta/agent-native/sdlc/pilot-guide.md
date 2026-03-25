@@ -78,8 +78,25 @@ my-saas/
 
 ```yaml
 # specs/invoicing/create_invoice.yaml
+
+# ── Human-authored ──────────────────────────────────────────────────────────
+goal: enable billing team to create invoices without manual data-entry errors
+  # Name the goal, not the solution. Goals survive implementation changes; solutions don't.
+
+constraints:
+  frozen: [invoice_schema_v2, payment-service HTTP API]
+  limits: [no new database tables]
+  # State these before any agent starts. Late-discovered constraints are the
+  # leading cause of scope drift.
+
+# ── Agent-seeded (spec-seed skill, from codebase analysis) ──────────────────
 feature: create_invoice
 domain: invoicing
+
+success_criteria:
+  - invoice creation error rate < 2% measured over first 30 days post-deploy
+  - end-to-end latency < 500ms at p95 under normal load
+  # Define done measurably. A measurable criterion is worth a hundred vague requirements.
 
 inputs:
   - authenticated_user
@@ -101,11 +118,24 @@ scenarios:
   - given: empty line items
     when: POST /api/invoices
     then: 422 Unprocessable
+
+tasks:
+  - [ ] implement POST /api/invoices handler
+  - [ ] add invariant validation (empty items, total check)
+  - [ ] emit invoice_created_event on successful persist
+  # Agent checks off items as it works; verifies against success_criteria before surfacing for review.
+
+decisions:
+  - context: invoice_schema_v2 is frozen per billing-service contract
+    decision: validate against existing schema; no new fields
+    consequences: no new columns needed; constrains the input model
+  # Record decisions as they're made. An undocumented decision is an ambiguity
+  # waiting to cause a merge conflict.
 ```
 
-This single file serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers — applying [specification discipline](../../../techniques/specification-discipline.md) to produce artifacts that satisfy the self-check heuristic: the agent knows where to start, what to implement, and what proves completion.
+The human authors `goal` and `constraints`; the `spec-seed` skill seeds the rest from codebase analysis; the human then reviews and edits before any implementation begins. After the checkpoint, the agent maintains `tasks` and `decisions` as it works. At any given moment the spec reads like a cross between an RFC, an ADR, and a project tracker — which is more or less exactly what it is.
 
-For non-obvious design choices, add a `decisions:` section to the spec — lightweight architecture decision records (context, decision, consequences) that preserve the *why* behind structural choices. Agents navigating a new domain read this section for the architectural context the behavioral contract intentionally omits. The [spec authoring workflow](spec-authoring.md) describes how this section gets populated from constraint elicitation, not written after the fact.
+This single file serves as instruction to the agent, acceptance criteria for CI, and behavioral documentation for engineers — applying [specification discipline](../../../techniques/specification-discipline.md) to produce artifacts that satisfy the self-check heuristic: the agent knows where to start, what to implement, and what proves completion. The [spec authoring workflow](spec-authoring.md) describes the full seeding process, including how `decisions:` gets populated from constraint elicitation rather than written after the fact.
 
 ---
 
@@ -121,7 +151,7 @@ For non-obvious design choices, add a `decisions:` section to the spec — light
 
 **Goal:** Write 8–12 specs for existing features. Compile them into a graph. Commit it.
 
-For the discipline behind writing specs that are complete and grounded in system context before the first commit, see [Spec Authoring Workflow](spec-authoring.md).
+For the discipline behind writing specs that are complete and grounded in system context before the first commit, see [Spec Authoring Workflow](spec-authoring.md). The `spec-seed` skill from the spec-authoring plugin automates Stage 3 of that workflow: the engineer authors `goal` and `constraints`; the skill seeds `inputs`, `invariants`, `effects`, `scenarios`, `success_criteria`, and `tasks` from codebase analysis.
 
 You are not building new features — you are describing what already exists. This forces clarity about what the system actually does. (A practical question that arises immediately: how granular should each spec be? A useful heuristic — each spec should deliver independently testable value. If a feature has sub-capabilities that different roles own or that could ship independently, split them. If the behaviors are interdependent and only make sense together, keep them in one spec.)
 

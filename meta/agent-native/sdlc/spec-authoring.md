@@ -15,6 +15,7 @@ That gap is what this document addresses. Spec authoring is not a preliminary st
 - [The Expanded Progression](#the-expanded-progression) — how the full intent→verify pipeline expands beyond the common summary
 - [Why Authoring Is the Critical Stage](#why-authoring-is-the-critical-stage) — the temporal argument for why specs are the cheapest place to be wrong
 - [The Four Stages](#the-four-stages) — surface context → elicit constraints → draft → graph integration check
+  - [Stage 3: The Spec Seed Skill](#stage-3-draft-and-review-the-spec) — human writes goal + constraints; agent seeds the rest
 - [What This Produces](#what-this-produces) — the spec PR artifact the rest of the framework operates on
 - [See Also](#see-also)
 
@@ -88,15 +89,26 @@ The output of Stage 2 is a constraint checklist that drives both the spec draft 
 
 ### Stage 3: Draft and review the spec
 
-The agent drafts the [Executable Spec](../../../GLOSSARY.md#executable-spec) YAML from the constraint checklist produced in Stage 2. The human reviews it against the self-check heuristic from [Specification Discipline](../../../techniques/specification-discipline.md):
+Stage 3 is where the spec-authoring plugin's `spec-seed` skill takes over. It takes the constraint checklist from Stage 2 as input and produces a complete YAML draft through codebase analysis — but it only seeds what the agent can derive. The human must first provide two things.
+
+**What the human writes first.** Before the `spec-seed` skill runs, the human authors two sections of the spec directly, guided by four rules:
+
+- **Name the goal, not the solution.** "Reduce onboarding drop-off by 20%" is a goal. "Add a progress bar" is a premature solution. Goals stay valid as the implementation evolves; solutions don't.
+- **State constraints explicitly.** Frozen modules, existing API contracts, hard limits — list them before any agent starts. Constraints discovered mid-implementation are the leading cause of scope drift.
+- **Define done measurably.** A measurable success criterion is worth a hundred vague requirements. "Invoice creation error rate < 2% in 30 days" is done. "Works correctly" is not.
+- **Record decisions as they're made.** An undocumented decision is an ambiguity waiting to cause a merge conflict. The `decisions:` section is populated throughout authoring and implementation — not written after the fact.
+
+**What the agent seeds.** With `goal` and `constraints` in place, the `spec-seed` skill runs codebase analysis against the Stage 1 context summary and seeds the remaining fields: `feature`, `domain`, `inputs`, `invariants`, `effects`, `scenarios`, `success_criteria`, and an initial `tasks` checklist. The skill uses the existing behavioral neighbors, known failure modes, and event patterns surfaced in Stage 1 to ground each field in actual system state rather than assumption.
+
+**The human checkpoint.** The agent's seed is a draft, not a final artifact. The human reviews it against the self-check heuristic from [Specification Discipline](../../../techniques/specification-discipline.md):
 
 1. Can I identify where the agent begins reading?
 2. What artifact proves completion?
 3. Are the constraints explicit enough to produce deterministic work?
 
-If any answer is "no," the spec is not ready to compile. Common failure modes: invariants that reference undefined state, scenarios that don't cover the failure modes surfaced in Stage 1, scope boundaries that were stated verbally but not encoded in the spec.
+If any answer is "no," the spec is not ready to compile. Common failure modes: invariants that reference undefined state, scenarios that don't cover the failure modes surfaced in Stage 1, scope boundaries stated verbally but not encoded in the spec. The human edits before any implementation begins.
 
-The `decisions:` section is populated during this stage — not as optional enrichment, but as the artifact that captures the constraint reasoning from Stage 2. Agents navigating a new domain read this section for the architectural context the behavioral contract intentionally omits: why this approach was chosen, what alternatives were considered, what invariants from adjacent specs constrain the implementation space. The compiler ignores `decisions:` for graph purposes; agents rely on it for navigation.
+**The living document.** After the human checkpoint, the spec doesn't freeze — it tracks. As the agent works, it updates the `tasks` section (checking off completed items) and populates `decisions` as architectural choices are made. Before surfacing any work for human review, the agent verifies completed work against `success_criteria`. At any given moment the spec reads like a cross between an RFC, an ADR, and a project tracker — which is more or less exactly what it is.
 
 ### Stage 4: Graph integration check
 
@@ -114,8 +126,10 @@ A spec that passes the integration check is structurally coherent with the rest 
 
 The output of a completed spec authoring workflow is a spec PR containing:
 
-- A YAML file that passes the self-check heuristic
-- A `decisions:` section that captures constraint reasoning and architectural context
+- A YAML file that passes the self-check heuristic, with:
+  - Human-authored `goal` and `constraints` sections
+  - Agent-seeded `inputs`, `invariants`, `effects`, `scenarios`, `success_criteria`, and `tasks`
+- A `decisions:` section that captures constraint reasoning and architectural context (populated throughout, not written after the fact)
 - A graph integration check that confirms structural coherence
 
 That PR is the artifact the rest of the framework operates on. The pilot guide's CI pipeline, the GitHub workflow's spec gate, and the adoption roadmap's Stage 2 criteria all assume this artifact exists and is complete. Spec authoring is the stage that produces it.
